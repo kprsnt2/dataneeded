@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LinkedIn Rewrite - Black Piano</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="linkedin-rewrite-black-piano-framed-for-data-pipelines-autom">LinkedIn Rewrite — Black Piano, Framed for Data Pipelines &amp; Automation</h1>
+<p><b>Why this rewrite:</b> ICICI Lombard&#x27;s recruiter named <b>&quot;data pipelines&quot;</b> and <b>&quot;automated pipelines&quot;</b> in his first message. Your current LinkedIn section leads with the data-quality agent and mentions the 18 pipelines last. For this inbound — and for any data-engineering-flavoured req — the pipeline and automation work should lead, because that is the keyword he is searching on.</p>
+<p><b>What this rewrite does and does not do:</b></p>
+<ul><li>✅ Reorders and sharpens what you already have, using only phrases from <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a>.</li><li>✅ Keeps the title <b>Data Analyst</b>. No inflation, no &quot;Engineer&quot; title.</li><li>⛔ Does not invent a metric. Every number below is either already in the canonical profile, or flagged in §1–§2 as a template value being removed.</li></ul>
+<blockquote><b>Evidence of current state:</b> <a href="assets/linkedin_blackpiano_current.png" target="_blank" rel="noopener">assets/linkedin_blackpiano_current.png</a></blockquote>
+<hr>
+<h2 id="1-resolved-the-60-claim-comes-off">§1 — RESOLVED: the 60% claim comes off</h2>
+<p><b>Decision taken (2026-10-12): remove it.</b> You confirmed it was left on LinkedIn by mistake. That was the right call, and here is why it mattered:</p>
+<table><thead><tr><th>Claim on your live profile</th><th>In <code>config/profile.md</code>?</th><th>In <code>config/profile.example.md</code>?</th></tr></thead><tbody><tr><td>&quot;reduced client manual analysis time by <b>60%</b>&quot;</td><td>❌ <b>No</b> — the canonical file deliberately drops the figure</td><td>✅ Yes, line 42</td></tr><tr><td>&quot;...across 18 sectors for <b>4 enterprise clients</b>&quot;</td><td>❌ <b>No</b> — canonical says only &quot;across 18 industry sectors&quot;</td><td>✅ Yes, line 43</td></tr></tbody></table>
+<p><code>profile.example.md</code> is the <b>template</b> file. The example&#x27;s phrasing had been copied into LinkedIn, and the canonical file was later tightened to remove the 60% — but LinkedIn was never updated. <b>Your live profile was claiming a number your own prep doc explicitly told you not to say aloud.</b> In a recorded, transcript-scored interview that is a trap, not a rounding error.</p>
+<p><b>The standing rule, so this cannot recur:</b> if a number is not in <code>config/profile.md</code>&#x27;s Verified Metrics table, it does not go on LinkedIn, in a resume, or in an interview answer. <code>profile.example.md</code> is a template — <b>never a source.</b></p>
+<p><b>On &quot;4 enterprise clients&quot;:</b> you said approximate, so it becomes <b>&quot;multiple enterprise clients&quot;</b> below. That still conveys multi-client scope without asserting a count you&#x27;d have to defend.</p>
+<hr>
+<h2 id="2-the-same-defect-is-probably-one-section-further-down-your-">§2 — The same defect is probably one section further down: your Pi Software entry</h2>
+<p><b>The Black Piano bullets were not the only thing copied from the template.</b> <code>config/profile.example.md</code> differs from the canonical profile in two more places — and if the Black Piano bullets leaked into your live LinkedIn, these plausibly did too:</p>
+<table><thead><tr><th><code>profile.example.md</code> (template)</th><th><code>config/profile.md</code> (canonical)</th><th>Risk</th></tr></thead><tbody><tr><td>Line 37: title <b>&quot;Data Analyst / AI Systems&quot;</b></td><td>Line 34: <i>&quot;The title is </i><i>Data Analyst</i><i> at both employers — </i><i>do not inflate it</i><i>.&quot;</i></td><td>&quot;AI Systems&quot; appended to a held title is the exact inflation the canonical file forbids.</td></tr><tr><td>Line 48: <b>&quot;15+ enterprise dashboards&quot;</b></td><td>Line 96: <b>&quot;Client dashboards (Pi), 10+&quot;</b></td><td>A stale count, <b>and</b> &quot;enterprise dashboards&quot; is explicitly listed in <a href="outreach_templates.md" target="_blank" rel="noopener">`outreach_templates.md` §6</a> as superseded wording.</td></tr></tbody></table>
+<p><b>Your screenshot only showed the Black Piano section, so I cannot see your Pi Software entry or your title line.</b> Check both now:</p>
+<ol><li><b>Your profile headline and the Pi Software job title.</b> If either says <b>&quot;Data Analyst / AI Systems&quot;</b>, change it to <b>&quot;Data Analyst&quot;</b>. Keep the <i>direction</i> in your headline if you want it (that is allowed — see §5), but not on a held job title.</li><li><b>The Pi Software bullet that mentions dashboards.</b> If it says <b>&quot;15+ enterprise dashboards&quot;</b>, change it to <b>&quot;10+ client dashboards&quot;</b> — the verified figure. Search your profile for the strings <code>15+</code>, <code>enterprise dashboards</code>, and <code>AI Systems</code>.</li><li><b>While you are there, read the whole profile once logged out.</b> This defect class — a template value surviving into a live profile — has now produced three separate problems: the 60%, the client count, and possibly the title. A single logged-out read catches all of them.</li></ol>
+<p><b>Why this matters more than it looks:</b> the 60% sat on your live profile unnoticed. That means the profile has not been read critically since it was written. Anything on it that is not in the canonical profile is a question you will one day be asked and cannot answer.</p>
+<hr>
+<h2 id="3-proposed-black-piano-section-publish-this">§3 — Proposed Black Piano section (publish this)</h2>
+<p>Copy the bullets as-is. This is the recommended version, with both corrections applied.</p>
+<div class="copyblock"><button class="copy" data-target="cb0" type="button">Copy</button><pre id="cb0"><code>Data Analyst
+Black Piano · Full-time
+Mar 2026 - Present · Hyderabad, Telangana, India · Remote
+
+• Architected 18 automated ETL pipelines feeding BigQuery → Looker Studio
+  dashboards across 18 sectors for multiple enterprise clients — owning the
+  pipeline layer end to end, from source ingestion and scheduling through to the
+  client-facing dashboard.
+
+• Built a self-healing data-quality agent powered by Gemini: autonomously
+  resolves missing brand domains via reference-table lookup with LLM fallback,
+  writes results back to both the dataset and the lookup table, retries 3x, and
+  escalates by email for human review only when unresolved.
+
+• Engineered an automated AI insights pipeline (ChatGPT) generating market- and
+  sector-level intelligence weekly, auto-published to a deployed client-facing
+  website, reducing a recurring manual analysis step.
+
+• Developed a custom MCP (Model Context Protocol) tool enabling non-technical
+  marketing &amp; sales teams to generate publication-ready, data-grounded blog
+  posts from a one-line prompt, backed by auto-exported Google Sheets pipelines.
+
+• Worked on recurring industry reports (Black Friday, Christmas, sales) and
+  ad-hoc dashboards, automating the refresh where the cadence allowed.</code></pre></div>
+<h3 id="why-these-bullets-in-this-order">Why these bullets, in this order</h3>
+<table><thead><tr><th>Bullet</th><th>The signal it sends</th></tr></thead><tbody><tr><td><b>1. The 18 pipelines</b></td><td><i>Volume and ownership.</i> &quot;18 pipelines across 18 sectors&quot; is the single strongest data-engineering line you have, and it is the exact phrase the recruiter used. Moving it to the top is the whole point of this rewrite.</td></tr><tr><td><b>2. The data-quality agent</b></td><td><i>Automation with judgement.</i> This is the differentiator — most analysts don&#x27;t build self-healing systems. Kept second because it&#x27;s your best story, not your broadest.</td></tr><tr><td><b>3. The AI insights pipeline</b></td><td><i>Cadence and client impact.</i> &quot;Weekly, auto-published&quot; says scheduled production, not a one-off analysis.</td></tr><tr><td><b>4. The MCP tool</b></td><td><i>Stakeholder leverage.</i> Non-technical users, one-line prompt, grounded in real data. This is the bullet a hiring manager remembers.</td></tr><tr><td><b>5. Recurring reporting</b></td><td><i>The unglamorous proof.</i> Recurring reports are exactly what an insurer&#x27;s MIS team needs and rarely gets — and this bullet is deliberately worded as <i>&quot;automating the refresh where the cadence allowed&quot;</i> rather than claiming full automation, because I can&#x27;t confirm those reports are genuinely scheduled. Upgrade it only if they are.</td></tr></tbody></table>
+<p><b>The added clause in bullet 1 — &quot;owning the pipeline layer end to end, from source ingestion and scheduling through to the client-facing dashboard&quot;</b> — is not a new claim. It restates what you already say across the six canonical bullets (pipelines, scheduling, dashboards), and it is the phrase that answers the question the recruiter is actually asking: <i>does this person own the pipeline, or just query it?</i> You own it.</p>
+<p><b>Bullet 5 is a reframe, not an addition</b> — and I have deliberately kept the canonical verb (&quot;Worked on&quot;) rather than upgrading it to &quot;Automated&quot;, because I do not know whether those reports are genuinely scheduled or were produced manually each cycle. <b>If they are scheduled and recurring, change it to &quot;Automated recurring industry reporting…&quot; — that is a stronger and equally honest bullet.</b> If they are produced by hand, leave it as written. Only you can settle this, and it is the kind of claim an interviewer probes with one follow-up question.</p>
+<p><b>Bullet 3 uses &quot;reducing a recurring manual analysis step&quot;, not &quot;replacing&quot;.</b> Your canonical profile says <i>&quot;reduced client manual analysis time&quot;</i> — it does not claim the step was eliminated. &quot;Reducing&quot; is the defensible verb; &quot;replacing&quot; asserts more than you can support, and it is exactly the upgrade the data-quality-agent guidance elsewhere in your prep warns against.</p>
+<p><b>What changed from your live version:</b> the 60% is gone (replaced with <i>&quot;reducing a recurring manual analysis step&quot;</i> — true, and unfalsifiable in the good sense); &quot;4 enterprise clients&quot; is now &quot;multiple enterprise clients&quot;; and the pipeline bullet moved from last to first.</p>
+<hr>
+<h2 id="4-headline-and-about-make-the-keyword-land">§4 — Headline and About: make the keyword land</h2>
+<p>Your section is only half the surface. The recruiter is searching on keywords, so the pipeline language needs to appear above the fold too.</p>
+<h3 id="headline-pick-one">Headline — pick one</h3>
+<div class="copyblock"><button class="copy" data-target="cb1" type="button">Copy</button><pre id="cb1"><code>Data Analyst → Data Pipelines &amp; Automation | Python · SQL · BigQuery · GCP</code></pre></div>
+<div class="copyblock"><button class="copy" data-target="cb2" type="button">Copy</button><pre id="cb2"><code>Data Analyst | 18 Automated ETL Pipelines → BigQuery · Looker Studio | Python, SQL, GCP</code></pre></div>
+<div class="copyblock"><button class="copy" data-target="cb3" type="button">Copy</button><pre id="cb3"><code>Data Analyst · Data Pipelines, Data Quality &amp; Automation | Python · BigQuery · GCP · SQL</code></pre></div>
+<p><b>Why `→` and not `|`:</b> <code>Data Analyst → Data Pipelines &amp; Automation</code> describes a direction without asserting a title you don&#x27;t hold. It is honest, and it is the same convention your resumes already use.</p>
+<p><b>Do not use:</b> &quot;Data Engineer&quot;, &quot;Senior&quot;, &quot;Lead&quot;, &quot;Analytics Engineer&quot; as a held title. Your title is Data Analyst at both employers, and the profile rule against inflating it is binding.</p>
+<p><b>A note on where the strict skill rule applies.</b> Your headline and About are prose — &quot;data pipelines&quot; and &quot;automation&quot; are descriptions of the work, and describing your work accurately is not a skill claim. <b>The strict rule bites on the Skills section (§5)</b>, where every entry should be traceable to the canonical list. Keep that boundary in mind: describe freely in prose, list conservatively in Skills.</p>
+<h3 id="about-section-draft">About section — draft</h3>
+<div class="copyblock"><button class="copy" data-target="cb4" type="button">Copy</button><pre id="cb4"><code>I build the data pipelines behind client dashboards — and the quality gates
+that decide whether what lands in them can be trusted.
+
+Currently at Black Piano, where I architected 18 automated ETL pipelines feeding
+BigQuery → Looker Studio dashboards across 18 sectors for multiple enterprise
+clients. Before that, three years at Pi Software Solutions building production
+Python pipelines for automated BigQuery access across 10+ client dashboards and
+delivering 30+ analytical reports for US and UK clients.
+
+The work I care most about is automation with a boundary. I built a self-healing
+data-quality agent that resolves missing data autonomously — deterministic
+lookup first, an LLM for the long tail, write-back so the fix persists — and
+escalates to a human only when it genuinely cannot resolve something. Before
+data, I spent nine years auditing CMS enrollment transactions at Optum, which is
+where I learned to treat data quality as a gate rather than a report.
+
+I also build autonomous agent systems on my own time — a job-sourcing pipeline,
+a research arena, a pair of security-research agents. Those are independent
+projects, not client work.
+
+Python · SQL · BigQuery · GCP · Looker Studio · ETL orchestration · data
+modelling · data quality &amp; validation
+
+kprsnt.in · github.com/kprsnt2</code></pre></div>
+<p><b>Note what the About does:</b> it leads with pipelines (the recruiter&#x27;s keyword), states the automation work second, uses the Optum audit background as the credibility spine rather than an awkward pre-2023 chapter, and explicitly labels the independent projects as independent — which is the attribution rule your own pipeline enforces in code.</p>
+<hr>
+<h2 id="5-skills-to-list">§5 — Skills to list</h2>
+<p>Your screenshot shows the first two skills as <b>&quot;Python (Programming Language)&quot;</b> and <b>&quot;Data Engineering&quot;</b>, then &quot;+6 skills&quot;.</p>
+<p><b>&quot;Data Engineering&quot; is not in your verified skills list.</b> That does not make it a lie — it is a reasonable description of what you do — but it is a title-adjacent claim on a profile whose canonical rule is that your held title is Data Analyst, and it invites the question <i>&quot;so are you a data engineer?&quot;</i> which you then have to walk back.</p>
+<p><b>Two options, both fine:</b></p>
+<ul><li><b>Keep it</b> — and be ready to answer plainly: <i>&quot;My title is Data Analyst. The work has been data engineering — pipelines, orchestration, warehouse modelling — and I describe it that way rather than claiming the title.&quot;</i> That is a good answer and it costs you nothing.</li><li><b>Replace it with a verified skill that carries the same signal.</b> The canonical list has exactly the right ones: <b>`ETL Orchestration`</b>, <b>`Data Pipeline Maintenance`</b>, or <b>`Data Modeling`</b>. All three are in <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a>, all three are unambiguously true, and they carry no title implication.</li></ul>
+<p><b>My recommendation: replace it with `ETL Orchestration`.</b> You keep the pipeline signal, lose the ambiguity, and stay strictly inside the verified skill list.</p>
+<p><b>Note the rule I am applying to myself here:</b> I originally suggested replacing it with &quot;Data Pipelines&quot; — which is <i>not</i> in the canonical Skills list either. That would have swapped one unverified skill for another. The canonical list has the phrase you need; use its exact wording.</p>
+<p>LinkedIn allows up to 50 skills, and the first three are the ones that matter for search.</p>
+<p><b>Pin these three first</b> — all three are verbatim in the canonical Skills list:</p>
+<ol><li><b>ETL Orchestration</b></li><li><b>Python</b> (LinkedIn will render it as &quot;Python (Programming Language)&quot;)</li><li><b>SQL</b></li></ol>
+<p><b>Then, verbatim from the canonical Skills list</b> (with one LinkedIn-rendering note below):</p>
+<p><code>BigQuery</code> · <code>Looker Studio</code> · <code>Tableau</code> · <code>ETL Orchestration</code> · <code>Data Modeling</code> · <code>Data Quality &amp; Validation</code> · <code>Data Pipeline Maintenance</code> · <code>Scheduled Queries</code> · <code>Google Apps Script</code> · <code>SQLite</code> · <code>Google Cloud Platform (GCP)</code> · <code>Cloud Run</code> · <code>Docker</code> · <code>GitHub Actions</code> · <code>Vercel</code> · <code>Linux/Bash</code> · <code>Git</code> · <code>Python</code> · <code>Pandas</code> · <code>NumPy</code> · <code>FastAPI</code> · <code>Node.js</code> · <code>TypeScript</code> · <code>JavaScript</code> · <code>Multi-Agent Swarms</code> · <code>FastMCP (MCP)</code> · <code>Tool/Function Calling</code> · <code>RAG</code> · <code>Prompt Engineering</code> · <code>LoRA/QLoRA Fine-Tuning</code> · <code>Agent Evaluation Harnesses</code> · <code>Human-in-the-Loop Escalation</code> · <code>Bounded Autonomy</code></p>
+<p><b>Four labels I had wrong in the previous version of this list — corrected, because the rule applies to me too:</b></p>
+<table><thead><tr><th>I had written</th><th>Canonical is</th><th>Why it matters</th></tr></thead><tbody><tr><td><code>Data Quality</code> <b>and</b> <code>Data Validation</code></td><td><b>`Data Quality &amp; Validation`</b> (one entry)</td><td>The canonical list has it as a single combined skill. Listing two implies a granularity you can&#x27;t support.</td></tr><tr><td><code>Data Analysis</code></td><td><b>`Data Pipeline Maintenance`</b></td><td><code>Data Analysis</code> is not in the Skills list at all. <code>Data Pipeline Maintenance</code> is, and it is closer to the work you actually do.</td></tr><tr><td><code>Multi-Agent Systems</code></td><td><b>`Multi-Agent Swarms`</b></td><td>The canonical term. &quot;Systems&quot; is a softer word than the thing you actually built.</td></tr><tr><td><code>Large Language Models (LLM)</code> · <code>Fine-Tuning</code> · <code>Agent Evaluation</code></td><td>Fine as category headings — but the canonical forms are <b>`LoRA/QLoRA Fine-Tuning`</b> and <b>`Agent Evaluation Harnesses`</b></td><td>Use the canonical form where you have room.</td></tr></tbody></table>
+<p><b>LinkedIn rendering note:</b> LinkedIn&#x27;s own skill taxonomy will map some of these to its canonical names — <code>Python</code> becomes &quot;Python (Programming Language)&quot;, <code>GCP</code> becomes &quot;Google Cloud Platform (GCP)&quot;. Accept LinkedIn&#x27;s mapping where it offers one; the point is that every entry traces to your Skills list, not to a word you liked.</p>
+<p><b>Do not add:</b> <code>dbt</code>, <code>Airflow</code>, <code>Spark</code>, <code>Snowflake</code>, <code>Databricks</code>, <code>AWS</code>, <code>Azure</code>, <code>Power BI</code>, <code>Excel</code> (advanced), <code>VBA</code>, <code>Data Engineering</code>. None are in your verified skills, and adding any of them creates the exact gap an interviewer finds in the first five minutes.</p>
+<hr>
+<h2 id="6-how-this-connects-to-the-icici-conversation">§6 — How this connects to the ICICI conversation</h2>
+<p>Publishing <b>§3</b> makes your profile and your interview script agree, and three things improve at once:</p>
+<ol><li><b>The recruiter&#x27;s keyword is above the fold.</b> &quot;Data pipelines&quot; and &quot;automated&quot; now appear in your headline, your first bullet, and your About. He found you by searching for that language.</li><li><b>The 60% contradiction is gone.</b> Until you edit, your live profile claims a number your prep doc explicitly tells you not to say. In a recorded, transcript-scored interview that is a live trap — and it is the kind of thing an interviewer who read your profile will ask about directly.</li><li><b>You can answer &quot;what do you own?&quot; with one line.</b> <i>&quot;Eighteen automated ETL pipelines into BigQuery feeding Looker Studio dashboards across eighteen sectors — I own the pipeline layer, from ingestion and scheduling through to the dashboard.&quot;</i></li></ol>
+<p><b>The line to say in the interview, unchanged by any of this:</b></p>
+<blockquote><i>&quot;The interesting engineering was never getting a model to produce output — it was building the component that decides whether to believe the output.&quot;</i></blockquote>
+<hr>
+<h2 id="7-publish-checklist">§7 — Publish checklist</h2>
+<ul><li>[x] Decide the 60% question — <b>resolved: remove it</b> (§1)</li><li>[x] Confirm or soften &quot;4 enterprise clients&quot; — <b>resolved: &quot;multiple enterprise clients&quot;</b></li><li>[ ] Update the <b>headline</b> (§4)</li><li>[ ] Update the <b>About</b> (§4)</li><li>[ ] Replace the <b>Black Piano bullets</b> with §3</li><li>[ ] <b>Check the Pi Software entry and your job title</b> for <code>15+</code>, <code>enterprise dashboards</code>, <code>AI Systems</code> (§2)</li><li>[ ] Pin <b>ETL Orchestration / Python / SQL</b> as the top three skills (§5)</li><li>[ ] Do <b>not</b> add any tool from the &quot;Do not add&quot; list</li><li>[ ] <b>After publishing, open the profile in a logged-out browser and read it once.</b> The 60% survived on the live profile for months precisely because it was never re-read. Thirty seconds now saves an interview later.</li></ul>
+<hr>
+<p><i>Companion files: <a href="icici_lombard_interview_prep.md" target="_blank" rel="noopener">icici_lombard_interview_prep.md</a> · <a href="micro1_data_analyst_prep.md" target="_blank" rel="noopener">micro1_data_analyst_prep.md</a> · <a href="micro1_ai_agent_evaluator_prep.md" target="_blank" rel="noopener">micro1_ai_agent_evaluator_prep.md</a> · <a href="outreach_templates.md" target="_blank" rel="noopener">outreach_templates.md</a> · <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a></i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRASHANTH KUMAR KADASI</title>
+<style>
+:root { --fs: 8.5pt; --accent: #1E3A8A; --ink: #1E293B; --muted: #475569;
+        --rule: #94A3B8; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
+               Arial, "Noto Sans", sans-serif;
+  color: var(--ink);
+  background: #eef1f5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.sheet {
+  background: #fff;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 12mm 14mm 14mm;
+  box-shadow: 0 1px 3px rgba(15,23,42,.14), 0 8px 28px rgba(15,23,42,.10);
+  font-size: var(--fs);
+  line-height: 1.22;
+}
+.name { font-size: calc(var(--fs) * 1.85); font-weight: 700; color: #0F172A;
+        text-align: center; letter-spacing: .3px; margin: 0 0 3px; }
+.title { font-size: calc(var(--fs) * 1.06); font-weight: 600;
+         color: var(--accent); text-align: center; margin: 0 0 4px; }
+.contact { font-size: calc(var(--fs) * .9); color: var(--muted);
+           text-align: center; margin: 0 0 2px; }
+.contact a, .proj-links a { color: var(--accent); text-decoration: none;
+                            font-weight: 600; }
+.contact a:hover, .proj-links a:hover { text-decoration: underline; }
+.section { font-size: calc(var(--fs) * 1.06); font-weight: 700;
+           color: var(--accent); text-transform: uppercase; letter-spacing: .6px;
+           border-bottom: .8px solid var(--rule); padding-bottom: 2px;
+           margin: 10px 0 4px;
+           break-after: avoid; page-break-after: avoid; }
+.subhead { font-weight: 700; color: #0F172A; margin: 6px 0 2px;
+           break-after: avoid; page-break-after: avoid; }
+.emp-header { display: flex; justify-content: space-between;
+              align-items: baseline; gap: 10px; margin: 6px 0 2px;
+              color: #0F172A; break-after: avoid; page-break-after: avoid; }
+.emp-left { flex: 1; min-width: 0; }
+.emp-loc { font-size: calc(var(--fs) * .95); color: var(--muted);
+           font-style: italic; }
+.emp-date { white-space: nowrap; font-weight: 700; text-align: right; }
+.proj-header { font-weight: 700; color: #0F172A; margin: 6px 0 1px;
+               break-after: avoid; page-break-after: avoid; }
+.proj-sub { font-weight: 400; font-style: italic; color: var(--muted);
+            font-size: calc(var(--fs) * .94); }
+.proj-links { font-size: calc(var(--fs) * .9); color: var(--accent);
+              margin: 0 0 2px; }
+.skill { margin: 0 0 2px; }
+.skill b { color: #0F172A; }
+.bullet { margin: 0 0 2px 12px; text-indent: -12px;
+          break-inside: avoid; page-break-inside: avoid; }
+.bullet b { color: #0F172A; }
+.para { margin: 2px 0 5px; }
+.note { font-size: calc(var(--fs) * .9); color: #64748B; font-style: italic;
+        margin: 0 0 3px; }
+.quote { margin: 4px 0 5px; padding: 3px 0 3px 9px;
+         border-left: 2.5px solid var(--rule); color: var(--muted);
+         font-style: italic; break-inside: avoid; }
+code { font-family: ui-monospace, Consolas, "SF Mono", Menlo, monospace;
+       font-size: .95em; }
+table { width: 100%; border-collapse: collapse; margin: 3px 0 5px;
+        font-size: calc(var(--fs) * .95); }
+th, td { text-align: left; padding: 2px 6px; border-bottom: .6px solid #CBD5E1; }
+th { color: #0F172A; }
+a { color: var(--accent); }
+
+/* Print: A4 by default, safe on Letter too — 12mm/14mm sits inside both. */
+@page { size: A4; margin: 12mm 14mm; }
+@media print {
+  html, body { background: #fff !important; height: auto !important; }
+  /* The sheet's own padding would stack on top of the @page margin and push
+     the last line onto a second page, so it is zeroed here and the @page
+     margin is the single source of truth for print whitespace. */
+  .sheet { width: auto !important; min-height: 0 !important; height: auto !important;
+           margin: 0 !important; padding: 0 !important;
+           box-shadow: none !important; border: 0 !important; background: #fff; }
+  a { color: var(--accent) !important; text-decoration: none !important; }
+  .section, .subhead, .emp-header, .proj-header, .skill {
+    break-after: avoid; page-break-after: avoid; }
+  .bullet, .para, .note, .quote, tr {
+    break-inside: avoid; page-break-inside: avoid; }
+  .name, .title { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="name">PRASHANTH KUMAR KADASI</div>
+<div class="title">Data Analyst | ETL Pipelines, BigQuery Warehousing &amp; BI Dashboards</div>
+<div class="contact">Hyderabad, Telangana, India • +91-9948311964 • kprsnt@live.com</div>
+<div class="contact">Portfolio: <a href="https://kprsnt.in" target="_blank" rel="noopener">kprsnt.in</a> • GitHub: <a href="https://github.com/kprsnt2" target="_blank" rel="noopener">github.com/kprsnt2</a> • LinkedIn: <a href="https://linkedin.com/in/prashanth-kumar-kadasi-b5281765" target="_blank" rel="noopener">linkedin.com/in/prashanth-kumar-kadasi-b5281765</a></div>
+<div class="section">PROFESSIONAL SUMMARY</div>
+<p class="para">Data Analyst with 3.5+ years building and maintaining production data pipelines — multi-source ingestion, BigQuery warehousing, and Looker Studio dashboards that client marketing, sales, and analytics teams use day to day. At Black Piano I own 18 automated ETL pipelines and the data-quality logic behind them; earlier at Pi Software Solutions I built the Python pipelines and delivered 30+ analytical reports for US and UK clients. Before analytics, nine years at Optum auditing CMS enrollment transactions under federal compliance rules. I also build independent, self-directed analytics and agent projects — labelled separately below, not employer work.</p>
+<div class="section">TECHNICAL SKILLS</div>
+<div class="bullet">• <b>Data &amp; Analytics:</b> SQL, BigQuery, Looker Studio, ETL Pipeline Orchestration, Data Modeling, Data Quality &amp; Validation, Scheduled Queries, Google Apps Script, Google Sheets Automation, Dashboard Design, SQLite</div>
+<div class="bullet">• <b>Languages &amp; Tools:</b> Python (Pandas, NumPy, FastAPI), Node.js, TypeScript, Linux/Bash, Git, GitHub Actions, Docker, GCP, Cloud Run</div>
+<div class="bullet">• <b>AI-Augmented Analytics:</b> LLM-powered data enrichment (Gemini, ChatGPT), automated insight generation, MCP tooling for non-technical teams, RAG, prompt engineering</div>
+<div class="bullet">• <b>Governance &amp; Ops:</b> Reference/lookup table management, retry &amp; escalation logic, audit trails, reporting standardization, data pipeline maintenance</div>
+<div class="section">PROFESSIONAL EXPERIENCE</div>
+<div class="emp-header"><span class="emp-left"><b>Black Piano</b> — <i>Data Analyst</i> <span class="emp-loc">| Remote</span></span><span class="emp-date">Mar 2026 – Present</span></div>
+<div class="bullet">• Created end-to-end pipelines for various client dashboards — ingesting multi-source sector data into BigQuery and publishing to Looker Studio, with 18 automated ETL pipelines now running across 18 industry sectors.</div>
+<div class="bullet">• Built the pipelines and dashboards behind recurring industry reports (Black Friday, Christmas, sales) and ad-hoc dashboards for client marketing, sales, and analytics teams.</div>
+<div class="bullet">• Built a self-healing data-quality agent (Gemini) that resolves missing brand domains required for dashboard logo rendering: reference-table lookup with LLM fallback, writes back to both the dataset and the lookup table, retries 3x on failure, and escalates by email for human review only when unresolved.</div>
+<div class="bullet">• Developed a custom MCP tool enabling non-technical marketing and sales teams to generate publication-ready, data-grounded blog posts from a one-line prompt, backed by auto-exported Google Sheets pipelines.</div>
+<div class="bullet">• Engineered an automated AI insights pipeline (ChatGPT) producing market- and sector-level intelligence weekly, auto-published to a deployed client-facing website; reduced client manual analysis time.</div>
+<div class="bullet">• <i>Moved from Pi Software to Black Piano, which hires India-based talent for US/UK clients.</i></div>
+<div class="emp-header"><span class="emp-left"><b>Pi Software Solutions (Pi - Datametrics)</b> — <i>Data Analyst</i> <span class="emp-loc">| Remote</span></span><span class="emp-date">Mar 2023 – Feb 2026</span></div>
+<div class="bullet">• Built production Python data pipelines (internal <code>Pi-API</code> package) for automated BigQuery access, feeding 10+ client dashboards.</div>
+<div class="bullet">• Delivered 30+ analytical reports on US &amp; UK industry trends for client stakeholders, standardizing reporting templates across engagements.</div>
+<div class="bullet">• Validated sources and reconciled discrepancies across concurrent client engagements, enforcing consistent metric definitions before data reached dashboards.</div>
+<div class="emp-header"><span class="emp-left"><b>Optum (UnitedHealth Group)</b> — <i>Enrollment Quality &amp; Audit Representative (CMS Auditor)</i> <span class="emp-loc">| Hyderabad, India</span></span><span class="emp-date">Apr 2014 – Mar 2023</span></div>
+<div class="bullet">• Audited federal enrollment transactions for Centers for Medicare &amp; Medicaid Services (CMS) compliance, producing regulatory documentation, statutory compliance checks, and audit readiness.</div>
+<div class="bullet">• Executed end-to-end data validation and regulatory compliance checks across complex enrollment transactions, generating audit-ready documentation and discrepancy reports for CMS.</div>
+<div class="bullet">• Applied zero-tolerance quality gates to high-volume transaction datasets — the core verification and audit discipline I now apply to automated data and AI pipelines.</div>
+<div class="bullet">• Promoted via internal job posting (IJP) in March 2016 from Claims Associate (Apr 2014 – Feb 2016) to Enrollment Quality &amp; Audit Representative based on audit precision and analytical rigor.</div>
+<div class="section">SELECTED PROJECTS</div>
+<p class="para"><i>Independent, self-directed projects — not employer deliverables. Publicly deployed for demonstration; no business or customer metrics are claimed.</i></p>
+<div class="proj-header"><b>mSeat — Seat Allocation Simulator &amp; Validation Model</b><span class="proj-sub"> | <i>Data Modeling, Validation, Compression</i></span></div>
+<div class="proj-links"><a href="https://mseat.kprsnt.in" target="_blank" rel="noopener">Platform</a> • <a href="https://github.com/kprsnt2/mSeat" target="_blank" rel="noopener">Code</a></div>
+<div class="bullet">• Modeled seat allocation across 59 colleges and a 7-dimensional reservation matrix, validating the model against official KNRUHS 2026 Phase 1 results — within 73 ranks of cutoff — while compressing the dataset 90.6% to fit a browser-side dataset.</div>
+<div class="proj-header"><b>AI Eco — Automated Telemetry &amp; Reporting Pipelines</b><span class="proj-sub"> | <i>Python, GitHub Actions, Data Observability</i></span></div>
+<div class="proj-links"><a href="https://kprsnt.in/ecosystem" target="_blank" rel="noopener">Live</a></div>
+<div class="bullet">• Built scheduled pipelines for repository telemetry, anomaly-free data pruning, and fitness scoring (83.4%) across 10 swarm agents, with 15+ tools and 5 resources — scheduled data operations behind strict quality gates.</div>
+<div class="proj-header"><b>AgentSwarm — Research Output with Auditable Data Quality</b><span class="proj-sub"> | <i>Node.js, Hash-Chained Audit Ledger, Verification</i></span></div>
+<div class="proj-links"><a href="https://agent.kprsnt.in/" target="_blank" rel="noopener">Live</a></div>
+<div class="bullet">• Ran 34 runs with 35/35 ledger hash chains cryptographically intact; the ledger lives outside the agents&#x27; writable directory, so the audited cannot edit the audit.</div>
+<div class="bullet">• Enforced data-quality gates on unattended output: 0 oracle violations across 1,254 tool calls and 0 of 2 self-assessing agents overclaiming; an independent numerical audit verified 22/25 quantitative claims exact. Audit verdict is B+ / not publication-grade without that numerical audit.</div>
+<div class="proj-header"><b>MyLocalCLI — Local-First Agentic Coding Assistant</b><span class="proj-sub"> | <i>Node.js, CLI, 8 providers, 42 tools, 38 skills</i></span></div>
+<div class="proj-links"><a href="https://mlc.kprsnt.in" target="_blank" rel="noopener">Live portal</a> • <a href="https://www.npmjs.com/package/mylocalcli" target="_blank" rel="noopener">npm</a> • <a href="https://github.com/kprsnt2/MyLocalCLI" target="_blank" rel="noopener">GitHub</a></div>
+<div class="bullet">• Published an open-source terminal coding agent on npm (<code>mylocalcli</code>, v4.0.2) — a Claude Code alternative built around local and free-tier models with no telemetry and no paid subscription required.</div>
+<div class="bullet">• Engineered <b>42 built-in tools</b> and <b>38 dynamic skills</b> across <b>8 providers</b> (Ollama and LM Studio local, vLLM self-hosted, OpenRouter and Groq free tiers, NVIDIA NIM, OpenAI, and any OpenAI-compatible endpoint), with <b>5 specialised sub-agents</b> (code reviewer, explorer, test generator, refactorer, doc writer).</div>
+<div class="bullet">• Dispatched parallel tool calls concurrently via <code>Promise.all</code> instead of sequential blocking, and added provider failover on rate limits, context overflow or connection drops — models are never silently swapped.</div>
+<div class="proj-header"><b>Geetha — AI Spiritual Guide</b><span class="proj-sub"> | <i>JavaScript, SQLite, Gemini AI, Vercel</i></span></div>
+<div class="proj-links"><a href="https://geetha.kprsnt.in/" target="_blank" rel="noopener">Live</a></div>
+<div class="bullet">• Built a bilingual Bhagavad Gita application indexing all 700 verses, with dynamic AI blog generation on Gemini plus verse search, chapter navigation, and personalized context extraction — a structured-content product running on Vercel.</div>
+<div class="proj-header"><b>rAsh Score — Multi-Model AI Brand-Visibility Index</b><span class="proj-sub"> | <i>Next.js, Turso/LibSQL, GitHub Actions, Vercel</i></span></div>
+<div class="proj-links"><a href="https://rashscore.live" target="_blank" rel="noopener">Live index</a></div>
+<div class="bullet">• Built and operate a live multi-model evaluation platform that queries <b>4 providers</b> (ChatGPT, Gemini, Claude, Groq) with standardised prompts and scores <b>300 tracked brands across 20 industry cohorts</b> on <b>4 independent dimensions</b> — recommendation, sentiment, prominence and factual accuracy.</div>
+<div class="bullet">• Automated daily pipelines via GitHub Actions writing into Turso (LibSQL), with a Next.js dashboard on Vercel; added a multi-agent debate arena and a text-to-SQL analyst chat.</div>
+<div class="section">EDUCATION</div>
+<div class="emp-header"><span class="emp-left"><b>Anurag Group of Institutions (JNTUH)</b> — <i>M. Pharmacy (Pharmaceutical Analysis &amp; Quality Assurance)</i></span><span class="emp-date">May 2012</span></div>
+</div>
+</body>
+</html>

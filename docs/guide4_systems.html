@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide 4 - Selected Systems</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="senior-resume-interview-guide-4-of-6-selected-systems">Senior Resume — Interview Guide 4 of 6: Selected Systems</h1>
+<p><b>Covers:</b> MyLocalCLI, rAsh Score, BugAgents, AgentSwarm, JobAgents, and the &quot;Also shipped&quot; line — every claim.</p>
+<blockquote><b>Framing rule for all five.</b> These are <b>independent, self-directed projects</b> — not employer work. Say it explicitly and early: <i>&quot;these are my own projects, not client work.&quot;</i> Let them find out later and it reads as inflation. Say it first and it reads as precision.</blockquote>
+<hr>
+<h2 id="1-mylocalcli-local-first-agentic-coding-assistant">§1 — MyLocalCLI — Local-First Agentic Coding Assistant</h2>
+<blockquote><i>Node.js, CLI, 8 providers</i> · Published on npm <b>v4.0.2</b> · <b>42 built-in tools</b>, <b>38 dynamic skills</b>, <b>8 providers</b>, <b>5 specialised sub-agents</b> · Parallel tool dispatch via <code>Promise.all</code>; provider failover.</blockquote>
+<h3 id="the-30-second-pitch">The 30-second pitch</h3>
+<blockquote><i>&quot;An open-source terminal coding agent published on npm — a Claude Code alternative built around local and free-tier models. Forty-two built-in tools, thirty-eight dynamic skills, eight providers, five specialised sub-agents. The engineering decisions I&#x27;d point at are parallel tool dispatch and provider failover.&quot;</i></blockquote>
+<h3 id="what-it-is-step-by-step">What it is, step by step</h3>
+<ol><li><b>What it is</b> — a CLI coding assistant. You install it with <code>npm install -g mylocalcli</code> and run it as <code>mlc</code> or <code>mylocalcli</code>.</li><li><b>Why local-first</b> — it runs against local models (Ollama, LM Studio, vLLM) or free tiers (OpenRouter, Groq), so there is no mandatory paid subscription and no telemetry.</li><li><b>What makes it agentic</b> — 42 tools the model can invoke, 38 skills auto-injected into the system prompt when matching project files are detected, and 5 sub-agents for specific jobs (code reviewer, explorer, test generator, refactorer, doc writer).</li><li><b>The distribution point</b> — it is <b>published on npm</b>, which means anyone can install it. That is a different bar from a repo.</li></ol>
+<h3 id="the-three-engineering-points-to-lead-with">The three engineering points to lead with</h3>
+<p><b>1. Parallel tool dispatch.</b></p>
+<blockquote><i>&quot;Older assistants block sequentially on every tool call — read a file, wait, read another, wait. MyLocalCLI dispatches concurrent calls using `Promise.all`, so the model can read multiple files, search text and run diagnostics simultaneously. On a real task that is the difference between a few seconds and a long wait.&quot;</i></blockquote>
+<p><b>2. Provider failover.</b></p>
+<blockquote><i>&quot;Eight providers wired, with automatic fallback when one hits rate limits, context overflow or a dropped connection. And a deliberate rule: models are never silently swapped. If you asked for a specific model, you get that model or a clear failure — not a quiet substitution that changes your results.&quot;</i></blockquote>
+<p><b>3. Skills as context injection.</b></p>
+<blockquote><i>&quot;Thirty-eight skills that auto-inject best-practice instructions when matching project files are detected. A Python file pulls the Python skill into the system prompt. It&#x27;s contextual grounding rather than one giant prompt.&quot;</i></blockquote>
+<h3 id="likely-follow-ups">Likely follow-ups</h3>
+<table><thead><tr><th>Question</th><th>Answer spine</th></tr></thead><tbody><tr><td><i>&quot;Why build this when Claude Code exists?&quot;</i></td><td>Cost and privacy. It runs on local models with no telemetry and no subscription. And building it taught me the harness internals — tool dispatch, context management, provider abstraction.</td></tr><tr><td><i>&quot;How do you handle context limits?&quot;</i></td><td>Tool results are the bulk of context. Read line slices rather than whole files, search before reading, and summarise aggressively.</td></tr><tr><td><i>&quot;Is it used by anyone?&quot;</i></td><td><b>Do not invent users or download counts.</b> <i>&quot;It&#x27;s published publicly on npm and the portal is live. I&#x27;m not claiming adoption figures.&quot;</i></td></tr><tr><td><i>&quot;What&#x27;s the hardest part?&quot;</i></td><td>Provider abstraction — eight APIs with different shapes for the same operation. That is where most of the bugs live.</td></tr></tbody></table>
+<h3 id="where-it-can-go-wrong">Where it can go wrong</h3>
+<p><b>Naming &quot;6 providers&quot;</b> — the README documents <b>8</b>. Use 8. And note that vLLM is documented but not in the provider config, so if asked precisely: <i>&quot;eight are documented; seven are in the provider registry, with vLLM as a documented self-hosted path.&quot;</i></p>
+<h3 id="the-honest-limit">The honest limit</h3>
+<blockquote><i>&quot;It&#x27;s a single-maintainer project. No test coverage to the standard I&#x27;d want in a team codebase, and the provider abstraction is where the fragility sits. It works, it&#x27;s published, and it&#x27;s not production-hardened for an enterprise.&quot;</i></blockquote>
+<hr>
+<h2 id="2-rash-score-multi-model-ai-brand-visibility-index">§2 — rAsh Score — Multi-Model AI Brand-Visibility Index</h2>
+<blockquote><i>Next.js, Turso/LibSQL, GitHub Actions, Vercel</i> · <b>4 providers</b> · <b>300 tracked brands across 20 industry cohorts</b> · <b>4 independent dimensions</b> · daily pipelines · multi-agent debate arena · text-to-SQL chat.</blockquote>
+<h3 id="the-30-second-pitch">The 30-second pitch</h3>
+<blockquote><i>&quot;A live multi-model evaluation platform. It queries four providers — ChatGPT, Gemini, Claude, Groq — with standardised prompts, and scores three hundred brands across twenty industry cohorts on four independent dimensions: recommendation, sentiment, prominence and factual accuracy. Daily pipelines run on GitHub Actions, writing into Turso, surfaced through a Next.js dashboard on Vercel.&quot;</i></blockquote>
+<h3 id="why-this-matters-more-than-it-looks">Why this matters more than it looks</h3>
+<p><b>This is a multi-model evaluation harness with a published rubric.</b> That is the same class of system as judging whether any AI system is behaving correctly — which is exactly the skill senior AI roles are hiring for.</p>
+<blockquote><i>&quot;The reason I&#x27;d point at this one: it forced me to solve the problem of getting comparable, structured output out of models that all answer differently, and detecting when a model update changes the answer. That&#x27;s an evaluation problem before it&#x27;s a product.&quot;</i></blockquote>
+<h3 id="the-four-dimensions-explained">The four dimensions, explained</h3>
+<table><thead><tr><th>Dimension</th><th>What it measures</th></tr></thead><tbody><tr><td><b>Recommendation</b></td><td>How frequently and authoritatively models suggest the brand</td></tr><tr><td><b>Sentiment</b></td><td>The reputation tone in the answers — positive, neutral, negative</td></tr><tr><td><b>Prominence</b></td><td>How early and visibly the brand appears in generated rankings</td></tr><tr><td><b>Accuracy</b></td><td>The factual precision of the model&#x27;s knowledge about the brand</td></tr></tbody></table>
+<p><b>Scored independently, each 0–100, composed into a visibility score.</b> The point of independence: a brand can rank highly but be described inaccurately, and collapsing those into one number would hide it.</p>
+<h3 id="likely-follow-ups">Likely follow-ups</h3>
+<table><thead><tr><th>Question</th><th>Answer spine</th></tr></thead><tbody><tr><td><i>&quot;How do you compare models fairly?&quot;</i></td><td>Standardised prompts — identical inputs across providers, so the variance you observe is the model&#x27;s, not the prompt&#x27;s.</td></tr><tr><td><i>&quot;How do you detect model drift?&quot;</i></td><td>The daily cadence is the detector. A fixed prompt set run on a schedule means a model update shows up as a score movement you can see, rather than something you discover when a user complains.</td></tr><tr><td><i>&quot;What did you learn about the models?&quot;</i></td><td><b>Only say what you have actually observed in your own data.</b> You have 300 brands across four models — you have real observations. Do not generalise into claims about model quality you cannot support.</td></tr><tr><td><i>&quot;Is 300 brands a lot?&quot;</i></td><td>It is 20 industry cohorts, which is the useful denominator. <b>Live site is the authority: 300 brands, 20 cohorts.</b></td></tr></tbody></table>
+<h3 id="where-it-can-go-wrong">Where it can go wrong</h3>
+<p><b>Cite the live figures: 300 brands / 20 cohorts.</b> Your README says 279 / 19 and there is a <b>legacy domain (`bs.kprsnt.in`) still serving an older build at 285 / 19</b>. If anyone looks at the wrong link they see different numbers. Know this so you are not caught out:</p>
+<blockquote><i>&quot;The live index at rashscore.live is the current build — 300 brands across 20 cohorts. There&#x27;s an older domain still resolving with a previous dataset; I should retire it.&quot;</i></blockquote>
+<p><b>That answer turns a potential inconsistency into evidence you know your own deployment.</b></p>
+<hr>
+<h2 id="3-bugagents-evidence-gated-autonomous-security-research">§3 — BugAgents — Evidence-Gated Autonomous Security Research</h2>
+<blockquote><i>Python/Node, multi-harness orchestration</i> · <b>report promotion gate</b> (4 conditions) · <b>2 promoted / 34 refused</b> · per-turn tool-call auditing · <b>22 hunt runs / 84 agent turns / 15,317 tool calls</b> · <b>8 findings across 14 CWE classes</b>.</blockquote>
+<h3 id="this-is-your-strongest-project-lead-with-it">This is your strongest project. Lead with it.</h3>
+<p><b>The premise to state first:</b></p>
+<blockquote><i>&quot;There&#x27;s no shortage of agents that can write a vulnerability report. Give a capable model a codebase and it produces something that looks like a finding — title, severity, CWE, impact paragraph, suggested fix, correctly formatted. And a meaningful fraction of the time it&#x27;s wrong. The artifact looks identical either way. Only the evidence distinguishes them. So my question was narrower than &#x27;can agents do security research&#x27; — it was: can I build a system where a report cannot be produced unless a bug was actually found?&quot;</i></blockquote>
+<h3 id="the-promotion-gate-the-core-answer">The promotion gate — the core answer</h3>
+<p><b>Four conditions, all must hold:</b></p>
+<table><thead><tr><th>Condition</th><th>What it kills</th></tr></thead><tbody><tr><td><b>Scope match</b></td><td>Real bugs in software the program does not cover — technically correct, commercially worthless</td></tr><tr><td><b>HEAD (commit) match</b></td><td>A report that was true when written and false by the time anyone reads it</td></tr><tr><td><b>Non-empty reproduction</b></td><td>The agent emitting a <code>## Reproduction</code> heading followed by a description of what a repro <i>would</i> look like</td></tr><tr><td><b>Evidence files exist</b></td><td>A report citing <code>path/to/file.py:412</code> where the file does not exist, or is shorter than 412 lines</td></tr></tbody></table>
+<p><b>The line that makes it land:</b></p>
+<blockquote><i>&quot;The gate is the only component that checks a claim against the world instead of against other claims. Without it you have a system that produces well-formatted assertions and calls them findings. With it you have a system that mostly produces nothing — and occasionally produces something true. I care much more about the second property.&quot;</i></blockquote>
+<h3 id="the-refusal-count-your-best-number">The refusal count — your best number</h3>
+<blockquote><i>&quot;Thirty-four candidates were refused to promote two. More than four times as many refused as promoted. It would be easy to read that as a system that mostly fails. I read it as the only number that tells me the gate is real. </i><i>A filter&#x27;s job is to refuse. A system that never refuses candidates isn&#x27;t filtering — it&#x27;s transcribing.</i><i>&quot;</i></blockquote>
+<h3 id="per-turn-tool-call-auditing">Per-turn tool-call auditing</h3>
+<blockquote><i>&quot;After every turn the harness replays the agent&#x27;s captured tool calls. Any host outside program scope plus the tooling allowlist aborts the agent. Any offensive tool — nmap, sqlmap, ffuf, nuclei — aborts the agent. Not warned, not logged-and-continued. Aborted. And it isn&#x27;t theoretical: a live run was aborted exactly this way when a hunter reached for a build host that wasn&#x27;t on the allowlist. </i><i>A safety control that has only ever been exercised by its own unit test is an untested control.</i><i>&quot;</i></blockquote>
+<h3 id="likely-follow-ups">Likely follow-ups</h3>
+<table><thead><tr><th>Question</th><th>Answer spine</th></tr></thead><tbody><tr><td><i>&quot;Were the findings real?&quot;</i></td><td><i>&quot;Each has a reproducing proof of concept, a pinned commit and `file:line` citations. Whether they&#x27;re novel I can&#x27;t claim — the gate checks corroboration, not novelty.&quot;</i></td></tr><tr><td><i>&quot;Did you report them?&quot;</i></td><td><b>Nothing has been submitted.</b> <i>&quot;They&#x27;re submission-ready drafts. Submission needs my identity and acceptance of the program&#x27;s terms, so it stays a manual action.&quot;</i></td></tr><tr><td><i>&quot;Which vendor? What class?&quot;</i></td><td><b>Refuse.</b> <i>&quot;I&#x27;m keeping specifics private until the disclosure process completes, but I&#x27;m happy to walk through the verification gate that validated them.&quot;</i> <b>That answer is itself a demonstration of security judgement.</b></td></tr><tr><td><i>&quot;How do you know the gate isn&#x27;t just rejecting good work?&quot;</i></td><td><i>&quot;I don&#x27;t, and that&#x27;s the honest limit. The gate raises the floor — it checks four things. A report can pass all four and still be a bad report. It doesn&#x27;t guarantee the ceiling.&quot;</i></td></tr></tbody></table>
+<h3 id="the-hard-limits-volunteer-these">The hard limits — volunteer these</h3>
+<ol><li><b>Nothing has been submitted.</b> No finding has been triaged, accepted, or rewarded.</li><li><b>No claim of novelty.</b> The gate checks corroboration, not prior art.</li><li><b>No claim of coverage.</b> 22 runs against a bounded target set is a bounded search.</li><li><b>The severity distribution describes what the gate accepted</b>, not anyone&#x27;s security posture.</li><li><b>One seat is filtered by the model provider</b> non-deterministically — the identical prompt returned blocked, pass, pass, blocked across four consecutive attempts.</li></ol>
+<hr>
+<h2 id="4-agentswarm-auditable-multi-agent-research-arena">§4 — AgentSwarm — Auditable Multi-Agent Research Arena</h2>
+<blockquote><i>Node.js, 4 harnesses, hash-chained ledger</i> · <b>34 runs, 35/35 hash chains intact</b> · ledger <b>outside</b> the agents&#x27; writable directory · <b>0 violations across 1,254 tool calls</b> · <b>0 of 2 self-assessing agents overclaimed</b> · <b>22 of 25</b> claims verified exact · verdict <b>B+</b>.</blockquote>
+<h3 id="the-30-second-pitch">The 30-second pitch</h3>
+<blockquote><i>&quot;An autonomous research arena where the interesting engineering was not getting the agents to produce output — it was the layer that decides whether to believe them. Every turn is written to a hash-chained ledger that sits outside the agents&#x27; own writable directory, so the thing being audited cannot alter the record of what it did. An independent oracle re-checked every turn for fabricated numbers and phantom artifacts: zero violations across twelve hundred and fifty-four tool calls.&quot;</i></blockquote>
+<h3 id="the-two-ideas-worth-explaining">The two ideas worth explaining</h3>
+<p><b>1. The ledger is outside the writable directory.</b></p>
+<blockquote><i>&quot;A log the process writes about itself is not an audit — the process can edit it. The ledger lives outside the agents&#x27; writable area, and each entry hashes the previous one, so altering history breaks the chain. Thirty-four runs, all thirty-five chains intact.&quot;</i></blockquote>
+<p><b>2. Measured honesty, not asserted honesty.</b></p>
+<blockquote><i>&quot;I didn&#x27;t ask the agents whether they had done good work — that&#x27;s the untrusted input. An independent oracle checked every turn, and separately, two agents self-assessed their own scores: both claimed exactly the score they had independently earned. Zero overclaiming. That&#x27;s a measured result about agent honesty rather than a claim about it.&quot;</i></blockquote>
+<h3 id="the-audit-verdict-volunteer-it">The audit verdict — volunteer it</h3>
+<blockquote><i>&quot;I commissioned an independent numerical audit of the output. It verified twenty-two of twenty-five quantitative claims correct to the printed digits, located all five defects, and returned the verdict B-plus — not publication-grade without that audit. I publish that verdict alongside the work.&quot;</i></blockquote>
+<p><b>Why volunteering this is powerful:</b> almost no candidate reports their own audit grade. On a senior application it reads as exactly the trait being hired for — <i>disclosure over polish</i>.</p>
+<h3 id="likely-follow-ups">Likely follow-ups</h3>
+<table><thead><tr><th>Question</th><th>Answer spine</th></tr></thead><tbody><tr><td><i>&quot;What did the swarm actually research?&quot;</i></td><td>Nine domains; the visible output is cosmology manuscripts. <b>Do not lead with the physics.</b> If asked: the point is the pipeline and its audit, not the subject matter.</td></tr><tr><td><i>&quot;Are the papers yours?&quot;</i></td><td><b>No.</b> <i>&quot;The authors are the swarm agents `A001_DarkMatter` and `A002_QuantumCosmos`. I built the system that wrote them. Paper 1 is a Zenodo preprint — not peer-reviewed. Paper 2 was not submitted.&quot;</i></td></tr><tr><td><i>&quot;Why B+?&quot;</i></td><td>The audit found five defects, all in markdown prose rather than Python modules. And Paper 2&#x27;s self-audit found its DESI agreement circular and its S8 result tuned — it recommended against submission.</td></tr><tr><td><i>&quot;Isn&#x27;t a self-audit that finds its own flaws just theatre?&quot;</i></td><td><i>&quot;It&#x27;s the opposite — it&#x27;s the pipeline catching its own overclaim. That&#x27;s the single best evidence I have that the audit layer does real work rather than producing favourable verdicts.&quot;</i></td></tr></tbody></table>
+<hr>
+<h2 id="5-jobagents-deterministic-sourcing-anti-fabrication-pipeline">§5 — JobAgents — Deterministic Sourcing &amp; Anti-Fabrication Pipeline</h2>
+<blockquote><i>Python (stdlib only), SQLite</i> · <b>7,613 jobs / 5,854 distinct roles</b> from <b>10 sources</b> across <b>334 companies</b> · <b>1,759 duplicates</b> merged · <b>22,839 scores with 0 model calls</b> · guard catches <b>8/8 seeded fabrications</b>.</blockquote>
+<h3 id="the-two-points-to-lead-with">The two points to lead with</h3>
+<p><b>1. The cost gate sits before the model.</b></p>
+<blockquote><i>&quot;Scoring is pure arithmetic and string matching — five weighted components, no model call anywhere. It runs on every job for free, so only the top-N ever reach an LLM. Twenty-two thousand eight hundred and thirty-nine scores computed with zero model calls. If I&#x27;d asked a model to judge every posting, cost would scale with sourcing volume — and sourcing volume is the one thing the pipeline exists to maximise.&quot;</i></blockquote>
+<p><b>2. Anti-fabrication is enforced in code, not in a prompt.</b></p>
+<blockquote><i>&quot;The guard validates generated text against a ground-truth profile file before anything is written to disk. It catches eight of eight seeded fabrications. And what it actually caught in testing is the argument for it: a model attributed four of my independent projects to my employer as employment history. The prompt forbade exactly that, in capitals. The model did it anyway.&quot;</i></blockquote>
+<h3 id="the-line-to-deliver">The line to deliver</h3>
+<blockquote><i>&quot;A prompt rule is a request — evaluated by the same model generating the content, in the same pass, under the same pressure to be fluent. A guard runs after generation, in code, has no opinion about plausibility, and fails loudly. </i><i>If the rule isn&#x27;t enforced by something that can reject the output, it isn&#x27;t a rule — it&#x27;s a suggestion.</i><i>&quot;</i></blockquote>
+<h3 id="likely-follow-ups">Likely follow-ups</h3>
+<table><thead><tr><th>Question</th><th>Answer spine</th></tr></thead><tbody><tr><td><i>&quot;Why stdlib only?&quot;</i></td><td>Zero dependencies is a feature when the whole thing runs unattended on a schedule. Nothing to break, nothing to upgrade.</td></tr><tr><td><i>&quot;How does two-layer dedupe work?&quot;</i></td><td>Layer one is a <code>UNIQUE(source, external_id)</code> constraint — same posting, same source. Layer two is a `company</td><td>title` key that <b>links</b> rows without deleting them, so provenance survives.</td></tr><tr><td><i>&quot;What&#x27;s the biggest gap?&quot;</i></td><td><i>&quot;The funnel ends at &#x27;approved&#x27;. There&#x27;s no Sent stage and no Replied stage, because the system has no idea either happened. I measured the top of the funnel to the unit and the bottom not at all.&quot;</i></td></tr><tr><td><i>&quot;What&#x27;s the failure mode of the guard?&quot;</i></td><td><i>&quot;It catches structural violations — an invented employer, an uncited figure, a withheld term. A confidently-stated false metric shaped like a real one still passes. That gap is real and it is not closed.&quot;</i></td></tr></tbody></table>
+<hr>
+<h2 id="6-also-shipped">§6 — &quot;Also shipped&quot;</h2>
+<blockquote><i>AI Eco (10-agent swarm, FastMCP server, &lt;4,000-word bounded memory), BrandXY (GPT-OSS-20B LoRA fine-tune, 76.5% vs 25.5% baseline), Project Awakening (1,441 autonomous turns, 100% CI integrity through a 330-turn API blackout), mSeat (18,000+ candidate allocation simulator, validated within 73 ranks of official cutoffs).</i></blockquote>
+<p><b>One line each, only if asked:</b></p>
+<table><thead><tr><th>Project</th><th>The one thing to say</th></tr></thead><tbody><tr><td><b>AI Eco</b></td><td><i>&quot;Ten agents running scheduled CI/CD with living memory bounded under four thousand words. The bound is the point — unbounded state makes behaviour a function of history rather than purpose.&quot;</i> <b>Limit:</b> 83.4% is a self-defined fitness function, not an external benchmark.</td></tr><tr><td><b>BrandXY</b></td><td><i>&quot;Fine-tuned GPT-OSS-20B on AMD MI300X to quantify and steer recommendation bias — 76.5% against a 25.5% baseline, under multi-model A/B evaluation. Open weights released.&quot;</i> <b>Limit:</b> single run, no external replication.</td></tr><tr><td><b>Project Awakening</b></td><td><i>&quot;1,441 autonomous turns and 1,553 commits, holding 100% CI integrity through a 330-turn cloud API blackout with no human intervention.&quot;</i> <b>Limit:</b> one run.</td></tr><tr><td><b>mSeat</b></td><td><i>&quot;A combinatorial seat-allocation simulator across 59 colleges and a seven-dimensional reservation matrix, validated within 73 ranks of the official cutoff at 90.6% dataset compression.&quot;</i> <b>Limit:</b> one phase; a validation exercise, not a deployed product.</td></tr></tbody></table>
+<p><b>Do not open with these.</b> They are depth if the conversation goes there.</p>
+<hr>
+<h2 id="7-practice-set-for-this-guide">§7 — Practice set for this guide</h2>
+<table><thead><tr><th>#</th><th>Question</th></tr></thead><tbody><tr><td>1</td><td>Walk me through BugAgents. What does the gate do?</td></tr><tr><td>2</td><td>Why is 34 refusals a good number?</td></tr><tr><td>3</td><td>Which vendor did you find bugs in? <i>(Refuse gracefully.)</i></td></tr><tr><td>4</td><td>Explain AgentSwarm&#x27;s ledger. Why outside the directory?</td></tr><tr><td>5</td><td>Your own audit graded it B+. Why publish that?</td></tr><tr><td>6</td><td>What is rAsh Score measuring, and how do you compare models fairly?</td></tr><tr><td>7</td><td>What&#x27;s MyLocalCLI, and why build it?</td></tr><tr><td>8</td><td>In JobAgents, why zero model calls in scoring?</td></tr><tr><td>9</td><td>How does the anti-fabrication guard work, and what does it miss?</td></tr><tr><td>10</td><td>Which of these is your strongest work, and why?</td></tr></tbody></table>
+<hr>
+<p><i>← Guide 3: Professional Experience · Guide 5: Approach →</i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+==============================================================================
+Complete_with_Docusign_BlackPiano_PrashanthK (2).pdf
+  pages: 2
+
+----- page 1 (1840 chars) -----
+Certificate Of Completion
+Envelope Id: F0E0963A-E569-476A-92E7-0FB9EF71708A
+Status: Completed
+Subject: Complete with Docusign: BlackPiano_PrashanthKadasi_OfferLetter.pdf
+Source Envelope: 
+Document Pages: 2
+Signatures: 2
+Envelope Originator: 
+Certificate Pages: 2
+Initials: 0
+Jonathan McElhatton
+AutoNav: Enabled
+EnvelopeId Stamping: Enabled
+Time Zone: (UTC-08:00) Pacific Time (US & Canada)
+9 Church Street
+nil
+Bishops Stortford, Hertfordshire  CM232LY
+jonathan@blackpiano.co.uk
+IP Address: 2402:a00:172:e9
+Record Tracking
+Status: Original
+             2/24/2026 | 08:28 PM
+Holder: Jonathan McElhatton
+             jonathan@blackpiano.co.uk
+Location: DocuSign
+Signer Events
+Signature
+Timestamp
+Jonathan McElhatton
+jonathan@blackpiano.co.uk
+Owner & CEO
+Black Piano Limited
+Security Level: Email, Account Authentication 
+(None)
+Signature Adoption: Pre-selected Style
+Using IP Address: 
+2a00:23c8:6321:db01:91ce:9637:24ce:6e38
+Sent: 2/24/2026 | 08:34 PM
+Viewed: 2/25/2026 | 04:16 AM 
+Signed: 2/25/2026 | 04:17 AM
+Electronic Record and Signature Disclosure: 
+      Not Offered via Docusign
+Prashanth Kadasi
+prashanth@intelligentpositioning.com
+Security Level: Email, Account Authentication 
+(None)
+Signature Adoption: Pre-selected Style
+Using IP Address: 110.235.236.232
+Sent: 2/25/2026 | 04:17 AM
+Viewed: 2/25/2026 | 06:08 AM 
+Signed: 2/25/2026 | 06:25 AM
+Electronic Record and Signature Disclosure: 
+      Not Offered via Docusign
+In Person Signer Events
+Signature
+Timestamp
+Editor Delivery Events
+Status
+Timestamp
+Agent Delivery Events
+Status
+Timestamp
+Intermediary Delivery Events
+Status
+Timestamp
+Certified Delivery Events
+Status
+Timestamp
+Carbon Copy Events
+Status
+Timestamp
+Witness Events
+Signature
+Timestamp
+Notary Events
+Signature
+Timestamp
+Envelope Summary Events
+Status
+Timestamps
+Envelope Sent
+Hashed/Encrypted
+2/24/2026 | 08:34 PM
+
+
+----- page 2 (236 chars) -----
+Envelope Summary Events
+Status
+Timestamps
+Certified Delivered
+Security Checked
+2/25/2026 | 06:08 AM
+Signing Complete
+Security Checked
+2/25/2026 | 06:25 AM
+Completed
+Security Checked
+2/25/2026 | 06:25 AM
+Payment Events
+Status
+Timestamps

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide 6 - Question Bank &amp; Pocket Card</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="senior-resume-interview-guide-6-of-6-question-bank-pocket-ca">Senior Resume — Interview Guide 6 of 6: Question Bank &amp; Pocket Card</h1>
+<p><b>The night-before document.</b> Cross-cutting questions, the traps, and the one-page card to keep open during the call.</p>
+<hr>
+<h2 id="1-the-opening-tell-me-about-yourself">§1 — The opening: &quot;Tell me about yourself&quot;</h2>
+<p><b>Use all 12+ years. Do not start at 2023.</b></p>
+<blockquote><i>&quot;I&#x27;ve spent my career on the question of whether data and decisions can be trusted.</i>  <i>For nine years at Optum I audited Medicare and Medicaid enrollment transactions for CMS compliance — federal transactions, zero-tolerance quality gates, audit-ready documentation. I started there as a Claims Associate and moved into the quality and audit role. That&#x27;s where I learned to treat data quality as a gate rather than a report.</i>  <i>For the last three and a half years I&#x27;ve been on the build side. At Pi Software I built production Python pipelines — an internal package for automated BigQuery access across ten-plus client dashboards — and delivered thirty-plus analytical reports for US and UK clients. At Black Piano I own the pipeline layer: eighteen automated ETL pipelines into BigQuery feeding Looker Studio dashboards across eighteen sectors, plus a self-healing data-quality agent.</i>  <i>Alongside that, on my own time, I build autonomous agent systems — a local-first coding agent published on npm, a multi-model evaluation platform, a pair of evidence-gated security-research agents, and an auditable research arena. What connects all of it is that the interesting engineering was never getting a model to produce output. It was building the component that decides whether to believe the output.&quot;</i></blockquote>
+<p><b>Then stop.</b> Let them choose the thread.</p>
+<hr>
+<h2 id="2-the-ten-questions-you-will-definitely-get">§2 — The ten questions you will definitely get</h2>
+<table><thead><tr><th>#</th><th>Question</th><th>Where the answer is</th></tr></thead><tbody><tr><td>1</td><td>Tell me about yourself</td><td>§1 above</td></tr><tr><td>2</td><td>Walk me through your strongest project</td><td><b>BugAgents</b> — Guide 4 §3</td></tr><tr><td>3</td><td>How do you handle a model producing something wrong?</td><td>Guide 5 §1 — the trace, and the gate</td></tr><tr><td>4</td><td>What&#x27;s your experience with RAG vs fine-tuning?</td><td>Guide 2 §3.1</td></tr><tr><td>5</td><td>How do you evaluate whether an AI system works?</td><td>Guide 2 §3.2 — falsification, not spot-checking</td></tr><tr><td>6</td><td>You&#x27;ve never managed a team. How is this senior?</td><td>Guide 1 §5</td></tr><tr><td>7</td><td>Rate yourself in Python</td><td>Guide 2 §3.3</td></tr><tr><td>8</td><td>You used AI to build all this — isn&#x27;t that a problem?</td><td>Guide 3 §1.5</td></tr><tr><td>9</td><td>What would you do differently?</td><td>Guide 1 §5 — instrument the outcome side</td></tr><tr><td>10</td><td>Where do you see the limits of this technology?</td><td>Guide 5 §1 — the approval/denial asymmetry</td></tr></tbody></table>
+<hr>
+<h2 id="3-the-traps-and-how-to-avoid-each">§3 — The traps, and how to avoid each</h2>
+<h3 id="trap-1-letting-ai-engineering-leadership-sound-like-a-held-t">Trap 1 — Letting &quot;AI Engineering Leadership&quot; sound like a held title</h3>
+<p><b>The fix:</b> <i>&quot;The headline is a direction, not a title claim. My held titles are Data Analyst — that&#x27;s in the profile section. &#x27;Leadership&#x27; means ownership of systems and architecture, not people.&quot;</i></p>
+<h3 id="trap-2-saying-we-about-solo-work">Trap 2 — Saying &quot;we&quot; about solo work</h3>
+<p><b>These are yours.</b> Say &quot;I built&quot;, &quot;I designed&quot;, &quot;I own&quot;. Your resume says it; match it.</p>
+<h3 id="trap-3-inflating-the-optum-work-into-claims-experience">Trap 3 — Inflating the Optum work into claims experience</h3>
+<p><b>The fix:</b> <i>&quot;Enrollment transactions — the application and eligibility stage. Not claims adjudication. I&#x27;d rather be clear about that.&quot;</i> Say it before they ask.</p>
+<h3 id="trap-4-naming-the-bugagents-vendor-asset-or-vulnerability-cl">Trap 4 — Naming the BugAgents vendor, asset or vulnerability class</h3>
+<p><b>The fix:</b> <i>&quot;I&#x27;m keeping specifics private until the disclosure process completes, but I&#x27;m happy to walk through the verification gate that validated them.&quot;</i> <b>That answer demonstrates judgement — it is not a dodge.</b></p>
+<h3 id="trap-5-claiming-production-users-or-adoption">Trap 5 — Claiming production users or adoption</h3>
+<p><b>None exist.</b> For MyLocalCLI: <i>&quot;It&#x27;s published publicly on npm and the portal is live. I&#x27;m not claiming adoption figures.&quot;</i></p>
+<h3 id="trap-6-saying-peer-reviewed-about-the-agentswarm-manuscripts">Trap 6 — Saying &quot;peer-reviewed&quot; about the AgentSwarm manuscripts</h3>
+<p>Paper 1 is a <b>Zenodo preprint</b> — not peer-reviewed, not a journal. Paper 2 is a <b>manuscript, not submitted</b>. The authors are the agents, not you.</p>
+<h3 id="trap-7-sounding-risk-averse">Trap 7 — Sounding risk-averse</h3>
+<p><b>The fix, if any answer makes you sound cautious:</b> <i>&quot;I&#x27;m arguing for asymmetry, not caution. Push hard where it&#x27;s safe, be deliberate where it isn&#x27;t.&quot;</i></p>
+<h3 id="trap-8-quoting-a-superseded-number">Trap 8 — Quoting a superseded number</h3>
+<p><b>The fix:</b> <i>&quot;That figure is superseded — the current one is X, from the live dashboard.&quot;</i> Common superseded values to watch: 7,533 jobs · 5,784 roles · 32 runs · 32/32 chains · 3,156 tool calls · 182 reports · 209 artifacts · &quot;15+ enterprise dashboards&quot;.</p>
+<h3 id="trap-9-claiming-react-or-any-tool-not-on-your-list">Trap 9 — Claiming React or any tool not on your list</h3>
+<p>PwC&#x27;s list includes React. <b>You have none.</b> <i>&quot;I haven&#x27;t worked with React. My frontend exposure is HTML/JavaScript and static sites.&quot;</i></p>
+<h3 id="trap-10-claiming-a-certification">Trap 10 — Claiming a certification</h3>
+<p><b>PMP: prepared, exam not taken.</b> If it comes up: <i>&quot;PMP exam preparation, 2024 — exam not taken. I chose to put my time into building AI systems instead, which is when the agent work started.&quot;</i></p>
+<hr>
+<h2 id="4-the-numbers-all-in-one-place">§4 — The numbers, all in one place</h2>
+<p><b>Memorise the bolded ones. The rest are reference.</b></p>
+<h3 id="employer-work">Employer work</h3>
+<table><thead><tr><th>Fact</th><th>Figure</th></tr></thead><tbody><tr><td><b>Black Piano — ETL pipelines</b></td><td><b>18 automated, feeding BigQuery → Looker Studio</b></td></tr><tr><td><b>Black Piano — industry sectors</b></td><td><b>18</b></td></tr><tr><td>Data-quality agent</td><td>Deterministic lookup → LLM fallback → write-back → <b>3 retries</b> → email escalation</td></tr><tr><td><b>Pi Software — client dashboards</b></td><td><b>10+</b></td></tr><tr><td><b>Pi Software — analytical reports</b></td><td><b>30+</b></td></tr><tr><td><b>Optum — tenure</b></td><td><b>Apr 2014 – Mar 2023</b> (9 years)</td></tr><tr><td>Optum — promotion</td><td><b>Mar 2016</b>, from Claims Associate</td></tr></tbody></table>
+<h3 id="independent-systems">Independent systems</h3>
+<table><thead><tr><th>Fact</th><th>Figure</th></tr></thead><tbody><tr><td><b>BugAgents — gate outcome</b></td><td><b>2 promoted / 34 refused</b></td></tr><tr><td><b>BugAgents — findings</b></td><td><b>8 findings, 14 CWE classes</b></td></tr><tr><td>BugAgents — scale</td><td>22 hunt runs / 84 agent turns / <b>15,317 tool calls</b></td></tr><tr><td><b>AgentSwarm — ledger</b></td><td><b>34 runs, 35/35 hash chains intact</b></td></tr><tr><td>AgentSwarm — oracle</td><td><b>0 violations across 1,254 tool calls</b>; 0 of 2 agents overclaimed</td></tr><tr><td><b>AgentSwarm — audit</b></td><td><b>22 of 25 claims verified exact</b>; verdict <b>B+</b></td></tr><tr><td><b>JobAgents — sourced</b></td><td><b>7,613 jobs / 5,854 distinct roles</b>, 10 sources, 334 companies, 1,759 duplicates</td></tr><tr><td><b>JobAgents — scoring</b></td><td><b>22,839 scores with 0 model calls</b>; 155 above threshold</td></tr><tr><td><b>JobAgents — guard</b></td><td><b>8/8 seeded fabrications caught</b></td></tr><tr><td><b>MyLocalCLI</b></td><td>npm <b>v4.0.2</b>, <b>42 tools</b>, <b>38 skills</b>, <b>8 providers</b>, 5 sub-agents</td></tr><tr><td><b>rAsh Score</b></td><td><b>300 brands, 20 cohorts, 4 dimensions, 4 providers</b></td></tr><tr><td>BrandXY</td><td><b>76.5% vs 25.5%</b> baseline</td></tr><tr><td>Awakening</td><td><b>1,441 turns, 1,553 commits</b>, 330-turn blackout at 100% CI integrity</td></tr><tr><td>mSeat</td><td>18,000+ candidates, 59 colleges, <b>within 73 ranks</b>, 90.6% compression</td></tr><tr><td>AI Eco</td><td>10 agents, memory bounded <b>&lt;4,000 words</b>, fitness 83.4%</td></tr></tbody></table>
+<h3 id="employment-facts">Employment facts</h3>
+<table><thead><tr><th>Fact</th><th>Figure</th></tr></thead><tbody><tr><td>Current CTC</td><td><b>₹12,70,500</b> (increment letter, effective 1 Jul 2026)</td></tr><tr><td>Current gross</td><td>₹11,94,270</td></tr><tr><td>Notice period</td><td><b>60 calendar days</b></td></tr><tr><td>Buy-out</td><td>Full 60 days, <b>subject to company approval</b></td></tr></tbody></table>
+<hr>
+<h2 id="5-salary-and-notice-period-questions">§5 — Salary and notice-period questions</h2>
+<p><b>&quot;What are your expectations?&quot;</b></p>
+<blockquote><i>&quot;I&#x27;d rather understand the scope and the band first — a senior individual-contributor role and a lead role aren&#x27;t priced the same. What&#x27;s budgeted for this grade?&quot;</i></blockquote>
+<p><b>If pushed for a number:</b></p>
+<blockquote><i>&quot;My current CTC is twelve point seven lakh, and I take home a lakh a month in Hyderabad with no rent because I own the house. So the number isn&#x27;t the only variable — relocation and cost of living matter as much as the base. On scope, I&#x27;d be looking at the band you&#x27;ve mapped this grade to.&quot;</i></blockquote>
+<p><b>&quot;What&#x27;s your notice period?&quot;</b></p>
+<blockquote><i>&quot;Sixty calendar days. I can request to buy out the full period by paying gross salary in lieu, but that&#x27;s subject to my employer&#x27;s approval rather than mine to elect — so I&#x27;d plan on sixty and treat anything shorter as a bonus.&quot;</i></blockquote>
+<p><b>Do not say you can buy out for 30 days.</b> You cannot — the buy-out covers the full 60 and needs approval.</p>
+<hr>
+<h2 id="6-the-pocket-card">§6 — The pocket card</h2>
+<p><b>Keep this open during the call. A glance is fine; reading is not.</b></p>
+<div class="copyblock"><button class="copy" data-target="cb0" type="button">Copy</button><pre id="cb0"><code>POSITIONING
+&quot;Nine years regulated healthcare audit, three and a half building data and AI
+systems. Both were about whether the answer can be trusted. The interesting
+engineering was never getting a model to produce output — it was building the
+component that decides whether to believe the output.&quot;
+
+SAY
+• I own systems end to end — architecture, delivery, controls, audit trail
+• I have not had direct reports (state once, flatly, move on)
+• 34 refused / 2 promoted — the refusal count is the control working
+• The explanation comes from the recorded decision trace, not a model narrating
+• Where a result is weak I publish the weakness
+
+NEVER SAY
+• Any management title or people-management claim
+• A number not in config/profile.md
+• BugAgents vendor / asset / vulnerability class
+• &quot;disclosed / accepted / paid / resolved&quot; about BugAgents
+• Production users, revenue, adoption for any project
+• &quot;Peer-reviewed&quot; about either AgentSwarm manuscript
+• That you authored the AgentSwarm papers
+• React, or any tool not in your verified skills
+• &quot;PMP certified&quot;
+
+NUMBERS
+18 pipelines | 18 sectors | 10+ dashboards | 30+ reports | 9 yrs Optum
+2 promoted / 34 refused | 8 findings / 14 CWE | 15,317 tool calls
+35/35 hash chains | 1,254 tool calls | 22 of 25 | B+
+7,613 jobs / 5,854 roles | 22,839 scores / 0 model calls | 8/8 fabrications
+npm v4.0.2 | 42 tools | 38 skills | 8 providers
+300 brands | 20 cohorts | 4 dimensions | 4 providers
+
+COMP &amp; NOTICE
+CTC ₹12,70,500 | notice 60 days | buy-out = full 60, needs approval
+
+GAPS — name them first, once, then pivot
+• No people management
+• No React
+• Enrollment audit, not claims adjudication</code></pre></div>
+<hr>
+<h2 id="7-final-preparation-checklist">§7 — Final preparation checklist</h2>
+<p><b>The night before:</b></p>
+<ul><li>[ ] Read Guide 1 (framework) and Guide 5 (approach) — the two that set the tone</li><li>[ ] Rehearse the §1 opening out loud, three times</li><li>[ ] Rehearse the approval/denial asymmetry (Guide 5 §1) out loud — it is your best 90 seconds</li><li>[ ] Say the BugAgents gate story out loud — 2 promoted, 34 refused</li><li>[ ] Re-read the gaps list and decide how you will say each, in one sentence</li></ul>
+<p><b>The morning of:</b></p>
+<ul><li>[ ] Re-read the numbers table (§4) and the pocket card (§6)</li><li>[ ] Have the resume open in a second window</li><li>[ ] Test camera, mic, connection</li><li>[ ] Confirm the format and platform</li></ul>
+<p><b>In the room:</b></p>
+<ul><li>[ ] Answer first, then explain — never build up to the answer</li><li>[ ] State your criteria on every substantive question</li><li>[ ] Give one concrete example with numbers</li><li>[ ] Name a boundary or limitation before they ask</li><li>[ ] Never say &quot;we&quot; about solo work</li><li>[ ] If you do not know something, say so and reason from first principles out loud</li></ul>
+<hr>
+<h2 id="8-the-three-sentences-to-remember">§8 — The three sentences to remember</h2>
+<p>If you remember nothing else:</p>
+<blockquote><b>1.</b> <i>&quot;The interesting engineering was never getting a model to produce output — it was building the component that decides whether to believe the output.&quot;</i></blockquote>
+<blockquote><b>2.</b> <i>&quot;Auto-approve aggressively behind guardrails; never auto-decline. A wrong approval is a cost you can measure. A wrong denial is a regulatory event.&quot;</i></blockquote>
+<blockquote><b>3.</b> <i>&quot;A filter&#x27;s job is to refuse. A system that never refuses candidates isn&#x27;t filtering — it&#x27;s transcribing.&quot;</i></blockquote>
+<hr>
+<p><i>← Guide 5: Approach · End of series.</i></p>
+<p><i>Companion files: <a href="icici_health_claims_interview_prep.md" target="_blank" rel="noopener">`icici_health_claims_interview_prep.md`</a> · <a href="pwc_manager_ai_engineer.md" target="_blank" rel="noopener">`pwc_manager_ai_engineer.md`</a> · <a href="resume_variant_comparison.md" target="_blank" rel="noopener">`resume_variant_comparison.md`</a> · <a href="../config/profile.md" target="_blank" rel="noopener">`../config/profile.md`</a></i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

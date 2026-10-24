@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Application Kit — Prashanth Kumar Kadasi</title>
+<style>
+  :root{
+    --bg:#0b0f17; --panel:#121826; --panel2:#0f1421; --line:#222c40;
+    --txt:#e7ecf5; --muted:#93a0b8; --accent:#5b8cff; --accent2:#37d6a8;
+    --warn:#ffb454; --chip:#1a2337;
+    --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 15% -10%,#16233f 0%,transparent 55%),
+               radial-gradient(900px 500px at 100% 0%,#14283a 0%,transparent 50%),
+               var(--bg);
+    color:var(--txt);
+    font:15px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{
+    padding:34px 22px 10px;max-width:1180px;margin:0 auto;
+  }
+  header h1{margin:0 0 6px;font-size:26px;letter-spacing:-.3px}
+  header p{margin:0;color:var(--muted);font-size:13.5px}
+  .meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .meta span{background:var(--chip);border:1px solid var(--line);color:var(--muted);
+    padding:4px 10px;border-radius:999px;font-size:12px}
+  .wrap{max-width:1180px;margin:0 auto;padding:10px 22px 80px}
+
+  /* Tabs */
+  nav.tabs{
+    display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;
+    position:sticky;top:0;z-index:20;padding:12px 0;
+    background:linear-gradient(180deg,rgba(11,15,23,.96),rgba(11,15,23,.78) 70%,transparent);
+    backdrop-filter:blur(8px);
+  }
+  .tab{
+    cursor:pointer;border:1px solid var(--line);background:var(--panel2);
+    color:var(--muted);padding:9px 14px;border-radius:10px;font-size:13.5px;font-weight:600;
+    transition:.16s;white-space:nowrap;
+  }
+  .tab:hover{color:var(--txt);border-color:#33405c}
+  .tab.active{color:#fff;background:linear-gradient(180deg,#2a4a99,#1e356e);border-color:#3c63c9;
+    box-shadow:0 6px 18px rgba(60,99,201,.35)}
+  .panel{display:none;animation:fade .22s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* Cards */
+  .grid{display:grid;gap:16px}
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .card > .head{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);
+  }
+  .head h3{margin:0;font-size:14.5px;letter-spacing:.2px}
+  .head .tag{font-size:11px;color:var(--muted);background:var(--chip);border:1px solid var(--line);
+    padding:2px 8px;border-radius:999px;margin-left:8px;font-weight:500}
+  .actions{display:flex;gap:8px;flex-shrink:0}
+  button.copy{
+    cursor:pointer;background:var(--chip);color:var(--txt);border:1px solid var(--line);
+    border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:600;transition:.15s;
+  }
+  button.copy:hover{border-color:var(--accent);color:#fff}
+  button.copy.done{background:#123a2c;border-color:var(--accent2);color:var(--accent2)}
+  .body{padding:16px 18px;white-space:pre-wrap;font-size:14px;color:#dbe3f0}
+  .body.tight{font-size:13.5px}
+  .note{padding:0 18px 14px;color:var(--muted);font-size:12.5px}
+
+  /* Q&A */
+  .qa{border:1px solid var(--line);border-radius:12px;background:var(--panel2);overflow:hidden}
+  .qa + .qa{margin-top:12px}
+  .qa .q{padding:12px 16px;font-weight:650;font-size:13.5px;background:rgba(91,140,255,.08);
+    border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}
+  .qa .a{padding:12px 16px;color:#dbe3f0;font-size:13.5px;white-space:pre-wrap}
+  .section-title{display:flex;align-items:center;gap:10px;margin:26px 0 12px}
+  .section-title h2{margin:0;font-size:16px;letter-spacing:.2px}
+  .section-title .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .hint{color:var(--muted);font-size:12.5px;margin:-6px 0 14px}
+  .ph{color:var(--warn)}
+  footer{max-width:1180px;margin:0 auto;padding:0 22px 60px;color:#5d6b85;font-size:12px}
+  .toast{
+    position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:#123a2c;border:1px solid var(--accent2);color:var(--accent2);
+    padding:10px 18px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;
+    pointer-events:none;transition:.25s;z-index:50;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media print{.tabs,button.copy{display:none}.panel{display:block!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Application Kit — Prashanth Kumar Kadasi</h1>
+  <p>Copy-paste DMs, emails and answers per role track. Every claim is drawn from verified ground truth only — no invented metrics.</p>
+  <div class="meta">
+    <span>Hyderabad, India (IST)</span>
+    <span>Remote-global · 4–5 hrs/day OK</span>
+    <span>kprsnt@live.com</span>
+    <span>+91-9948311964</span>
+    <span>kprsnt.in · github.com/kprsnt2 · huggingface.co/kprsnt</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="agentic">🎯 Agentic AI Engineer</button>
+    <button class="tab" data-tab="applied">🤖 Applied AI / LLM Engineer</button>
+    <button class="tab" data-tab="safety">🛡️ AI Safety &amp; Evaluation</button>
+    <button class="tab" data-tab="data">📊 Senior Data Analyst</button>
+    <button class="tab" data-tab="quick">⚡ Quick DMs</button>
+    <button class="tab" data-tab="qa">❓ Application Q&amp;A</button>
+  </nav>
+
+  <!-- ══════════════════ 1. AGENTIC AI ENGINEER ══════════════════ -->
+  <section class="panel active" id="agentic">
+    <p class="hint">Use for: "Agentic AI Engineer", contract/part-time agent gigs, multi-agent / RAG / tool-calling roles. Matches the posted role (remote, 4–5 hrs/day, 2+ yrs).</p>
+
+    <div class="section-title"><h2>Direct Message</h2><div class="rule"></div></div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="head"><h3>DM — short <span class="tag">X / LinkedIn · ~700 chars</span></h3>
+          <div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — your Agentic AI Engineer post (remote, 4–5 hrs/day, 2+ yrs) is exactly my lane.
+
+~2 years building agentic systems: a 10-agent FastMCP swarm (15+ tools / 5 resources), autonomous security-research agents with a report-promotion gate + per-turn tool auditing, and a job pipeline scoring 22,647 matches with 0 model calls.
+
+Day job: production RAG, a Gemini self-healing data agent, and custom MCP tools for non-technical teams.
+
+Live: kprsnt.in/ecosystem · job.kprsnt.in · bug.kprsnt.in
+Profile: kprsnt.in | github.com/kprsnt2
+
+Remote, 4–5 hrs/day works. Open to a quick call?</div>
+      </div>
+
+      <div class="card">
+        <div class="head"><h3>DM — detailed <span class="tag">hiring manager / founder</span></h3>
+          <div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name],
+
+Saw your post for an Agentic AI Engineer (remote, part-time, 2+ yrs). I build exactly this — LLM-powered agents, RAG, tool calling and multi-agent workflows — and I have three shipped autonomous systems you can inspect right now:
+
+1. AI Eco — a 10-agent swarm on FastMCP exposing 15+ tools / 5 resources, with living-memory compaction (&lt;4,000 words) and target fitness scoring (83.4%). Live: kprsnt.in/ecosystem
+2. BugAgents — two autonomous security-research agents with a 4-point report-promotion gate and per-turn tool auditing (53 turns / 3,156 tool calls for $0.067). Live: bug.kprsnt.in
+3. JobAgents — a multi-agent pipeline sourcing 7,533 jobs, deterministic scoring (22,647 match scores, 0 model calls), plus resume tailoring and outreach drafting. Live: job.kprsnt.in
+
+Professionally, at Black Piano I built a Gemini-powered self-healing data-quality agent, a custom MCP tool that lets non-technical teams generate data-grounded content from a one-line prompt, and 18 BigQuery → Looker Studio ETL pipelines.
+
+Remote + 4–5 hrs/day suits me. Portfolio: kprsnt.in · github.com/kprsnt2 · huggingface.co/kprsnt
+
+Open to a short call this week?</div>
+      </div>
+
+      <div class="card">
+        <div class="head"><h3>Email</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Subject: Agentic AI Engineer (Remote, Part-time) — Prashanth Kumar Kadasi
+
+Hi [Name],
+
+I'm applying to your Agentic AI Engineer contract role (remote, 4–5 hrs/day, 2+ yrs).
+
+I've spent ~2 years building agentic AI systems end-to-end — LLM-powered agents, RAG pipelines, tool/function calling and multi-agent workflows — on top of 3.5+ years of production data engineering. Three shipped systems are live and inspectable:
+
+• AI Eco — 10-agent FastMCP swarm, 15+ tools / 5 resources, living-memory compaction, 83.4% fitness → kprsnt.in/ecosystem
+• BugAgents — autonomous security-research agents with a 4-point report-promotion gate + per-turn tool auditing → bug.kprsnt.in
+• JobAgents — multi-agent sourcing + deterministic scoring (22,647 scores, 0 model calls) → job.kprsnt.in
+
+In my current role (Black Piano) I built a Gemini-powered self-healing data-quality agent (auto-resolves failures, 3x retry, human escalation only when unresolved), a custom MCP tool for one-line-prompt content generation, and 18 automated ETL pipelines feeding BigQuery → Looker Studio dashboards for 4 enterprise clients.
+
+Stack: Python (FastAPI, PyTorch), FastMCP, RAG, SQL/BigQuery, GCP/Cloud Run, Docker, GitHub Actions; models incl. Claude 4.x, Gemini 2.5/3.x and GPT-OSS 120B/20B.
+
+I'm based in Hyderabad (IST), fully set up for remote part-time work, and can align working hours to your timezone. Portfolio: kprsnt.in · GitHub: github.com/kprsnt2 · HF: huggingface.co/kprsnt
+
+Happy to walk you through any of the systems on a quick call.
+
+Best regards,
+Prashanth Kumar Kadasi
++91-9948311964 · kprsnt@live.com · kprsnt.in</div>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>Tailored answers</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Do you have 2+ years of agentic AI experience? <button class="copy">Copy</button></div>
+      <div class="a">Yes — ~2 years building agentic systems (self-directed + production). Shipped a 10-agent FastMCP swarm (15+ tools / 5 resources), two autonomous security-research agents with verification gates, and a multi-agent job-sourcing pipeline. At Black Piano I run a production Gemini self-healing agent and a custom MCP tool.</div></div>
+    <div class="qa"><div class="q">What agentic systems have you actually built? <button class="copy">Copy</button></div>
+      <div class="a">Three live systems: AI Eco (10-agent swarm, FastMCP, living-memory compaction, 83.4% fitness — kprsnt.in/ecosystem), BugAgents (autonomous security research, report-promotion gate, per-turn tool auditing, 53 turns / 3,156 tool calls — bug.kprsnt.in), and JobAgents (multi-agent sourcing + deterministic scoring, 22,647 match scores with 0 model calls — job.kprsnt.in).</div></div>
+    <div class="qa"><div class="q">Can you work remotely 4–5 hrs/day? <button class="copy">Copy</button></div>
+      <div class="a">Yes. I'm based in Hyderabad, India (IST), fully remote-ready, and 4–5 hrs/day fits. I can overlap with your timezone — happy to lock in specific hours.</div></div>
+    <div class="qa"><div class="q">What's your rate for a contract? <button class="copy">Copy</button></div>
+      <div class="a"><span class="ph">[Edit before sending]</span> I'd like to understand the scope first. Could you share your budget range? For a part-time contract I'm open to aligning on a rate that works for you — for full-time remote roles I'm targeting $150k+.</div></div>
+  </section>
+
+  <!-- ══════════════════ 2. APPLIED AI / LLM ══════════════════ -->
+  <section class="panel" id="applied">
+    <p class="hint">Use for: "Applied AI / LLM Engineer", fine-tuning, evaluation, RAG, model reliability, inference roles.</p>
+
+    <div class="section-title"><h2>Direct Message</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card">
+        <div class="head"><h3>DM — short <span class="tag">X / LinkedIn</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — I build applied LLM systems, and I saw [Company] is hiring.
+
+Recent proof-of-work: fine-tuned GPT-OSS-20B on AMD MI300X (LoRA/QLoRA) to measure and steer recommendation bias — 76.5% vs 25.5% baseline (+51% lift), weights + demo public on Hugging Face.
+
+Also shipped a 10-agent FastMCP swarm with RAG + tool calling, and production RAG/self-healing agents at Black Piano.
+
+Model: huggingface.co/kprsnt/BrandXY-gpt-oss-20b
+Profile: kprsnt.in | github.com/kprsnt2
+
+Open to a quick chat?</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Email</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Subject: Applied AI / LLM Engineer — Prashanth Kumar Kadasi
+
+Hi [Name],
+
+I'm applying for the Applied AI / LLM Engineer role at [Company].
+
+I work across the applied-LLM stack — fine-tuning, evaluation, RAG and agentic tool use — with a bias toward measurable, reproducible results:
+
+• Fine-tuned GPT-OSS-20B on AMD MI300X (LoRA/QLoRA) to quantify and steer recommendation bias: 76.5% vs 25.5% baseline (+51% lift) under multi-model A/B evaluation. Open weights + demo: huggingface.co/kprsnt/BrandXY-gpt-oss-20b
+• Built a 10-agent FastMCP swarm (15+ tools / 5 resources) with living-memory compaction and target fitness scoring (83.4%) — kprsnt.in/ecosystem
+• Built automated multi-model evaluation harnesses across multiple providers, plus a deterministic matching service that scored 22,647 matches with zero model calls (cost gate before any LLM).
+
+Professionally at Black Piano I run production RAG and a Gemini-powered self-healing data agent, and built a custom MCP tool for one-line-prompt content generation. Background: 3.5+ years of production data engineering (BigQuery, ETL, GCP/Cloud Run).
+
+Stack: Python (PyTorch, FastAPI, Pandas), LoRA/QLoRA, FastMCP, RAG, SQL/BigQuery, Docker, GitHub Actions; Claude 4.x, Gemini 2.5/3.x, GPT-OSS 120B/20B, DeepSeek, Ollama, NVIDIA NIM, OpenRouter.
+
+Portfolio: kprsnt.in · GitHub: github.com/kprsnt2 · HF: huggingface.co/kprsnt
+
+I'd welcome a quick conversation.
+
+Best regards,
+Prashanth Kumar Kadasi
++91-9948311964 · kprsnt@live.com</div>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>Tailored answers</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Tell me about a model you fine-tuned and what it achieved. <button class="copy">Copy</button></div>
+      <div class="a">I fine-tuned GPT-OSS-20B on AMD MI300X GPUs (LoRA/QLoRA) to quantify and steer recommendation bias. Measured 76.5% vs a 25.5% baseline (+51% lift) under multi-model A/B evaluation. Weights and an interactive demo are public on Hugging Face for reproducible scrutiny.</div></div>
+    <div class="qa"><div class="q">What's your experience with RAG and tool calling? <button class="copy">Copy</button></div>
+      <div class="a">I've built RAG and tool/function calling into production agent systems — a 10-agent FastMCP swarm exposing 15+ tools and 5 resources, and a custom MCP tool at Black Piano that generates data-grounded content from a one-line prompt. I also run a Gemini-powered self-healing data agent in production.</div></div>
+    <div class="qa"><div class="q">How do you evaluate model quality? <button class="copy">Copy</button></div>
+      <div class="a">With independent, adversarial evaluation rather than self-assessment: multi-model A/B comparisons, an oracle that checks every agent turn for fabricated artifacts/numbers, and hash-chained audit ledgers stored outside the agents' writable area. In AgentSwarm this measured 0 oracle violations across 1,254 tool calls.</div></div>
+  </section>
+
+  <!-- ══════════════════ 3. AI SAFETY & EVAL ══════════════════ -->
+  <section class="panel" id="safety">
+    <p class="hint">Use for: AI Safety / Evaluation / Alignment-adjacent, model reliability, red-teaming, guardrails, trust &amp; safety engineering roles.</p>
+
+    <div class="section-title"><h2>Direct Message</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card">
+        <div class="head"><h3>DM — short <span class="tag">X / LinkedIn</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — I work on AI safety/evaluation from the build side: guardrails that fail safely, bounded autonomy, and independent verification.
+
+Proof: a 20B fine-tune measuring + steering model bias (76.5% vs 25.5% baseline), an agent arena with 32/32 cryptographically intact audit ledgers and 0 oracle violations across 1,254 tool calls, and autonomous security-research agents gated by a 4-point promotion check.
+
+I also bring 9 years of regulated healthcare-compliance auditing — audit discipline applied to agent reliability.
+
+Portfolio: kprsnt.in | github.com/kprsnt2 — open to a quick chat?</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Email</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Subject: AI Safety &amp; Evaluation Engineer — Prashanth Kumar Kadasi
+
+Hi [Name],
+
+I'm applying for the AI Safety / Evaluation role at [Company].
+
+My approach is safety-through-verification: I build systems that prove their own claims, then measure whether they can be trusted.
+
+• Model steerability &amp; bias: fine-tuned GPT-OSS-20B on AMD MI300X to quantify and steer recommendation bias — 76.5% vs 25.5% baseline (+51% lift) under multi-model A/B evaluation, with open weights for independent scrutiny.
+• Agent honesty, measured: built AgentSwarm, an arena where an independent oracle checks every turn for phantom artifacts, fabricated numbers and asserted verdicts on undecidable questions — 32/32 hash-chained ledgers cryptographically intact, 0 oracle violations across 1,254 tool calls, and 0 of 2 self-assessing agents overclaimed.
+• Guardrails as code: BugAgents enforced per-turn tool-call auditing (any out-of-scope host or offensive tool aborts the run — one live run was aborted exactly this way), bounded retries and human-in-the-loop escalation.
+• Fail-safe operations: ran a 1,441-turn autonomous ecosystem (1,553 commits) that survived a 330-turn cloud API blackout with 100% CI/CD integrity.
+
+Background: 3.5+ years of production data/AI engineering plus 9 years of regulated healthcare-compliance auditing (Optum / UnitedHealth Group) — validation, audit trails and failure-mode documentation applied to model evaluation and agent reliability.
+
+Portfolio: kprsnt.in · GitHub: github.com/kprsnt2
+
+I'd value a conversation about the evaluation problems you're tackling.
+
+Best regards,
+Prashanth Kumar Kadasi
++91-9948311964 · kprsnt@live.com</div>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>Tailored answers</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">How have you measured model behavior objectively? <button class="copy">Copy</button></div>
+      <div class="a">Two ways. (1) Fine-tuned GPT-OSS-20B to quantify and steer recommendation bias: 76.5% vs 25.5% baseline (+51% lift) under multi-model A/B evaluation, weights public. (2) Built AgentSwarm with an independent oracle that audits every agent turn — 0 violations across 1,254 tool calls, with the audit ledger stored outside the agents' writable directory so the audited cannot edit the audit.</div></div>
+    <div class="qa"><div class="q">What does "safety" mean in your engineering practice? <button class="copy">Copy</button></div>
+      <div class="a">Guardrails as code, not prompts: bounded autonomy, per-turn tool-call auditing that aborts on scope violations, bounded retries, human-in-the-loop escalation only when unresolved, budget enforcement, and hash-chained audit trails. Systems should fail safely and prove what they did.</div></div>
+    <div class="qa"><div class="q">Why the shift from pharma QA to AI safety? <button class="copy">Copy</button></div>
+      <div class="a">9 years of healthcare-compliance auditing at Optum / UnitedHealth Group taught me validation, audit trails and failure-mode documentation under a zero-tolerance quality bar. I now apply that same verification discipline to autonomous AI systems — the core skill transfers directly.</div></div>
+  </section>
+
+  <!-- ══════════════════ 4. SENIOR DATA ANALYST ══════════════════ -->
+  <section class="panel" id="data">
+    <p class="hint">Use for: Senior Data Analyst / Analytics Engineer / Data Manager, BI, ETL, BigQuery, dashboarding, analytics-ops roles.</p>
+
+    <div class="section-title"><h2>Direct Message</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card">
+        <div class="head"><h3>DM — short <span class="tag">X / LinkedIn</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — saw [Company] is hiring a Senior Data Analyst. I own production analytics end-to-end.
+
+At Black Piano I architected 18 automated ETL pipelines into BigQuery feeding Looker Studio dashboards across 18 sectors for 4 enterprise clients, plus a self-healing Gemini data-quality agent and an AI insights pipeline that cut client manual analysis time by 60%.
+
+Before that, 3.5+ years of SQL/Python pipelines and 30+ reports for US &amp; UK clients.
+
+Portfolio: kprsnt.in | github.com/kprsnt2 — open to a chat?</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Email</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Subject: Senior Data Analyst — Prashanth Kumar Kadasi
+
+Hi [Name],
+
+I'm applying for the Senior Data Analyst / Data Manager role at [Company].
+
+I own production data pipelines end-to-end — multi-source ingestion, BigQuery warehousing, and executive dashboards consumed by enterprise clients:
+
+• At Black Piano I architected and deployed 18 automated ETL pipelines into BigQuery, feeding Looker Studio dashboards across 18 sectors for 4 enterprise clients.
+• Built a self-healing data-quality pipeline with a Gemini-powered resolver: detects missing reference data, resolves it via lookup table with LLM fallback, writes back to both, retries 3x, and escalates by email only when unresolved.
+• Engineered an AI insights pipeline generating weekly market/sector intelligence auto-published to a client-facing site — reduced client manual analysis time by 60%.
+• Previously at Pi Software Solutions: built production Python data pipelines (internal API package) for automated BigQuery access across 15+ enterprise dashboards and delivered 30+ analytical reports for US &amp; UK clients.
+
+Stack: SQL, BigQuery, Looker Studio, Tableau, Python (Pandas, NumPy, FastAPI), ETL orchestration, data modeling, data quality &amp; validation, Google Apps Script, GCP, Docker, GitHub Actions.
+
+I bring 9 years of prior regulated healthcare-compliance auditing (Optum / UnitedHealth Group) — audit-grade data integrity and SOP discipline. Portfolio: kprsnt.in · GitHub: github.com/kprsnt2
+
+I'd welcome a quick conversation.
+
+Best regards,
+Prashanth Kumar Kadasi
++91-9948311964 · kprsnt@live.com</div>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>Tailored answers</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Describe the scale of data you've owned. <button class="copy">Copy</button></div>
+      <div class="a">At Black Piano I architected 18 automated ETL pipelines into BigQuery feeding Looker Studio dashboards across 18 sectors for 4 enterprise clients. At Pi Software I built Python pipelines for automated BigQuery access across 15+ enterprise dashboards and delivered 30+ reports for US &amp; UK clients.</div></div>
+    <div class="qa"><div class="q">How do you ensure data quality? <button class="copy">Copy</button></div>
+      <div class="a">Validation at ingestion, consistent metric definitions, reference/lookup table management, and a self-healing layer: a Gemini-powered resolver that detects missing reference data, resolves via lookup with LLM fallback, writes back to both dataset and lookup table, retries 3x, and escalates only when unresolved.</div></div>
+    <div class="qa"><div class="q">Do you use AI in analytics work? <button class="copy">Copy</button></div>
+      <div class="a">Yes — LLM-powered enrichment and automated insight generation (Gemini/ChatGPT), plus a custom MCP tool that lets non-technical marketing/sales teams produce publication-ready, data-grounded content from a one-line prompt. It removes the analytics team as a bottleneck.</div></div>
+  </section>
+
+  <!-- ══════════════════ 5. QUICK DMs ══════════════════ -->
+  <section class="panel" id="quick">
+    <p class="hint">Short-form openers for X, LinkedIn connection notes, and cold-email subject lines. Pair with the profile tab above.</p>
+
+    <div class="section-title"><h2>X / Twitter DM — under 300 chars</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card">
+        <div class="head"><h3>Cold opener</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hey [Name] — ~2 yrs building agentic systems: 10-agent FastMCP swarm, autonomous security-research agents w/ verification gates, multi-agent job pipeline. Day job: production RAG + Gemini self-healing agents. Remote, 4–5 hrs/day OK. kprsnt.in | github.com/kprsnt2</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Hiring-post reply</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">[Name] — this fits me. Agentic AI engineer, ~2 yrs: LLM agents, RAG, tool calling, multi-agent workflows. Live systems at kprsnt.in/ecosystem + job.kprsnt.in. Remote/part-time works. Profile: kprsnt.in. Want me to send details?</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>LinkedIn connection note (300 char limit)</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — I build agentic AI systems (multi-agent swarms, FastMCP tooling, RAG). Saw [Company]'s work on [topic] and would love to connect. Portfolio: kprsnt.in | github.com/kprsnt2</div>
+      </div>
+      <div class="card">
+        <div class="head"><h3>Follow-up (48h, no reply)</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Hi [Name] — floating this back up in case it got buried. Happy to send a 2-min walkthrough of the agent systems instead of a long message. kprsnt.in</div>
+      </div>
+    </div>
+
+    <div class="section-title"><h2>Cold-email subject lines</h2><div class="rule"></div></div>
+    <div class="grid">
+      <div class="card"><div class="head"><h3>Pick one</h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">• Agentic AI Engineer (Remote) — Prashanth Kumar Kadasi
+• Applied AI / LLM Engineer — Prashanth Kumar Kadasi
+• Built a 10-agent FastMCP swarm — application for [Role]
+• Agentic AI Engineer, ~2 yrs shipping autonomous systems
+• [Role] — multi-agent + RAG engineer, live systems to show</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ 6. APPLICATION Q&A ══════════════════ -->
+  <section class="panel" id="qa">
+    <p class="hint">Universal answers to the questions that repeat across application forms. Copy and trim. Anything in <span class="ph">[orange]</span> must be filled by you.</p>
+
+    <div class="section-title"><h2>About you</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Tell me about yourself. <button class="copy">Copy</button></div>
+      <div class="a">I'm an AI/agentic engineer based in Hyderabad, India. I've spent 3.5+ years building production data pipelines and ~2 years shipping autonomous agent systems. I've built three live projects — a 10-agent FastMCP swarm (kprsnt.in/ecosystem), autonomous security-research agents (bug.kprsnt.in), and an automated job-sourcing pipeline (job.kprsnt.in). Professionally, at Black Piano I build RAG systems, self-healing data agents and custom MCP tools. Before tech I spent 9 years in regulated healthcare-compliance auditing at Optum / UnitedHealth Group, which is where my audit-grade verification discipline comes from.</div></div>
+    <div class="qa"><div class="q">Why are you interested in this role? <button class="copy">Copy</button></div>
+      <div class="a">I want to work on [Company's specific problem / mission] because it's exactly the kind of [agentic / LLM / evaluation / data] work I already build independently — and I'd rather do it with a team, real users and real constraints than on my own. Your stack ([mention stack]) maps closely to what I use daily.</div></div>
+    <div class="qa"><div class="q">What's your greatest strength? <button class="copy">Copy</button></div>
+      <div class="a">Verification discipline. I don't just build agents — I build the gates that prove what they did: report-promotion checks, per-turn tool auditing, hash-chained audit ledgers, and independent oracles. That habit came from 9 years of compliance auditing and it's the difference between a demo and a system you can trust.</div></div>
+    <div class="qa"><div class="q">What's a weakness / area you're improving? <button class="copy">Copy</button></div>
+      <div class="a">I've historically gone very deep on the engineering and under-invested in distribution and writing things up for non-technical stakeholders. I've been correcting that deliberately — publishing blogs and building dashboards and tools so the work is legible to business teams, not just to engineers.</div></div>
+
+    <div class="section-title"><h2>Logistics</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Where are you based and are you open to remote? <button class="copy">Copy</button></div>
+      <div class="a">Hyderabad, Telangana, India (IST). I'm fully set up for remote work globally and can align hours to your timezone. I'm also open to relocation with visa sponsorship.</div></div>
+    <div class="qa"><div class="q">What's your notice period / availability to start? <button class="copy">Copy</button></div>
+      <div class="a"><span class="ph">[Fill in: e.g. "I can start within X weeks" / "available immediately for contract work"]</span></div></div>
+    <div class="qa"><div class="q">Are you open to contract / part-time work? <button class="copy">Copy</button></div>
+      <div class="a">Yes — I'm open to contract and part-time engagements, including 4–5 hrs/day, alongside remote full-time roles.</div></div>
+    <div class="qa"><div class="q">What are your salary / rate expectations? <button class="copy">Copy</button></div>
+      <div class="a">Could you share the budget range for the role? For full-time remote roles I'm targeting $150k+. For contract work I'm flexible on structure — happy to align on a rate that fits your scope.</div></div>
+    <div class="qa"><div class="q">Do you require visa sponsorship? <button class="copy">Copy</button></div>
+      <div class="a">For remote roles, no — I work from India. For on-site relocation I would require visa sponsorship.</div></div>
+
+    <div class="section-title"><h2>Technical</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">What's your primary tech stack? <button class="copy">Copy</button></div>
+      <div class="a">Python (FastAPI, PyTorch, Pandas, NumPy), Node.js/TypeScript, SQL/BigQuery, FastMCP (Model Context Protocol), RAG, Docker, GitHub Actions, GCP/Cloud Run, Vercel. Models: Claude 4.x, Gemini 2.5/3.x, GPT-OSS 120B/20B, DeepSeek, Ollama, NVIDIA NIM, OpenRouter.</div></div>
+    <div class="qa"><div class="q">Describe your most impressive project. <button class="copy">Copy</button></div>
+      <div class="a">AgentSwarm — an autonomous multi-agent research arena. It runs unattended against real questions while an independent oracle checks every turn for phantom artifacts, fabricated numbers and asserted verdicts. Result: 32/32 hash-chained ledgers cryptographically intact, 0 oracle violations across 1,254 tool calls, and 0 of 2 self-assessing agents overclaimed. The agents also produced 182 reports and 158 tested Python engines. Ledger lives outside the agents' writable directory — the audited cannot edit the audit.</div></div>
+    <div class="qa"><div class="q">How do you stay current? <button class="copy">Copy</button></div>
+      <div class="a">I build — I run autonomous systems against current models (Claude, Gemini, GPT-OSS, DeepSeek) and benchmark them directly, rather than only reading about them. My pRash project benchmarked 6 autonomous coding CLIs across 2 rounds, and I publish the findings.</div></div>
+
+    <div class="section-title"><h2>Behavioral</h2><div class="rule"></div></div>
+    <div class="qa"><div class="q">Tell me about a time you failed and what you learned. <button class="copy">Copy</button></div>
+      <div class="a">Early agent builds produced confident but unverified output — reports that looked right but weren't corroborated. That's why every system I build now has a promotion gate: an agent output only counts when the workspace corroborates it (scope match, HEAD match, non-empty repro, evidence files present). In BugAgents that gate rejected 34 unverified candidate findings before any verified bug was promoted.</div></div>
+    <div class="qa"><div class="q">How do you handle ambiguity? <button class="copy">Copy</button></div>
+      <div class="a">I probe first, then codify. When I integrated multiple agent CLIs I hit three undocumented quirks, so I probed each until I understood the behavior and absorbed them into a single tested harness — instead of guessing and shipping something fragile.</div></div>
+    <div class="qa"><div class="q">Do you have references? <button class="copy">Copy</button></div>
+      <div class="a"><span class="ph">[Add 1–2 references with name, title, company, contact — only with their permission]</span></div></div>
+  </section>
+
+</div>
+
+<footer>
+  Private application kit · Do not publish · Facts limited to verified profile ground truth (config/profile.md).
+</footer>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+(function(){
+  // Tab switching
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      t.classList.add('active');
+      var el = document.getElementById(t.dataset.tab);
+      if(el) el.classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  // Copy buttons
+  var toast = document.getElementById('toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1600);
+  }
+  document.querySelectorAll('button.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.card') || btn.closest('.qa');
+      var target = card ? card.querySelector('.body, .a') : null;
+      if(!target) return;
+      var text = target.innerText;
+      function done(){
+        var old = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        showToast('Copied to clipboard');
+        setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1500);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+      } else {
+        fallback(text, done);
+      }
+    });
+  });
+  function fallback(text, cb){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); cb(); } catch(e){ showToast('Copy failed — select manually'); }
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ICICI Lombard - Technical Round Prep</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="icici-lombard-interview-debrief-technical-round-prep">ICICI Lombard — Interview Debrief &amp; Technical Round Prep</h1>
+<p><b>Interview 1:</b> done, 2026-10-15. <b>Next:</b> technical round, format/date to be confirmed. <b>Interviewer confirmed:</b> it is the <b>Agentic AI</b> role, and there <b>will be a technical round</b>. Formal dress, join 10 minutes early.</p>
+<hr>
+<h2 id="0-the-60-second-read">§0 — The 60-second read</h2>
+<ol><li><b>Your multi-model answer was good — genuinely.</b> The response-variance → schema-normalisation → drift argument is the correct architecture, and you explained it in plain language. Two things would have made it stronger: saying the word <b>contract</b>, and noting that <b>routing</b> must be deterministic.</li><li><b>Your self-hosting suggestion was half right, and the wrong half could hurt you.</b> The <b>privacy</b> argument is strong — arguably the most important point anyone made in that interview. The <b>cost</b> argument is usually backwards. §3 tells you how to correct it before the technical round, because they may well ask you to defend it.</li><li><b>They told you &quot;you&#x27;re the first to implement&quot;.</b> That means greenfield. The technical round will be architecture and judgement, not trivia. §4.</li><li><b>You cited rAsh Score and the live numbers have moved past your README.</b> Live site says <b>300 tracked brands, 20 industry cohorts</b>; your README says 279 and 19. <b>Cite the live figures.</b> §5.</li><li><b>rAsh Score is a much better project for this role than you realise.</b> It is a live multi-model evaluation harness with four scored dimensions and a debate arena — which is <i>exactly</i> the problem this job is about. §5.</li><li><b>Fix your ground truth before the next round.</b> rAsh Score is not in <code>config/profile.md</code>, so every agent in your pipeline — and this prep — has been treating it as if it doesn&#x27;t exist. §5.4.</li></ol>
+<hr>
+<h2 id="1-scorecard-on-the-first-interview">§1 — Scorecard on the first interview</h2>
+<table><thead><tr><th>What they asked</th><th>What you did</th><th>Verdict</th></tr></thead><tbody><tr><td><b>Your work automation, and how you used AI in it</b></td><td>Explained the automation, the pipeline, and the human fallback</td><td><b>Good.</b> This was your strongest material (§4C of the main prep) and you used it.</td></tr><tr><td><b>Multi-model: how you&#x27;d solve the problem</b></td><td>Response-format variance across models → structured output via system prompt → JSON segmentation → drift on model updates → models work well with structured I/O</td><td><b>Strong.</b> This is a real architectural answer, not a keyword answer.</td></tr><tr><td><b>Explained a project</b></td><td>rAsh Score healthcare leaderboard</td><td><b>Good instinct</b> — but see §5: you undersold it, and cited stale numbers.</td></tr><tr><td><b>Closing suggestion on self-hosting</b></td><td>Privacy for health data + lower LLM cost</td><td><b>Half right.</b> Privacy: strong. Cost: usually wrong. §3.</td></tr></tbody></table>
+<p><b>The one thing you did that most candidates don&#x27;t:</b> you offered a strategic suggestion unprompted, and you framed it as <i>&quot;irrespective of my selection&quot;</i>. That reads as someone who cares about the problem rather than the job. It is a genuine differentiator — <b>provided the advice holds up</b>, which is why §3 matters.</p>
+<hr>
+<h2 id="2-your-multi-model-answer-refined">§2 — Your multi-model answer, refined</h2>
+<p>What you said was correct. Here is the sharper version, so you can deliver it again in the technical round with more precision.</p>
+<h3 id="2-1-the-three-points-you-made-named-properly">2.1 The three points you made, named properly</h3>
+<p><b>1. Response-format variance is a real engineering problem, not a quirk.</b></p>
+<blockquote><i>&quot;Ask three models the same question and you get three shapes — a numbered list, a paragraph, a table. If your pipeline parses prose, it breaks the moment a model changes its house style. That&#x27;s not a bug you fix once; it&#x27;s a permanent fragility.&quot;</i></blockquote>
+<p><b>2. The fix is a schema, enforced at the boundary.</b></p>
+<blockquote><i>&quot;So you don&#x27;t parse prose. You constrain the output to a schema — JSON is my preference, XML works, some teams use function calling — and you validate against it before anything downstream touches it. The important part is what that buys you: </i><i>the model&#x27;s output becomes a contract you can test</i><i>, instead of text you have to interpret.&quot;</i></blockquote>
+<p><b>Say the word &quot;contract.&quot;</b> It is the difference between describing a technique and describing an engineering principle, and it is the same idea as your BugAgents gate: a check that can reject.</p>
+<p><b>3. Model updates are a source of drift, and you detect it rather than assume it.</b></p>
+<blockquote><i>&quot;Models get updated underneath you. A prompt that returned clean JSON for six months can start returning JSON wrapped in a sentence. So you monitor: a fixed set of golden inputs, run against the live model on a schedule, checking that the output still validates and the values are still stable. When the schema validation rate drops, you know before your users do.&quot;</i></blockquote>
+<p><b>Why this connects to rAsh Score:</b> you have literally built this. rAsh Score queries multiple models with standardised prompts and scores them — that <i>is</i> a multi-model harness with drift observation. Say so (§5).</p>
+<h3 id="2-2-the-two-things-you-should-add-next-time">2.2 The two things you should add next time</h3>
+<p><b>1. Routing must be deterministic — not a model deciding.</b></p>
+<p>If they push on &quot;how do you handle multiple models&quot;, the strong answer is:</p>
+<blockquote><i>&quot;I&#x27;d keep the routing decision itself out of the models. Which model handles which task should be an explicit rule — by task type, by cost ceiling, by data-sensitivity tier — not a model choosing. If a model decides which model to call, you&#x27;ve added a non-deterministic step to your control plane, and now you can&#x27;t explain why a given claim went to a given model. In a regulated decision that&#x27;s indefensible.&quot;</i></blockquote>
+<p>That is a real, senior position, and it maps directly onto claims.</p>
+<p><b>2. Fallback needs to be defined, not improvised.</b></p>
+<blockquote><i>&quot;Multi-model also means multi-failure-mode. If the primary returns an invalid schema three times, what happens? In my own work the answer is bounded retries and then a defined escalation — never an unbounded loop, and never a silent default.&quot;</i></blockquote>
+<p>This is your data-quality agent&#x27;s design (3 retries → email escalation) applied to model routing. Same instinct, and you have already shipped it.</p>
+<h3 id="2-3-the-one-liner-to-have-ready">2.3 The one-liner to have ready</h3>
+<blockquote><i>&quot;Structured output isn&#x27;t about making the model tidy. It&#x27;s about converting an unreliable narrator into a testable component. Once the output validates against a schema, everything downstream can be deterministic — and in a claims decision, deterministic is the only thing you can audit.&quot;</i></blockquote>
+<hr>
+<h2 id="3-your-self-hosting-suggestion-what-to-keep-what-to-fix">§3 — Your self-hosting suggestion: what to keep, what to fix</h2>
+<p>You asked what I think. <b>Honest answer: you were right about the risk and wrong about the economics — and the economics is the part they&#x27;re most likely to probe.</b></p>
+<h3 id="3-1-the-privacy-argument-keep-this-it-s-your-best-point">3.1 The privacy argument — keep this, it&#x27;s your best point</h3>
+<p>This is genuinely strong, and for an Indian health insurer it is close to the centre of the problem:</p>
+<ul><li>Health data is the most sensitive category you can process, and under the <b>DPDP Act 2023</b> — which is mid-rollout on a staggered timetable — there is <b>no separate &quot;sensitive data&quot; tier</b>: every claim document carries equal statutory weight. (Sourced in <a href="health_claims_domain_research.md" target="_blank" rel="noopener">`health_claims_domain_research.md`</a>.)</li><li>If a third-party model API sees claim documents, you have created a data-flow you must be able to describe, justify, and audit.</li><li><b>A model you host means the data never leaves your perimeter</b> — and the compliance conversation gets dramatically simpler.</li></ul>
+<p>That instinct — <i>&quot;this data is too sensitive to hand to someone else&#x27;s endpoint by default&quot;</i> — is exactly right, and it is the kind of thing a claims or compliance stakeholder remembers.</p>
+<h3 id="3-2-the-cost-argument-usually-backwards-and-here-s-why">3.2 The cost argument — usually backwards, and here&#x27;s why</h3>
+<p><b>Self-hosting is rarely cheaper than API calls.</b> The reasons:</p>
+<table><thead><tr><th>Cost you take on</th><th>What it looks like</th></tr></thead><tbody><tr><td><b>GPU capacity</b></td><td>Either capex on hardware or a per-hour cloud GPU bill — and it accrues whether or not claims arrive. API billing scales with usage; your GPU bill does not.</td></tr><tr><td><b>ML engineering</b></td><td>Someone has to serve, quantise, version, monitor and update the model. That is a headcount, not a line item.</td></tr><tr><td><b>Model capability</b></td><td>The models you can self-host at reasonable cost are smaller than frontier APIs. On medical-necessity reasoning, a smaller model is a real quality regression — in the highest-stakes part of the pipeline.</td></tr><tr><td><b>Utilisation</b></td><td>Self-hosting only wins at <b>high, steady</b> utilisation. Bursty claims volumes mean idle GPUs.</td></tr></tbody></table>
+<p><b>The rule of thumb:</b> API calls win at low-to-moderate volume and for hard reasoning. Self-hosting wins at <b>very high, steady volume on narrow, simple tasks</b> — classification, extraction, routing — where a small fine-tuned model can match a frontier model at a fraction of the marginal cost.</p>
+<h3 id="3-3-the-answer-that-would-have-been-stronger-and-still-makes">3.3 The answer that would have been stronger — and still makes your point</h3>
+<p>Do not abandon the suggestion. <b>Sharpen it.</b> The correct enterprise answer is usually not &quot;self-host everything&quot; but <b>tier the data and match the deployment to the tier</b>:</p>
+<blockquote><i>&quot;I&#x27;d start by classifying what actually flows through the pipeline. Policy numbers and member identifiers can go to a frontier model under a zero-retention, no-training enterprise agreement — that&#x27;s a contractual control, and it&#x27;s what most insurers do. But clinical documents — discharge summaries, investigation reports, diagnosis detail — I&#x27;d want to keep inside our perimeter.</i>  <i>And that&#x27;s where self-hosting becomes interesting, but only for the right tasks. Not for medical-necessity reasoning, where you want the strongest model you can get. For the high-volume, narrow work — document classification, field extraction, routing — where a smaller model you host can do the job at a fraction of the marginal cost and the data never leaves.</i>  <i>So my suggestion isn&#x27;t &#x27;replace the API&#x27;. It&#x27;s: tier the data, keep clinical content in-perimeter, self-host the high-volume narrow tasks, and use frontier APIs — under a no-training agreement — only where you genuinely need the reasoning.&quot;</i></blockquote>
+<p><b>Why this is better than what you said:</b> it keeps your privacy insight, drops the cost claim that doesn&#x27;t survive scrutiny, and shows you understand that this is a <b>data-classification decision</b> rather than a build-versus-buy preference. That is a more senior answer, and it is harder to argue with.</p>
+<h3 id="3-4-if-they-challenge-you-on-it-in-the-technical-round">3.4 If they challenge you on it in the technical round</h3>
+<p><b>&quot;Self-hosting is expensive — did you consider that?&quot;</b></p>
+<blockquote><i>&quot;Yes, and I&#x27;d have put it better. Self-hosting wins at high, steady volume on narrow tasks; it loses on bursty volume and on reasoning quality. My actual point was about data residency for clinical documents, and the right version of that argument is tiering the data rather than replacing the API everywhere.&quot;</i></blockquote>
+<p><b>Correcting yourself cleanly is a strength, not a weakness.</b> A candidate who says <i>&quot;I&#x27;d have put that better, here&#x27;s the sharper version&quot;</i> reads as someone who thinks rather than someone who performs. Do not defend the cost claim.</p>
+<h3 id="3-5-one-thing-your-suggestion-proved">3.5 One thing your suggestion proved</h3>
+<p><b>You have actually done the thing you recommended.</b> BrandXY is a <b>fine-tuned self-hosted model</b> (GPT-OSS-20B, LoRA/QLoRA, 76.5% vs 25.5% baseline). If self-hosting comes up, you are not theorising:</p>
+<blockquote><i>&quot;I&#x27;ve done this at small scale — I fine-tuned and released my own model rather than only calling APIs, so I know both the cost shape and the maintenance burden. It&#x27;s not free, and it&#x27;s not always the right call.&quot;</i></blockquote>
+<p>That converts a suggestion into experience.</p>
+<hr>
+<h2 id="4-preparing-for-the-technical-round">§4 — Preparing for the technical round</h2>
+<p>They told you <b>&quot;you&#x27;re the first to implement&quot;</b> — so expect greenfield design questions, not trivia. Prepare these five.</p>
+<h3 id="4-1-the-architecture-answer-from-3-3-of-the-main-prep">4.1 The architecture answer (from §3.3 of the main prep)</h3>
+<p>Have the eight-step pipeline ready to sketch: intake and classification → extraction (IDP/OCR) → <b>deterministic policy and coverage rules engine</b> → medical necessity → fraud scoring → routing (auto-approve / human review / <b>no auto-decline</b>) → explanation generated <b>from the decision trace</b> → immutable audit log.</p>
+<p><b>Land the two non-negotiables:</b> the rules engine must not be an LLM, and denials must not be straight-through.</p>
+<h3 id="4-2-the-governance-answer">4.2 The governance answer</h3>
+<p>The IRDAI Master Circular on Health Insurance Business (<b>ref IRDAI/HLT/CIR/PRO/84/5/2024, dated 29.05.2024</b>) already constrains the design:</p>
+<ul><li><b>Cashless pre-auth decided within one hour</b>; final discharge authorisation within <b>three hours</b>, with delay costs borne by the insurer from shareholders&#x27; funds.</li><li><b>&quot;No claim shall be repudiated without the approval of PMC or a three-member sub-group… called the Claims Review Committee.&quot;</b></li></ul>
+<p><b>Say this:</b> <i>&quot;The routing policy I&#x27;d propose isn&#x27;t a design preference — the regulator has effectively already written it. Auto-approve within limits, human approval for every repudiation.&quot;</i> That is a very strong thing to say in a technical round, because it shows you read the rules before proposing the architecture.</p>
+<h3 id="4-3-the-evaluation-answer">4.3 The evaluation answer</h3>
+<p>They will ask how you know the system works. You have the best answer in the room:</p>
+<blockquote><i>&quot;Never a model grading a model — that rubber-stamps. My own review invariants were validated by deliberately violating every rule and asserting each check fires. A checker that only ever returns pass is worse than no checker, because it manufactures confidence. For claims I&#x27;d want a labelled historical set, per-decision-type accuracy, and a monitored schema-validation rate as the early-warning signal for model drift.&quot;</i></blockquote>
+<h3 id="4-4-the-multi-model-answer">4.4 The multi-model answer</h3>
+<p>§2. Add the routing point and the drift-detection point.</p>
+<h3 id="4-5-the-honest-limits-answer">4.5 The honest-limits answer</h3>
+<p>They will probe what you don&#x27;t know. Have §4.3 of the main prep ready, and lead with the sharpest one: <b>you have not run a claims desk.</b> Say it before they find it.</p>
+<hr>
+<h2 id="5-rash-score-verify-your-numbers-and-use-this-project-proper">§5 — rAsh Score — verify your numbers, and use this project properly</h2>
+<h3 id="5-1-your-numbers-are-stale">5.1 Your numbers are stale</h3>
+<p>I checked the live site on 2026-10-15:</p>
+<table><thead><tr><th></th><th>Your README</th><th><b>Live site</b></th></tr></thead><tbody><tr><td>Tracked brands</td><td>279</td><td><b>300</b></td></tr><tr><td>Industry cohorts</td><td>19</td><td><b>20</b></td></tr><tr><td>Scoring dimensions</td><td>4</td><td><b>4</b> ✓</td></tr></tbody></table>
+<p><b>Cite the live figures: 300 brands, 20 industry cohorts.</b> The README is behind — same stale-document problem your canonical profile warns about. The live site is the authority.</p>
+<p><b>Also confirmed live:</b> the four models named on the site are <b>ChatGPT, Gemini, Claude and Groq</b>.</p>
+<p><b>On Groq vs Grok — get this right before you name it.</b> I checked your source: the codebase references <b>both</b>, and they are different things:</p>
+<ul><li><b>Groq</b> — the fast-inference API provider (<code>api.groq.com</code>, <code>GROQ_API_KEY</code>). <b>82 references in your source</b>, and your own code comments call it the <i>&quot;fastest inference&quot;</i> path and use it as a <b>fallback</b> for insights and reports. This is the one that is genuinely wired up.</li><li><b>Grok</b> — xAI&#x27;s model (25 references, plus 33 for <code>xai</code>). It appears in a Vertex AI comment and some config, but it is <b>not one of the four named on your live site</b>.</li></ul>
+<p><b>So name four: ChatGPT, Gemini, Claude, Groq.</b> If asked which you use most, your own code answers it — <b>Groq for speed as the fallback path</b>, and your <code>.env.example</code> lists OpenAI, Gemini, Vertex, NVIDIA and Groq as configured providers.</p>
+<p><b>If they ask about provider mix, this is a better answer than a model list:</b> <i>&quot;I run four providers and I route by task — OpenAI for the scheduled pipeline, Gemini as the direct fallback, and Groq where I want fast inference. Having four wired means a provider outage degrades the run rather than stopping it.&quot;</i> That is a multi-provider resilience story, which is more relevant to an insurer than which model is cleverest.</p>
+<h3 id="5-2-why-this-project-is-better-for-this-role-than-you-seem-t">5.2 Why this project is better for this role than you seem to think</h3>
+<p>Read your own README description back: it <b>queries multiple foundation models with standardised evaluation prompts</b> and computes a composite score across <b>four independently-scored dimensions</b> — recommendation, sentiment, prominence, accuracy.</p>
+<p><b>That is a multi-model evaluation harness with a scoring rubric.</b> It is the same class of system as the &quot;AI Agent Evaluator&quot; work and the same class of problem as judging whether a claims model is behaving.</p>
+<p>And you have more in there: a <b>multi-agent debate arena</b> (Agent Pro-A, Agent Pro-B, The Judge), <b>text-to-SQL</b> analyst chat, an <b>LLM-optimisation strategy generator</b>, and daily <b>GitHub Actions</b> pipelines into <b>Turso/LibSQL</b> with a Next.js dashboard on Vercel.</p>
+<p><b>The pitch for the technical round:</b></p>
+<blockquote><i>&quot;I&#x27;ve built a live multi-model evaluation platform — it queries ChatGPT, Gemini, Claude and Groq with standardised prompts, scores each brand across four independent dimensions, and runs daily so I can see perception shift over time. Three hundred brands, twenty industry cohorts. The reason it&#x27;s relevant here is that it forced me to solve the exact problem you asked me about: getting comparable, structured output out of models that all answer differently, and detecting when a model update changes the answer.&quot;</i></blockquote>
+<p><b>That is a much stronger answer than the healthcare leaderboard alone</b>, because it demonstrates the multi-model engineering <i>and</i> the evaluation discipline in one project.</p>
+<h3 id="5-3-be-ready-for-the-obvious-follow-up">5.3 Be ready for the obvious follow-up</h3>
+<p><b>&quot;What did you learn about model differences?&quot;</b> Have a specific, honest observation ready — e.g. which model formats most consistently, which is most verbose, which drifts most on updates. <b>Only say what you have actually observed in your own data.</b> You have 300 brands across four models; you have real observations. Do not generalise into claims about model quality you cannot support from your own runs.</p>
+<h3 id="5-4-fix-your-ground-truth-this-matters-beyond-this-interview">5.4 Fix your ground truth — this matters beyond this interview</h3>
+<p><b>rAsh Score is not in `config/profile.md`.</b> That means every agent in your own pipeline — and this prep — has been treating the project as non-existent, and your tailored resumes cannot cite it.</p>
+<p>Add it, with the <b>live</b> figures and the live URL, as a featured project. It belongs there: it is live, it is verifiable, it demonstrates multi-model evaluation, and it is arguably the most directly relevant thing you have built to an &quot;Agentic AI&quot; role at an insurer.</p>
+<p><b>Suggested entry:</b> name, one-line purpose, live URL, stack (Next.js, Turso/LibSQL, GitHub Actions, Vercel, multi-provider model APIs), the four scoring dimensions, and the verified counts — with the live site as the source, the same way your other metrics are recorded.</p>
+<hr>
+<h2 id="6-questions-for-the-technical-round">§6 — Questions for the technical round</h2>
+<ol><li><b>&quot;What does the pipeline look like today — is anything automated, or is this greenfield?&quot;</b> — &quot;First to implement&quot; suggests greenfield; confirm it.</li><li><b>&quot;Which decisions do you want automated first — approvals, or the document handling upstream?&quot;</b> — tests whether they have thought about sequencing.</li><li><b>&quot;Where would the model sit, and where would the rules sit?&quot;</b> — if they say &quot;the model decides coverage&quot;, you have found your first piece of work.</li><li><b>&quot;What&#x27;s the data-residency position — would clinical documents go to a third-party API, or stay in our environment?&quot;</b> — your §3 insight, asked as a question rather than a lecture. Much stronger.</li><li><b>&quot;How do the medical reviewers feel about this? Are they shaping it or receiving it?&quot;</b> — the best predictor of whether the project succeeds.</li><li><b>&quot;Who signs off on an automated decision, and what&#x27;s the audit expectation?&quot;</b> — governance ownership.</li><li><b>&quot;What does the first milestone look like, and by when?&quot;</b> — scoped means real.</li><li><b>&quot;Is the team building this, or is there a vendor?&quot;</b> — determines whether you&#x27;d be writing specs or integrating someone&#x27;s product.</li><li><b>&quot;What&#x27;s the stack — Python, cloud, any existing claims platform we&#x27;d integrate with?&quot;</b> — practical, and it tells you how much greenfield there really is.</li><li><b>&quot;What&#x27;s the band and grade for this role, and what does the total package include?&quot;</b> — still unresolved. Ask it.</li></ol>
+<hr>
+<h2 id="7-pocket-card-for-the-technical-round">§7 — Pocket card for the technical round</h2>
+<p><b>Opening, if they ask you to introduce yourself:</b></p>
+<blockquote>M. Pharmacy → 9 years Optum (Claims Associate → CMS enrollment audit) → 3.5 years data and agentic AI. Then: <i>&quot;the interesting engineering was never getting a model to produce output — it was building the component that decides whether to believe the output.&quot;</i></blockquote>
+<p><b>If they ask about multi-model:</b></p>
+<blockquote><i>&quot;Structured output isn&#x27;t about making the model tidy — it converts an unreliable narrator into a testable component. Schema-constrained output, validated at the boundary, with routing kept deterministic and drift detected by monitoring the validation rate.&quot;</i></blockquote>
+<p><b>If they ask about architecture:</b></p>
+<blockquote>Eight-step pipeline. <b>Rules engine for anything contractual; model only where judgement is needed. Auto-approve behind guardrails; never auto-decline — the IRDAI Master Circular already requires Claims Review Committee approval for repudiation.</b></blockquote>
+<p><b>If they ask about evaluation:</b></p>
+<blockquote><i>&quot;Never a model grading a model. Validate the checker by deliberately violating every rule and asserting it fires.&quot;</i></blockquote>
+<p><b>If self-hosting comes up:</b></p>
+<blockquote><i>&quot;Tier the data. Clinical documents stay in-perimeter; high-volume narrow tasks are candidates for a self-hosted small model; frontier APIs under a no-training agreement only where you need the reasoning. I&#x27;ve fine-tuned and released my own model, so I know both the cost shape and the maintenance burden — it isn&#x27;t free.&quot;</i></blockquote>
+<p><b>The project to lead with:</b></p>
+<blockquote>rAsh Score — <b>300 brands, 20 industry cohorts, 4 dimensions, 4 models, daily pipelines.</b> Multi-model evaluation harness. Live.</blockquote>
+<p><b>Never say:</b></p>
+<ul><li><b>&quot;PMP certified / qualified / trained&quot;</b> — prepared, exam not taken</li><li>Any title above Data Analyst for held employment</li><li>That BugAgents findings were disclosed, accepted, paid, <b>or resolved</b></li><li>Any production users, revenue or adoption claim for your independent projects</li><li>That you authored the AgentSwarm manuscripts</li><li>Any ICICI Lombard claim-settlement or financial figure — you have none sourced</li><li><b>The README&#x27;s 279/19 figures</b> — cite the live 300/20</li></ul>
+<hr>
+<p><i>Companion files: <a href="icici_health_claims_interview_prep.md" target="_blank" rel="noopener">`icici_health_claims_interview_prep.md`</a> · <a href="health_claims_domain_research.md" target="_blank" rel="noopener">`health_claims_domain_research.md`</a> · <a href="../config/profile.md" target="_blank" rel="noopener">`../config/profile.md`</a></i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

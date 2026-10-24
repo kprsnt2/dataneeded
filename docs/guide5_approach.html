@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide 5 - The APPROACH Section</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="senior-resume-interview-guide-5-of-6-the-approach-section">Senior Resume — Interview Guide 5 of 6: The APPROACH Section</h1>
+<p><b>Covers:</b> the four principles in the APPROACH block — word by word.</p>
+<blockquote><b>Why this section matters most.</b> No other resume variant has it. It is the section that turns a list of projects into a <b>position</b> — and at senior level, the interview is not &quot;what did you build&quot; but &quot;how do you think&quot;. Every principle here is evidenced by a system on the same page, which is what makes it credible rather than decorative.</blockquote>
+<hr>
+<h2 id="1-principle-1-verification-before-autonomy">§1 — Principle 1: &quot;Verification before autonomy&quot;</h2>
+<blockquote><i>&quot;Every system above has a component that decides whether to believe the output. On a regulated decision that is not a feature, it is the design: automated approvals are tractable, automated denials are a regulatory event, and the explanation has to come from the recorded decision trace rather than a model narrating a decision it did not make.&quot;</i></blockquote>
+<p><b>This is the strongest paragraph on the resume. Break it into three separate claims and be able to defend each.</b></p>
+<h3 id="claim-1-every-system-has-a-verification-component">Claim 1 — Every system has a verification component</h3>
+<p><b>Say it as an inventory, not a boast:</b></p>
+<blockquote><i>&quot;Every project I&#x27;ve built has one. In BugAgents it&#x27;s a promotion gate with four conditions that must all hold — it refused thirty-four candidates to promote two. In JobAgents it&#x27;s a guard that validates generated text against a ground-truth file before anything reaches disk, catching eight of eight seeded fabrications. In AgentSwarm it&#x27;s a hash-chained ledger outside the agents&#x27; writable directory, so the audited can&#x27;t edit the audit. In the data-quality agent it&#x27;s a deterministic lookup before any model is called. Same instinct, five implementations.&quot;</i></blockquote>
+<h3 id="claim-2-on-a-regulated-decision-it-is-the-design-not-a-featu">Claim 2 — On a regulated decision it is the design, not a feature</h3>
+<p><b>This is the sentence to slow down on.</b> It is a position, and it is the one that maps onto insurance, banking and healthcare roles.</p>
+<blockquote><i>&quot;In an unregulated setting, verification is a quality feature — nice to have, and you can ship without it. In a regulated setting it&#x27;s structural. If you can&#x27;t show an auditor why a decision was made, the decision doesn&#x27;t exist as far as the process is concerned. So the verification layer isn&#x27;t something you add after the model works; it&#x27;s the thing that determines whether the model is allowed to decide at all.&quot;</i></blockquote>
+<h3 id="claim-3-the-asymmetry-approvals-are-tractable-denials-are-no">Claim 3 — The asymmetry: approvals are tractable, denials are not</h3>
+<p><b>This is your single best substantive answer in any interview.</b> Have it ready verbatim in shape.</p>
+<blockquote><i>&quot;Auto-approval and auto-decline are not the same problem, and treating them as one is the mistake I&#x27;d expect an automation programme to make.</i>  <i>Auto-approval is tractable. Approving a clean, low-value, in-network, pre-authorised claim within policy limits is a bounded decision. If the system is wrong you have paid a claim you might have questioned — a cost you can measure, reserve for, and tune the threshold on. That&#x27;s where the volume is.</i>  <i>Auto-decline is a different risk class. A wrong denial isn&#x27;t a cost line — it&#x27;s a regulatory event, a grievance, possibly an ombudsman case, and a reputational one. And in Indian health insurance the burden of justifying a rejection sits with the insurer. So a denial should never be a straight-through decision. It should be a recommendation with the reasoning surfaced to a human who owns the call, and the evidence attached.</i>  <i>So I&#x27;d build the automation asymmetrically: automate approvals aggressively behind guardrails, and treat denials as decision-support. That&#x27;s not a limitation of the technology — it&#x27;s the correct design for a regulated decision.&quot;</i></blockquote>
+<p><b>If the role is at ICICI Lombard or any insurer, add the regulatory fact:</b></p>
+<blockquote><i>&quot;And the regulator has effectively already written that policy. The IRDAI Master Circular on Health Insurance Business requires that no claim be repudiated without approval of the Policyholder Protection Committee or a three-member Claims Review Committee. So auto-decline isn&#x27;t just unwise — it isn&#x27;t available.&quot;</i></blockquote>
+<p><i>(Source: IRDAI/HLT/CIR/PRO/84/5/2024, dated 29.05.2024 — verified in `health_claims_domain_research.md`. Do not cite a circular number you have not checked.)</i></p>
+<h3 id="claim-4-the-explanation-comes-from-the-trace">Claim 4 — The explanation comes from the trace</h3>
+<p><b>Your best technical position. Understand why it is right.</b></p>
+<blockquote><i>&quot;The decision trace has to be the source of the explanation. If you ask a model to explain a decision it didn&#x27;t structurally make, you get a plausible narrative that isn&#x27;t the actual reason. The model will produce a fluent, confident, well-structured justification — and it will be a reconstruction, not a record.</i>  <i>So the system records the rules that fired, the inputs used, the model versions and the outcome, and the explanation is generated from that record. In a regulated decision, a plausible explanation that isn&#x27;t the real one is worse than no explanation at all — because it survives review.&quot;</i></blockquote>
+<p><b>The follow-up you will get: &quot;How is that different from logging?&quot;</b></p>
+<blockquote><i>&quot;A log is written by the process about itself, and the process can be wrong or the log can be edited. A trace is the decision&#x27;s own structure — which rules fired and on what inputs. The difference is that the trace can be replayed and the decision reproduced. A log tells you what the process said it did.&quot;</i></blockquote>
+<h3 id="where-this-principle-can-go-wrong">Where this principle can go wrong</h3>
+<p><b>Do not let it sound like you are anti-automation.</b> The position is <i>automate aggressively where it is safe</i>, not <i>be cautious everywhere</i>. If you sound risk-averse, you read as someone who will not ship.</p>
+<blockquote><i>&quot;I&#x27;m not arguing for less automation. I&#x27;m arguing for asymmetry — push hard on approvals, be deliberate on denials. The automation rate is the metric most likely to be optimised for its own sake, and a high automation rate on denials is a regulatory problem wearing a KPI.&quot;</i></blockquote>
+<hr>
+<h2 id="2-principle-2-deterministic-where-it-is-contractual-model-ba">§2 — Principle 2: &quot;Deterministic where it is contractual, model-based only where judgement is required&quot;</h2>
+<blockquote><i>&quot;Cost gates sit before the model, not around it.&quot;</i></blockquote>
+<h3 id="what-it-means">What it means</h3>
+<p>Two claims:</p>
+<ol><li><b>Some decisions are computable, and those should never touch a model.</b> Policy coverage is a contract. A contract is arithmetic and rules. A probabilistic answer to a contractual question is indefensible in an audit.</li><li><b>The cheap filter goes before the expensive one</b> — not as an optimisation bolted on later, but as the architecture.</li></ol>
+<h3 id="how-to-explain-it">How to explain it</h3>
+<blockquote><i>&quot;In JobAgents, scoring is pure arithmetic and string matching — five weighted components, no model call anywhere. Twenty-two thousand eight hundred and thirty-nine scores computed with zero model calls, and only the top hundred and fifty-five above threshold ever reach an LLM.</i>  <i>That&#x27;s the pattern I default to. If I&#x27;d asked a model to judge every posting, cost would scale with sourcing volume — and sourcing volume is the one thing the pipeline exists to maximise. Retrofitting a gate onto a system that already calls a model per item is much harder than building the gate first.&quot;</i></blockquote>
+<h3 id="why-the-ordering-matters-the-insight">Why the ordering matters — the insight</h3>
+<blockquote><i>&quot;The obvious design is to put a model in the loop and add a filter afterwards if cost becomes a problem. That&#x27;s backwards. The gate has to be the first thing, because by the time you&#x27;ve built the model path you&#x27;ve built a system whose economics depend on the model being there.&quot;</i></blockquote>
+<h3 id="the-follow-up-isn-t-a-rules-engine-brittle">The follow-up: &quot;Isn&#x27;t a rules engine brittle?&quot;</h3>
+<blockquote><i>&quot;A rules engine is exactly as brittle as the rules — which is a feature, because you can read them, test them and fix them. A model is brittle in ways you can&#x27;t enumerate. For anything contractual I&#x27;d rather have a rule I can point at in an audit than a probability I can&#x27;t explain.&quot;</i></blockquote>
+<h3 id="where-it-can-go-wrong">Where it can go wrong</h3>
+<p><b>Do not say &quot;never use a model for decisions.&quot;</b> That is not your position and it is not credible.</p>
+<blockquote><i>&quot;Models are the right tool where judgement is genuinely required — document interpretation, summarisation, surfacing inconsistencies. They&#x27;re the wrong tool where the answer is defined by a contract or a rule.&quot;</i></blockquote>
+<hr>
+<h2 id="3-principle-3-bounded-autonomy-with-an-explicit-human-bounda">§3 — Principle 3: &quot;Bounded autonomy with an explicit human boundary&quot;</h2>
+<blockquote><i>&quot;Retries are capped, escalations are defined, budgets and kill switches exist, and a no-result outcome is a valid recorded result.&quot;</i></blockquote>
+<h3 id="the-four-elements-each-with-evidence">The four elements, each with evidence</h3>
+<table><thead><tr><th>Element</th><th>What it means</th><th>Your evidence</th></tr></thead><tbody><tr><td><b>Retries are capped</b></td><td>Transient failure gets a second chance; unresolvable cases do not get infinite attempts</td><td>The data-quality agent: <b>3 retries</b>, then escalate</td></tr><tr><td><b>Escalations are defined</b></td><td>The terminal state for an unresolvable case is a specific human, not silence</td><td>Email escalation when the agent cannot resolve a domain</td></tr><tr><td><b>Budgets and kill switches exist</b></td><td>Hard limits the agent cannot exceed, and a way to stop it</td><td><code>MAX_SPEND_USD</code>, <code>MAX_TURNS_PER_AGENT</code>, <code>MAX_WALL_CLOCK_MINUTES</code>, and a <code>STOP</code> file halting hunters at the next turn boundary</td></tr><tr><td><b>A no-result outcome is valid and recorded</b></td><td>Finding nothing is a legitimate result, not a failure to be hidden</td><td>BugAgents: a no-finding verdict is recorded</td></tr></tbody></table>
+<h3 id="how-to-explain-it">How to explain it</h3>
+<blockquote><i>&quot;Autonomy without a boundary isn&#x27;t autonomy, it&#x27;s an unobserved process. So every system I build has three things: a cap on how long it can try, a defined human to escalate to, and a hard limit it cannot cross on spend or turns.</i>  <i>The part people miss is the fourth: a no-result outcome has to be valid. If the only acceptable outcome is finding something, you&#x27;ve built a system with an incentive to fabricate. Making &#x27;found nothing&#x27; a recorded, acceptable result is what lets the gate refuse thirty-four candidates and promote two without that looking like failure.&quot;</i></blockquote>
+<h3 id="the-line-worth-memorising">The line worth memorising</h3>
+<blockquote><i>&quot;The escalation path has to be cheap enough that using it isn&#x27;t a punishment.&quot;</i></blockquote>
+<p><b>Why:</b> if escalating is expensive, slow or politically costly, people stop escalating and start guessing. The design has to make the safe path the easy path.</p>
+<h3 id="the-follow-up-how-do-you-decide-where-the-boundary-goes">The follow-up: &quot;How do you decide where the boundary goes?&quot;</h3>
+<blockquote><i>&quot;Two questions. Can this be undone cheaply? And is the case clearly covered by the rules? Reversible and covered — the system decides. Irreversible or not covered — a human decides. And I separate the item from the rule: I&#x27;ll decide the item, because that&#x27;s the job, but a gap in the guideline isn&#x27;t mine to fill unilaterally, because my fix would only apply to me and would make my behaviour inconsistent with everyone else&#x27;s.&quot;</i></blockquote>
+<hr>
+<h2 id="4-principle-4-disclosure-over-polish">§4 — Principle 4: &quot;Disclosure over polish&quot;</h2>
+<blockquote><i>&quot;Where a result is weak I publish the weakness — a B+ audit verdict, 34 refused candidates, a self-audit that found its own headline result circular. A system whose limits are documented is more useful than one that looks clean.&quot;</i></blockquote>
+<h3 id="why-this-is-the-differentiator">Why this is the differentiator</h3>
+<p><b>Almost no candidate volunteers a weakness.</b> The instinct is to present the strongest version and hope the gaps are not found. This principle inverts that — and on a senior application, in a role that involves governance, it is precisely the trait being hired for.</p>
+<h3 id="the-three-examples-and-how-to-present-each">The three examples, and how to present each</h3>
+<p><b>1. The B+ audit verdict.</b></p>
+<blockquote><i>&quot;I commissioned an independent numerical audit of AgentSwarm&#x27;s output. It verified twenty-two of twenty-five quantitative claims exact, located all five defects, and returned the verdict B-plus — not publication-grade without that audit. That verdict is published alongside the work. I&#x27;d rather ship something whose weaknesses are documented than something that looks clean.&quot;</i></blockquote>
+<p><b>2. The 34 refusals.</b></p>
+<blockquote><i>&quot;Thirty-four candidates refused to promote two. On a dashboard that looks like a system that mostly fails. It&#x27;s the number I&#x27;d defend hardest, because a filter that promotes everything has a refusal count of zero and no verification at all.&quot;</i></blockquote>
+<p><b>3. The circularity finding.</b></p>
+<blockquote><i>&quot;One of the agent-authored manuscripts had a self-audit attached that found its headline agreement was circular — the model&#x27;s outputs were the input constants — and its second result was tuned. It recommended against submitting the paper. I didn&#x27;t hide that; it&#x27;s the single best evidence I have that the audit layer does real work rather than producing favourable verdicts.&quot;</i></blockquote>
+<h3 id="the-follow-up-isn-t-that-just-being-negative-about-your-own-">The follow-up: &quot;Isn&#x27;t that just being negative about your own work?&quot;</h3>
+<blockquote><i>&quot;No — it&#x27;s the difference between a result and a claim. If I tell you a system works and I haven&#x27;t tested where it breaks, you&#x27;re relying on my optimism. If I tell you it works within these limits and here&#x27;s the audit that found the edges, you can make a decision. The first is marketing. The second is engineering.&quot;</i></blockquote>
+<h3 id="the-follow-up-give-me-an-example-where-you-were-wrong">The follow-up: &quot;Give me an example where you were wrong.&quot;</h3>
+<p><b>This principle sets this question up, so have an answer ready.</b></p>
+<blockquote><i>&quot;Two. In JobAgents I built a scoring weight that interacted with a formula and made an entire role track return zero candidates. Nothing errored — the run completed and the summary looked fine. Absences don&#x27;t throw. I only found it because a track reporting zero is suspicious.</i>  <i>And in the data-quality agent I built the mechanism before the instrumentation, so I can&#x27;t tell you the resolution hit rate. Both are the same lesson: I measured what was easy to measure rather than what mattered.&quot;</i></blockquote>
+<hr>
+<h2 id="5-how-the-four-principles-fit-together">§5 — How the four principles fit together</h2>
+<p>They are not four separate opinions — they are one argument:</p>
+<blockquote><i>&quot;The four are connected. </i><i>Deterministic where contractual</i><i> means the decision is computable. </i><i>Verification before autonomy</i><i> means you can prove what was decided and why. </i><i>Bounded autonomy</i><i> means the system knows its own limits and hands over at them. </i><i>Disclosure over polish</i><i> means you find out where the limits are before your users do.</i>  <i>Put together: a system that can be trusted with a decision, because you can explain it, bound it, and show where it fails.&quot;</i></blockquote>
+<p><b>Say that paragraph if you get an open question like &quot;what&#x27;s your philosophy on AI systems?&quot;</b> It is a complete, structured answer in five sentences.</p>
+<hr>
+<h2 id="6-practice-set-for-this-guide">§6 — Practice set for this guide</h2>
+<table><thead><tr><th>#</th><th>Question</th></tr></thead><tbody><tr><td>1</td><td>What does &quot;verification before autonomy&quot; mean?</td></tr><tr><td>2</td><td>Should an AI system ever auto-decline a claim?</td></tr><tr><td>3</td><td>How is a decision trace different from a log?</td></tr><tr><td>4</td><td>Why put the cost gate before the model rather than around it?</td></tr><tr><td>5</td><td>Isn&#x27;t a rules engine brittle compared to a model?</td></tr><tr><td>6</td><td>How do you decide where the human boundary goes?</td></tr><tr><td>7</td><td>Why do you publish your own B+ audit verdict?</td></tr><tr><td>8</td><td>Tell me about a time you were wrong.</td></tr><tr><td>9</td><td>What&#x27;s your philosophy on building AI systems?</td></tr><tr><td>10</td><td>You sound cautious about automation. Will you ship?</td></tr></tbody></table>
+<p><b>Question 10 is the trap.</b> If any answer makes you sound risk-averse rather than deliberate, correct it: <i>&quot;I&#x27;m arguing for asymmetry, not caution. Push hard where it&#x27;s safe, be deliberate where it isn&#x27;t.&quot;</i></p>
+<hr>
+<p><i>← Guide 4: Selected Systems · Guide 6: Question Bank →</i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

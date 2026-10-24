@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Outreach Templates</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="outreach-templates">Outreach Templates</h1>
+<p>Copy-paste-ready templates for cold outreach. Generic and reusable — fill in the five placeholders per role (see §5).</p>
+<p><b>Ground rules:</b> every number below traces to the reconciled metrics in <code>config/profile.md</code> (2026-10-11). Lead with what a client or team actually used, not with a keyword list. Nothing here is auto-sent; a human copies, personalises, and sends.</p>
+<hr>
+<h2 id="1-cold-email-to-a-hiring-team">1. Cold email to a hiring team</h2>
+<p><b>Subject:</b> <code>{{role}} — Data Analyst, BigQuery + Looker Studio pipelines</code></p>
+<div class="copyblock"><button class="copy" data-target="cb0" type="button">Copy</button><pre id="cb0"><code>Hi {{name}},
+
+I&#x27;m applying for {{role}} at {{company}}.
+
+At Black Piano I build the pipelines behind client dashboards — 18 automated ETL
+pipelines feeding BigQuery and Looker Studio across 18 industry sectors. Before
+that, at Pi Software Solutions, I built production Python pipelines (internal
+Pi-API package) for automated BigQuery access across 10+ client dashboards and
+delivered 30+ analytical reports for US and UK clients.
+
+I noticed {{keyword}} in the posting — that&#x27;s the work I do most often:
+{{keyword_sentence}}.
+
+I also build independent, self-directed data systems — including a sourcing
+pipeline that resolved 7,613 jobs / 5,854 distinct roles from 10 sources with
+1,759 duplicates merged, scoring 22,839 matches with zero model calls. Those are
+my own projects, not client work.
+
+Earlier I spent 9 years at Optum auditing CMS enrollment transactions — where I
+learned to treat data quality as a gate, not a report.
+
+Happy to walk through any of this. Resume attached.
+
+Best regards,
+Prashanth Kumar Kadasi
+kprsnt@live.com · +91-9948311964 · https://kprsnt.in</code></pre></div>
+<hr>
+<h2 id="2-linkedin-connection-note">2. LinkedIn connection note</h2>
+<p><b>Hard limit: 300 characters including spaces and the sign-off</b> (this version is 247). If you need room, drop the <code>30+ reports at Pi Software</code> clause first.</p>
+<div class="copyblock"><button class="copy" data-target="cb1" type="button">Copy</button><pre id="cb1"><code>Hi {{name}} — Data Analyst, 3.5+ yrs building BigQuery/Looker pipelines: 18 automated ETL pipelines across 18 sectors at Black Piano, 30+ reports at Pi Software. Interested in {{role}} at {{company}} — {{keyword}} is the work I do daily. Prashanth</code></pre></div>
+<hr>
+<h2 id="3-linkedin-dm-to-a-recruiter">3. LinkedIn DM to a recruiter</h2>
+<p><b>Roughly 400–600 characters.</b> More room than a connection note, so name one concrete production outcome and one honest project detail.</p>
+<div class="copyblock"><button class="copy" data-target="cb2" type="button">Copy</button><pre id="cb2"><code>Hi {{name}}, thanks for connecting. I&#x27;m interested in {{role}} at {{company}}.
+
+Quick context: I&#x27;m a Data Analyst with 3.5+ years in production data work. At Black Piano I own 18 automated ETL pipelines into BigQuery feeding Looker Studio dashboards across 18 sectors; at Pi Software I built Python pipelines across 10+ client dashboards and wrote 30+ analytical reports for US/UK clients.
+
+Your posting mentions {{keyword}} — that&#x27;s squarely what I do. Open to a short call?
+
+Prashanth · kprsnt@live.com · https://kprsnt.in</code></pre></div>
+<hr>
+<h2 id="4-x-twitter-dm">4. X / Twitter DM</h2>
+<p><b>Roughly 200–280 characters.</b> Shortest form; one proof point only.</p>
+<div class="copyblock"><button class="copy" data-target="cb3" type="button">Copy</button><pre id="cb3"><code>Hi {{name}} — Data Analyst here (3.5+ yrs). I build BigQuery + Looker pipelines: 18 automated ETL pipelines across 18 sectors at Black Piano. Keen on {{role}} at {{company}} — {{keyword}}. Portfolio: https://kprsnt.in</code></pre></div>
+<hr>
+<h2 id="5-how-to-personalise">5. How to personalise</h2>
+<p>Swap <b>two or three tokens per role</b> and leave the rest alone. The templates are deliberately generic in the middle so that only these change:</p>
+<table><thead><tr><th>Token</th><th>What to put there</th><th>Where to find it</th></tr></thead><tbody><tr><td><code>{{company}}</code></td><td>The company you&#x27;re writing to</td><td>The posting</td></tr><tr><td><code>{{role}}</code></td><td>The <b>exact</b> job title from the posting</td><td>The posting</td></tr><tr><td><code>{{name}}</code></td><td>The recruiter or hiring manager&#x27;s first name</td><td>LinkedIn / the posting</td></tr><tr><td><code>{{keyword}}</code></td><td><b>One</b> skill or tool the posting emphasises that you genuinely have</td><td>The requirements section</td></tr><tr><td><code>{{keyword_sentence}}</code></td><td>One sentence connecting that keyword to real work you did</td><td>Your own history</td></tr></tbody></table>
+<p>Guidance:</p>
+<ul><li><b>One keyword, not five.</b> Pick the single requirement you can back with a</li></ul>
+<p>production example. <code>{{keyword_sentence}}</code> exists so you say <i>what you did</i> with it, not that you know it.</p>
+<ul><li><b>Only claim what you actually used.</b> If the posting wants Tableau and you</li></ul>
+<p>have used it, say so. If it wants dbt and you have not, leave it out — the resume carries the real stack and an interview will find the gap anyway.</p>
+<ul><li><b>Do not touch the numbers.</b> They are the verified set. If a number is not in</li></ul>
+<p><code>config/profile.md</code>, it does not go in the message.</p>
+<ul><li><b>Keep the projects labelled as projects.</b> The independent work</li></ul>
+<p>(JobAgents, AgentSwarm, BugAgents, AI Eco, mSeat, BrandXY) is self-directed, not client or employer work. Say so, as the templates do.</p>
+<hr>
+<h2 id="6-never-say-this">6. Never say this</h2>
+<table><thead><tr><th>Never write</th><th>Why</th></tr></thead><tbody><tr><td>&quot;Staff / Principal / Founding Engineer&quot;, &quot;Head of Data&quot;</td><td>The real titles are <b>Data Analyst</b> at both Black Piano and Pi Software. There is no seniority to inflate.</td></tr><tr><td>&quot;Agentic AI Systems Engineer&quot; as a held job title</td><td>Not an employment title. It may describe a <i>direction</i>, never a job held.</td></tr><tr><td>&quot;My pipeline serves 10,000 users&quot; / &quot;drove $X revenue&quot; / &quot;grew adoption&quot;</td><td>There are no production users, revenue, customers, or adoption figures. None.</td></tr><tr><td>&quot;My findings were disclosed / accepted / paid / resolved&quot;</td><td>BugAgents findings are <b>submission-ready drafts</b>. Nothing has been submitted and no bounty exists.</td></tr><tr><td>Naming the BugAgents vendor, program, asset, or vulnerability class</td><td>Withheld pending responsible disclosure. Cite the project and severity only, or omit entirely.</td></tr><tr><td>&quot;My paper was peer-reviewed&quot; / &quot;published in a journal&quot;</td><td>Paper 1 is a <b>Zenodo preprint</b> (DOI 10.5281/zenodo.23232189) — not peer-reviewed, not a journal. Paper 2 is a <b>manuscript, not submitted</b>.</td></tr><tr><td>&quot;I authored the cosmology papers&quot;</td><td>The agent authors are <code>A001_DarkMatter</code> / <code>A002_QuantumCosmos</code>. You built the system that wrote them; you are not the paper author.</td></tr><tr><td>Any number not in <code>config/profile.md</code></td><td>Superseded figures are actively misleading. <code>config/profile.md</code> carries a binding &quot;Stale values — do not use&quot; list; treat every number there as deleted. If it is not in the current metrics table, it does not go in the message.</td></tr><tr><td>Any &quot;enterprise dashboards&quot; count</td><td>Superseded wording. The verified figure is <b>10+ client dashboards</b> at Pi Software.</td></tr><tr><td>Any BugAgents report count above the promoted total</td><td>Superseded. BugAgents promoted <b>2 reports</b> from <b>8 findings</b>; the remainder were filter refusals.</td></tr><tr><td>A wall of tools with no outcome</td><td>Keyword soup reads as a template. One tool, one outcome, per sentence.</td></tr><tr><td>&quot;Dear Sir/Madam&quot;, &quot;To Whom It May Concern&quot;</td><td>Use a real name, or &quot;Hi {{company}} hiring team&quot;.</td></tr><tr><td>Claims about clients you cannot name</td><td>Client confidentiality. Describe the work, not the client list.</td></tr></tbody></table>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>

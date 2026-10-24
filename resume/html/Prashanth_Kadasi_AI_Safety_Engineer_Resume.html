@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRASHANTH KUMAR KADASI</title>
+<style>
+:root { --fs: 8.5pt; --accent: #1E3A8A; --ink: #1E293B; --muted: #475569;
+        --rule: #94A3B8; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
+               Arial, "Noto Sans", sans-serif;
+  color: var(--ink);
+  background: #eef1f5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.sheet {
+  background: #fff;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 12mm 14mm 14mm;
+  box-shadow: 0 1px 3px rgba(15,23,42,.14), 0 8px 28px rgba(15,23,42,.10);
+  font-size: var(--fs);
+  line-height: 1.22;
+}
+.name { font-size: calc(var(--fs) * 1.85); font-weight: 700; color: #0F172A;
+        text-align: center; letter-spacing: .3px; margin: 0 0 3px; }
+.title { font-size: calc(var(--fs) * 1.06); font-weight: 600;
+         color: var(--accent); text-align: center; margin: 0 0 4px; }
+.contact { font-size: calc(var(--fs) * .9); color: var(--muted);
+           text-align: center; margin: 0 0 2px; }
+.contact a, .proj-links a { color: var(--accent); text-decoration: none;
+                            font-weight: 600; }
+.contact a:hover, .proj-links a:hover { text-decoration: underline; }
+.section { font-size: calc(var(--fs) * 1.06); font-weight: 700;
+           color: var(--accent); text-transform: uppercase; letter-spacing: .6px;
+           border-bottom: .8px solid var(--rule); padding-bottom: 2px;
+           margin: 10px 0 4px;
+           break-after: avoid; page-break-after: avoid; }
+.subhead { font-weight: 700; color: #0F172A; margin: 6px 0 2px;
+           break-after: avoid; page-break-after: avoid; }
+.emp-header { display: flex; justify-content: space-between;
+              align-items: baseline; gap: 10px; margin: 6px 0 2px;
+              color: #0F172A; break-after: avoid; page-break-after: avoid; }
+.emp-left { flex: 1; min-width: 0; }
+.emp-loc { font-size: calc(var(--fs) * .95); color: var(--muted);
+           font-style: italic; }
+.emp-date { white-space: nowrap; font-weight: 700; text-align: right; }
+.proj-header { font-weight: 700; color: #0F172A; margin: 6px 0 1px;
+               break-after: avoid; page-break-after: avoid; }
+.proj-sub { font-weight: 400; font-style: italic; color: var(--muted);
+            font-size: calc(var(--fs) * .94); }
+.proj-links { font-size: calc(var(--fs) * .9); color: var(--accent);
+              margin: 0 0 2px; }
+.skill { margin: 0 0 2px; }
+.skill b { color: #0F172A; }
+.bullet { margin: 0 0 2px 12px; text-indent: -12px;
+          break-inside: avoid; page-break-inside: avoid; }
+.bullet b { color: #0F172A; }
+.para { margin: 2px 0 5px; }
+.note { font-size: calc(var(--fs) * .9); color: #64748B; font-style: italic;
+        margin: 0 0 3px; }
+.quote { margin: 4px 0 5px; padding: 3px 0 3px 9px;
+         border-left: 2.5px solid var(--rule); color: var(--muted);
+         font-style: italic; break-inside: avoid; }
+code { font-family: ui-monospace, Consolas, "SF Mono", Menlo, monospace;
+       font-size: .95em; }
+table { width: 100%; border-collapse: collapse; margin: 3px 0 5px;
+        font-size: calc(var(--fs) * .95); }
+th, td { text-align: left; padding: 2px 6px; border-bottom: .6px solid #CBD5E1; }
+th { color: #0F172A; }
+a { color: var(--accent); }
+
+/* Print: A4 by default, safe on Letter too — 12mm/14mm sits inside both. */
+@page { size: A4; margin: 12mm 14mm; }
+@media print {
+  html, body { background: #fff !important; height: auto !important; }
+  /* The sheet's own padding would stack on top of the @page margin and push
+     the last line onto a second page, so it is zeroed here and the @page
+     margin is the single source of truth for print whitespace. */
+  .sheet { width: auto !important; min-height: 0 !important; height: auto !important;
+           margin: 0 !important; padding: 0 !important;
+           box-shadow: none !important; border: 0 !important; background: #fff; }
+  a { color: var(--accent) !important; text-decoration: none !important; }
+  .section, .subhead, .emp-header, .proj-header, .skill {
+    break-after: avoid; page-break-after: avoid; }
+  .bullet, .para, .note, .quote, tr {
+    break-inside: avoid; page-break-inside: avoid; }
+  .name, .title { break-after: avoid; page-break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="name">PRASHANTH KUMAR KADASI</div>
+<div class="title">Data Analyst → AI Safety &amp; Evaluation Engineer | Verification &amp; Audit Discipline, Model Steerability, Guardrails</div>
+<div class="contact">Hyderabad, Telangana, India • +91-9948311964 • kprsnt@live.com</div>
+<div class="proj-links"><a href="https://kprsnt.in" target="_blank" rel="noopener">kprsnt.in</a> • <a href="https://github.com/kprsnt2" target="_blank" rel="noopener">github.com/kprsnt2</a> • <a href="https://huggingface.co/kprsnt" target="_blank" rel="noopener">huggingface.co/kprsnt</a> • <a href="https://linkedin.com/in/prashanth-kumar-kadasi-b5281765" target="_blank" rel="noopener">LinkedIn</a></div>
+<div class="section">PROFESSIONAL SUMMARY</div>
+<p class="para">Career transition into AI safety and evaluation, built on <b>9 years of paid verification work</b> as a CMS compliance auditor at Optum plus 3.5+ years as a Data Analyst (Black Piano, Pi Software). Since 2024 I have applied that audit discipline to autonomous AI systems through independent, self-directed projects: audit ledgers the agents cannot edit, per-turn scope guardrails, evidence gates that block unverified output, and measured honesty tests. Where I have not verified a number, I say so — my largest project carries an explicit <b>B+ / not publication-grade</b> verdict.</p>
+<div class="section">TECHNICAL SKILLS</div>
+<div class="bullet">• <b>AI Safety &amp; Evaluation:</b> Independent Verifier Design, Agent Evaluation Harnesses, Model Evaluation &amp; Steerability, Bias Quantification, Multi-Model A/B Evaluation, Human-in-the-Loop Escalation</div>
+<div class="bullet">• <b>Guardrails &amp; Audit:</b> Hash-Chained Audit Ledgers, Scope Guardrails, Budget Enforcement, Bounded Autonomy, Responsible Disclosure, CVSS Scoring, CWE Classification</div>
+<div class="bullet">• <b>Data Quality &amp; Compliance (9 yrs):</b> Data Quality &amp; Validation, Data Modeling, Regulatory Compliance Checks, Audit Readiness, Discrepancy Reporting</div>
+<div class="bullet">• <b>Engineering:</b> Python (PyTorch, Pandas, NumPy, FastAPI), Node.js, TypeScript, SQL, BigQuery, Looker Studio, Tableau, SQLite, FastMCP (MCP), RAG, Docker, GitHub Actions, GCP, Cloud Run, Linux/Bash, Git</div>
+<div class="bullet">• <b>Models:</b> Claude 4.x, Gemini 2.5/3.x, GPT-OSS 120B/20B, DeepSeek 4.1, Ollama, OpenRouter</div>
+<div class="section">PROFESSIONAL EXPERIENCE</div>
+<div class="emp-header"><span class="emp-left"><b>Black Piano</b> — <i>Data Analyst</i> <span class="emp-loc">| Remote</span></span><span class="emp-date">Mar 2026 – Present</span></div>
+<div class="bullet">• Created end-to-end pipelines for client dashboards, ingestion through publication — <b>18 automated ETL pipelines</b> feeding BigQuery → Looker Studio across 18 sectors.- Produced <b>industry reports (Black Friday, Christmas, sales) and ad-hoc dashboards</b> for stakeholders.- Built a self-healing data-quality agent (Gemini) with <b>fail-safe guardrails</b>: resolves missing brand domains via reference-table lookup with LLM fallback, <b>retries 3x, then escalates via email for human review only when unresolved</b> — automation that knows when to stop.</div>
+<div class="bullet">• Developed a custom MCP tool letting non-technical marketing &amp; sales teams generate data-grounded blog posts from one-line prompts.</div>
+<div class="emp-header"><span class="emp-left"><b>Pi Software Solutions (Pi - Datametrics)</b> — <i>Data Analyst</i> <span class="emp-loc">| Remote</span></span><span class="emp-date">Mar 2023 – Feb 2026</span></div>
+<div class="bullet">• Built production Python data pipelines (internal <code>Pi-API</code> package) for automated BigQuery access across 10+ client dashboards, staying reproducible.- Delivered <b>30+ analytical reports</b> on US &amp; UK industry trends, traceable to source queries.</div>
+<div class="bullet">• <b>Move to Black Piano (honest note):</b> Black Piano hires India-based data talent to serve US/UK clients remotely; I moved for closer client-facing dashboard ownership, not a title change.</div>
+<div class="emp-header"><span class="emp-left"><b>Optum (UnitedHealth Group)</b> — <i>Enrollment Quality &amp; Audit Representative (CMS Auditor)</i> <span class="emp-loc">| Hyderabad, India</span></span><span class="emp-date">Apr 2014 – Mar 2023</span></div>
+<div class="bullet">• Audited federal enrollment transactions for Centers for Medicare &amp; Medicaid Services (CMS) compliance across <b>9 years</b> — regulatory documentation, compliance checks, and audit readiness in a zero-tolerance environment.</div>
+<div class="bullet">• Executed end-to-end data validation and compliance checks across high-volume enrollment transactions, generating audit-ready documentation and discrepancy reports for CMS.</div>
+<div class="bullet">• Applied zero-tolerance quality gates to high-volume datasets: verification against a written standard, evidence retained for every finding, no conclusion asserted beyond the record.</div>
+<div class="bullet">• Promoted via internal job posting (IJP) in <b>March 2016</b> from Claims Associate (<b>Apr 2014 – Feb 2016</b>) on audit precision — the discipline I now apply to AI systems: define the check, retain the evidence, refuse to overstate.</div>
+<div class="section">INDEPENDENT &amp; SELF-DIRECTED AI SAFETY PROJECTS</div>
+<p class="para"><i>Independent, self-directed project work — not employer work for Black Piano, Pi Software, or Optum. No claim of commercial scale, paying clients, or user take-up.</i></p>
+<div class="proj-header"><b>MyLocalCLI — Local-First Agentic Coding Assistant</b><span class="proj-sub"> | <i>Node.js, CLI, 8 providers, 42 tools, 38 skills</i></span></div>
+<div class="proj-links"><a href="https://mlc.kprsnt.in" target="_blank" rel="noopener">Live portal</a> • <a href="https://www.npmjs.com/package/mylocalcli" target="_blank" rel="noopener">npm</a> • <a href="https://github.com/kprsnt2/MyLocalCLI" target="_blank" rel="noopener">GitHub</a></div>
+<div class="bullet">• Published an open-source terminal coding agent on npm (<code>mylocalcli</code>, v4.0.2) — a Claude Code alternative built around local and free-tier models with no telemetry and no paid subscription required.</div>
+<div class="bullet">• Engineered <b>42 built-in tools</b> and <b>38 dynamic skills</b> across <b>8 providers</b> (Ollama and LM Studio local, vLLM self-hosted, OpenRouter and Groq free tiers, NVIDIA NIM, OpenAI, and any OpenAI-compatible endpoint), with <b>5 specialised sub-agents</b> (code reviewer, explorer, test generator, refactorer, doc writer).</div>
+<div class="bullet">• Dispatched parallel tool calls concurrently via <code>Promise.all</code> instead of sequential blocking, and added provider failover on rate limits, context overflow or connection drops — models are never silently swapped.</div>
+<div class="proj-header"><b>rAsh Score — Multi-Model AI Brand-Visibility Index</b><span class="proj-sub"> | <i>Next.js, Turso/LibSQL, GitHub Actions, Vercel</i></span></div>
+<div class="proj-links"><a href="https://rashscore.live" target="_blank" rel="noopener">Live index</a></div>
+<div class="bullet">• Built and operate a live multi-model evaluation platform that queries <b>4 providers</b> (ChatGPT, Gemini, Claude, Groq) with standardised prompts and scores <b>300 tracked brands across 20 industry cohorts</b> on <b>4 independent dimensions</b> — recommendation, sentiment, prominence and factual accuracy.</div>
+<div class="bullet">• Automated daily pipelines via GitHub Actions writing into Turso (LibSQL), with a Next.js dashboard on Vercel; added a multi-agent debate arena and a text-to-SQL analyst chat.</div>
+<div class="proj-header"><b>AgentSwarm — Measurable Agent Honesty &amp; a Tamper-Resistant Audit Ledger</b><span class="proj-sub"> | <i>Node.js, Hash-Chained Ledger, Independent Oracle</i> | <a href="https://agent.kprsnt.in" target="_blank" rel="noopener">Live</a></span></div>
+<div class="bullet">• Built an unattended research arena where an <b>independent oracle</b> checks every turn for phantom artifacts, fabricated numbers, and asserted verdicts on undecidable questions: <b>0 oracle violations across 1,254 tool calls</b>, <b>0 of 2 self-assessing agents overclaimed</b>.</div>
+<div class="bullet">• Kept the <b>hash-chained forensic ledger outside the agents&#x27; writable directory</b> so the audited cannot edit the audit: <b>34 runs, 35/35 hash chains intact</b>.</div>
+<div class="bullet">• Commissioned an independent numerical audit: <b>22 of 25 quantitative claims verified correct to the printed digits</b>, all 5 defects in markdown prose, not Python modules.</div>
+<div class="bullet">• Wrote two agent-authored cosmology manuscripts in REVTeX, attributed to swarm agents <code>A001_DarkMatter</code> / <code>A002_QuantumCosmos</code> — I built the system, not the physics: a <b>Zenodo preprint</b> (DOI 10.5281/zenodo.23232189) plus one <b>manuscript not submitted</b>.</div>
+<div class="bullet">• <b>The safety asset:</b> that manuscript&#x27;s self-audit (<code>AUDIT_AND_KNOWN_LIMITATIONS.md</code>) found its DESI (w0,wa) agreement <b>circular</b> — the outputs are the DESI inputs — and its S8 result <b>tuned</b>, recommending against submission: the pipeline caught its own overclaim.</div>
+<div class="bullet">• <b>Honest limitation — the headline, not a footnote:</b> the verdict is <b>B+ / not publication-grade without that numerical audit</b>; no academic review.</div>
+<div class="proj-header"><b>BugAgents — Scope Guardrails &amp; an Evidence Gate for Autonomous Security Research</b><span class="proj-sub"> | <i>Python, Node.js, omp + agy</i> | <a href="https://bug.kprsnt.in" target="_blank" rel="noopener">Live Site</a></span></div>
+<div class="bullet">• Enforced a <b>per-turn tool-call audit</b>: any out-of-scope host or offensive tool aborts it — a live run was aborted so, bounding the blast radius of an autonomous actor with real tool access.</div>
+<div class="bullet">• Built a <b>report promotion gate</b> (scope match + HEAD match + non-empty repro + evidence files exist) — the difference between a model that writes a report and one that found a bug: <b>8 findings</b>, <b>5 High/Critical</b>, <b>2 promoted</b>, <b>34 refusals</b>.</div>
+<div class="bullet">• Ran <b>22 hunt runs / 84 agent turns / 15,317 tool calls</b> across the <code>agy</code> and <code>omp</code> harnesses — budget enforcement and a full call log as safety properties.</div>
+<div class="bullet">• <b>2 submission-ready reports</b> were promoted, each with a reproducing proof of concept, pinned commit, and <code>file:line</code> citations — drafts only: <b>none submitted yet</b>. <i>(Vendor, asset, and vulnerability-class specifics withheld pending disclosure.)</i></div>
+<div class="proj-header"><b>BrandXY — Measuring and Steering Recommendation Bias in a 20B Model</b><span class="proj-sub"> | <i>PyTorch, LoRA/QLoRA, AMD MI300X</i> | <a href="https://huggingface.co/kprsnt/BrandXY-gpt-oss-20b" target="_blank" rel="noopener">Weights</a></span></div>
+<div class="bullet">• Fine-tuned GPT-OSS-20B to <b>quantify and steer recommendation bias</b>, measured under multi-model A/B evaluation at <b>76.5% vs. 25.5% baseline</b> — open weights, so the measurement can be reproduced and challenged.</div>
+<div class="proj-header"><b>Project Awakening — Long-Horizon Agent Behavior &amp; Failure Recovery</b><span class="proj-sub"> | <i>Multi-Agent, FastMCP, CI/CD</i> | <a href="https://github.com/kprsnt2/ac_awakening" target="_blank" rel="noopener">Code</a></span></div>
+<div class="bullet">• Ran an unprompted multi-agent ecosystem for <b>1,441 autonomous turns (1,553 commits)</b>, then sustained <b>100% CI/CD integrity across a 330-turn cloud API blackout with zero human intervention</b> — graceful degradation under prolonged tool failure, not silent corruption.</div>
+<div class="proj-header"><b>AI Eco — Bounded Autonomy Under Enforceable Limits</b><span class="proj-sub"> | <i>Python, FastMCP, GitHub Actions</i> | <a href="https://kprsnt.in/ecosystem" target="_blank" rel="noopener">Live</a></span></div>
+<div class="bullet">• Operate a <b>10-agent</b> autonomous swarm under hard constraints: living memory bounded (<b>&lt;4,000 words</b>), target fitness scoring (<b>83.4%</b>), and technical-debt pruning gated at zero false positives.</div>
+<div class="section">EDUCATION</div>
+<div class="emp-header"><span class="emp-left"><b>Anurag Group of Institutions (JNTUH)</b> — <i>M. Pharmacy (Pharmaceutical Analysis &amp; Quality Assurance)</i></span><span class="emp-date">May 2012</span></div>
+</div>
+</body>
+</html>

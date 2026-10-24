@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LinkedIn Optimization — Prashanth Kumar Kadasi</title>
+<style>
+  :root{
+    --bg:#0a0e15; --panel:#121826; --panel2:#0f1421; --line:#222c40;
+    --txt:#e7ecf5; --muted:#93a0b8; --accent:#0a66c2; --accent-l:#5b8cff;
+    --accent2:#37d6a8; --warn:#ffb454; --chip:#1a2337; --danger:#ff6b6b;
+    --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:radial-gradient(1100px 560px at 12% -10%,#132a4d 0%,transparent 55%),
+      radial-gradient(900px 500px at 100% 0%,#0f2b3a 0%,transparent 50%),var(--bg);
+    color:var(--txt);font:15px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  a{color:var(--accent-l);text-decoration:none}a:hover{text-decoration:underline}
+  header{padding:34px 22px 8px;max-width:1180px;margin:0 auto}
+  header h1{margin:0 0 6px;font-size:26px;letter-spacing:-.3px}
+  header p{margin:0;color:var(--muted);font-size:13.5px}
+  .meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .meta span{background:var(--chip);border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:999px;font-size:12px}
+  .wrap{max-width:1180px;margin:0 auto;padding:10px 22px 80px}
+  nav.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;position:sticky;top:0;z-index:20;padding:12px 0;
+    background:linear-gradient(180deg,rgba(10,14,21,.96),rgba(10,14,21,.78) 70%,transparent);backdrop-filter:blur(8px)}
+  .tab{cursor:pointer;border:1px solid var(--line);background:var(--panel2);color:var(--muted);padding:9px 14px;border-radius:10px;font-size:13.5px;font-weight:600;transition:.16s;white-space:nowrap}
+  .tab:hover{color:var(--txt);border-color:#33405c}
+  .tab.active{color:#fff;background:linear-gradient(180deg,#0a66c2,#0a4f96);border-color:#1a7bd0;box-shadow:0 6px 18px rgba(10,102,194,.4)}
+  .panel{display:none;animation:fade .22s ease}.panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .grid{display:grid;gap:16px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+  .card>.head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
+  .head h3{margin:0;font-size:14.5px;letter-spacing:.2px}
+  .head .tag{font-size:11px;color:var(--muted);background:var(--chip);border:1px solid var(--line);padding:2px 8px;border-radius:999px;margin-left:8px;font-weight:500}
+  .head .tag.ok{color:var(--accent2);border-color:#1d5c46}
+  .head .tag.warn{color:var(--warn);border-color:#5c4a1d}
+  .actions{display:flex;gap:8px;flex-shrink:0}
+  button.copy{cursor:pointer;background:var(--chip);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:600;transition:.15s}
+  button.copy:hover{border-color:var(--accent-l);color:#fff}
+  button.copy.done{background:#123a2c;border-color:var(--accent2);color:var(--accent2)}
+  .body{padding:16px 18px;white-space:pre-wrap;font-size:14px;color:#dbe3f0}
+  .hint{color:var(--muted);font-size:12.5px;margin:-4px 0 16px}
+  .section-title{display:flex;align-items:center;gap:10px;margin:26px 0 12px}
+  .section-title h2{margin:0;font-size:16px}
+  .section-title .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--chip);color:var(--muted);font-weight:600}
+  td code{background:#0a0f18;padding:2px 6px;border-radius:6px;font-size:12px}
+  .bad{color:var(--danger);font-weight:600}
+  .good{color:var(--accent2);font-weight:600}
+  .ph{color:var(--warn)}
+  ul.check{list-style:none;padding:0;margin:0}
+  ul.check li{padding:9px 12px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--panel2);font-size:13.5px}
+  footer{max-width:1180px;margin:0 auto;padding:0 22px 60px;color:#5d6b85;font-size:12px}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:#123a2c;border:1px solid var(--accent2);color:var(--accent2);padding:10px 18px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  @media print{.tabs,button.copy{display:none}.panel{display:block!important}}
+</style>
+</head>
+<body>
+<header>
+  <h1>LinkedIn Optimization Kit — Prashanth Kumar Kadasi</h1>
+  <p>Copy-paste blocks for every profile field. Verified ground truth only — no invented metrics.</p>
+  <div class="meta">
+    <span>linkedin.com/in/prashanth-kumar-kadasi-b5281765</span>
+    <span>Hyderabad · Remote-global</span>
+    <span>kprsnt.in · github.com/kprsnt2 · huggingface.co/kprsnt</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="audit">🔍 Audit</button>
+    <button class="tab" data-tab="headline">✏️ Headline</button>
+    <button class="tab" data-tab="about">📝 About</button>
+    <button class="tab" data-tab="exp">💼 Experience</button>
+    <button class="tab" data-tab="featured">⭐ Featured</button>
+    <button class="tab" data-tab="projects">🚀 Projects</button>
+    <button class="tab" data-tab="skills">🧩 Skills</button>
+    <button class="tab" data-tab="checklist">✅ Checklist</button>
+  </nav>
+
+  <!-- AUDIT -->
+  <section class="panel active" id="audit">
+    <div class="section-title"><h2>What's wrong with the live profile</h2><div class="rule"></div></div>
+    <div class="card"><div class="body" style="padding:0">
+      <table>
+        <tr><th>Field</th><th>Current (stale)</th><th>Why it costs you</th></tr>
+        <tr><td>Headline</td><td>"Data Analyst @ Black Piano | Analyzing Data Insights"</td><td>Generic, hides the agentic/AI work; no searchable keywords</td></tr>
+        <tr><td>About</td><td>"over five months of experience… Google Analytics and SQL… JavaScript, Node.js"</td><td>Time-bound, dated, low-signal skills; zero mention of multi-agent/MCP/RAG or live projects</td></tr>
+        <tr><td>Top skills</td><td>BigQuery, ETL, DASH</td><td class="bad">DASH is a dead slot; no LLM/MCP/agentic keywords</td></tr>
+        <tr><td>Experience</td><td>Black Piano "7 months", no agentic detail</td><td>Misses Gemini self-healing agent, MCP tool, 18 ETL pipelines</td></tr>
+        <tr><td>Featured / Projects</td><td>Empty</td><td class="bad">No visual proof-of-work — the biggest miss for AI roles</td></tr>
+      </table>
+    </div></div>
+    <p class="hint" style="margin-top:14px">Fix: reposition as an <b>AI / Agentic Engineer who also owns the data stack</b>, and lead with live, inspectable systems.</p>
+  </section>
+
+  <!-- HEADLINE -->
+  <section class="panel" id="headline">
+    <p class="hint">LinkedIn limit: 220 characters. All four fit. Recommended: <b>A</b>.</p>
+    <div class="grid">
+      <div class="card"><div class="head"><h3>A — Agentic-first <span class="tag ok">162 chars · recommended</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">AI / Agentic Engineer | Autonomous Multi-Agent Systems, FastMCP & LLM Evaluation | 3.5+ yrs Data & AI | 3 live agent systems | Python • BigQuery • GCP | kprsnt.in</div></div>
+      <div class="card"><div class="head"><h3>B — Data + AI hybrid <span class="tag">153 chars</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Data & AI Systems Engineer | BigQuery • ETL • Looker Studio + Multi-Agent LLMs, MCP & RAG | 18 ETL pipelines • 10-agent swarm | Remote-global | kprsnt.in</div></div>
+      <div class="card"><div class="head"><h3>C — Proof-driven <span class="tag">158 chars</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Agentic AI Engineer | 10-agent FastMCP swarm • autonomous security agents • 20B LLM fine-tune | 3.5+ yrs data/AI + 9 yrs compliance audit | github.com/kprsnt2</div></div>
+      <div class="card"><div class="head"><h3>D — Mission / philosophy <span class="tag">164 chars</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">AI Systems Engineer | I build autonomous multi-agent systems that prove what they did — verification gates, tool auditing, RAG | Python • BigQuery • GCP | kprsnt.in</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="panel" id="about">
+    <p class="hint">LinkedIn limit: 2,600 characters. This block is 2,270.</p>
+    <div class="card"><div class="head"><h3>About / Summary <span class="tag ok">2,270 / 2,600</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">I build autonomous AI systems — and the production data pipelines underneath them.
+
+I'm an AI / Agentic Engineer with 3.5+ years across data/analytics and AI, including ~2 years building agentic systems: LLM-powered agents, RAG pipelines, tool/function calling and multi-agent workflows. I care about systems that can prove what they did — verification gates, per-turn tool auditing and hash-chained audit trails.
+
+What I've shipped (all live, all inspectable):
+• AI Eco — a 10-agent swarm on FastMCP exposing 15+ tools and 5 resources, with living-memory compaction (&lt;4,000 words) and target fitness scoring (83.4%) → kprsnt.in/ecosystem
+• BugAgents — two autonomous security-research agents with a 4-point report-promotion gate and per-turn tool auditing; 3 submission-ready reports (two High: CVSS 9.3 and 8.6) from 53 turns / 3,156 tool calls for $0.067 → bug.kprsnt.in
+• AgentSwarm — an autonomous multi-agent research arena with 32/32 cryptographically intact audit ledgers and 0 oracle violations across 1,254 tool calls → agent.kprsnt.in
+• JobAgents — a multi-agent sourcing pipeline: 7,533 jobs sourced, 22,647 match scores computed with 0 model calls, plus automated resume tailoring and outreach drafting → job.kprsnt.in
+
+Professionally:
+• Black Piano (Data Analyst / AI Systems, 2026–present): built a Gemini-powered self-healing data-quality agent, a custom MCP tool that turns a one-line prompt into publication-ready data-grounded content, and 18 automated ETL pipelines into BigQuery → Looker Studio dashboards for 4 enterprise clients (60% less manual analysis).
+• Pi Software Solutions (Data Analyst, 2023–2026): production Python pipelines for automated BigQuery access across 15+ enterprise dashboards and 30+ reports for US & UK clients.
+
+Before tech, I spent 9 years in regulated healthcare-compliance auditing at Optum / UnitedHealth Group — where my audit-grade verification discipline comes from.
+
+Stack: Python (FastAPI, PyTorch, Pandas), FastMCP, RAG, SQL/BigQuery, Looker Studio, Docker, GitHub Actions, GCP/Cloud Run; Claude 4.x, Gemini 2.5/3.x, GPT-OSS 120B/20B, DeepSeek, Ollama.
+
+Portfolio: kprsnt.in · GitHub: github.com/kprsnt2 · Hugging Face: huggingface.co/kprsnt
+Open to remote roles globally (India / IST) and contract engagements.</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="panel" id="exp">
+    <p class="hint">Paste each into the matching role. Keep the nested Claims Associate entry under Optum so the 9-year tenure and promotion read correctly.</p>
+    <div class="section-title"><h2>Black Piano — Data Analyst / AI Systems</h2><div class="rule"></div></div>
+    <p class="hint">Mar 2026 – Present · Remote</p>
+    <div class="card"><div class="head"><h3>Description</h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">• Built a self-healing data-quality agent powered by Gemini: autonomously resolves missing brand domains via reference-table lookup with LLM fallback, writes results back to both the dataset and lookup table, retries 3x, and escalates by email for human review only when unresolved.
+• Developed a custom MCP (Model Context Protocol) tool enabling non-technical marketing & sales teams to generate publication-ready, data-grounded blog posts from a one-line prompt, backed by auto-exported Google Sheets pipelines.
+• Engineered an automated AI insights pipeline (ChatGPT) generating market- and sector-level intelligence weekly, auto-published to a deployed client-facing website; reduced client manual analysis time by 60%.
+• Architected 18 automated ETL pipelines feeding BigQuery → Looker Studio dashboards across 18 sectors for 4 enterprise clients.</div></div>
+
+    <div class="section-title"><h2>Pi Software Solutions — Data Analyst</h2><div class="rule"></div></div>
+    <p class="hint">Mar 2023 – Feb 2026 · Hyderabad, Telangana, India</p>
+    <div class="card"><div class="head"><h3>Description</h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">• Built production Python data pipelines (internal Pi-API package) for automated BigQuery access across 15+ enterprise dashboards.
+• Delivered 30+ analytical reports for US & UK enterprise clients.
+• Validated sources, reconciled discrepancies, and enforced consistent metric definitions across concurrent client engagements.</div></div>
+
+    <div class="section-title"><h2>Optum (UnitedHealth Group) — Enrollment Quality &amp; Audit Representative (CMS Auditor)</h2><div class="rule"></div></div>
+    <p class="hint">Apr 2014 – Mar 2023 · Hyderabad, Telangana, India</p>
+    <div class="card"><div class="head"><h3>Description</h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">• Audited federal enrollment transactions for Centers for Medicare & Medicaid Services (CMS) compliance — regulatory documentation, statutory compliance checks, and audit readiness.
+• Promoted in Feb 2016 from Claims Associate (Apr 2014 – Feb 2016) based on audit precision and analytical rigor.
+• Executed end-to-end data validation and regulatory compliance checks across complex enrollment transactions, generating audit-ready documentation and discrepancy reports.
+• Applied zero-tolerance quality gates to high-volume transaction datasets — the verification discipline now applied to autonomous AI systems.</div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="panel" id="featured">
+    <p class="hint">Add section → Recommended → Add featured → Add a link. Add all six.</p>
+    <div class="grid">
+      <div class="card"><div class="head"><h3>1 · AI Eco <span class="tag">kprsnt.in/ecosystem</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: AI Eco — 10-Agent Autonomous Swarm (FastMCP)
+Description: 10 agents, 15+ MCP tools / 5 resources, living-memory compaction (<4,000 words), 83.4% fitness.</div></div>
+      <div class="card"><div class="head"><h3>2 · BugAgents <span class="tag">bug.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: BugAgents — Autonomous Security Research Agents
+Description: Two agents on disjoint targets with a 4-point report-promotion gate + per-turn tool auditing. 3 submission-ready reports (two High: CVSS 9.3 & 8.6). Details withheld pending responsible disclosure.</div></div>
+      <div class="card"><div class="head"><h3>3 · JobAgents <span class="tag">job.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: JobAgents — Automated Job-Search Pipeline
+Description: Multi-agent pipeline: 7,533 jobs sourced, 22,647 deterministic match scores with 0 model calls, resume tailoring + outreach drafting.</div></div>
+      <div class="card"><div class="head"><h3>4 · AgentSwarm <span class="tag">agent.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: AgentSwarm — Autonomous Multi-Agent Research Arena
+Description: 32/32 cryptographically intact hash-chained ledgers, 0 oracle violations across 1,254 tool calls. The audit lives outside the agents' writable area.</div></div>
+      <div class="card"><div class="head"><h3>5 · BrandXY <span class="tag">huggingface.co/spaces/kprsnt/brandXY-chat</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: BrandXY — 20B LLM Fine-Tuning (AMD MI300X)
+Description: Fine-tuned GPT-OSS-20B (LoRA/QLoRA) to quantify and steer recommendation bias: 76.5% vs 25.5% baseline (+51% lift) under multi-model A/B evaluation.</div></div>
+      <div class="card"><div class="head"><h3>6 · mSeat <span class="tag">mseat.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Title: mSeat — Discrete Allocation Simulator + MCP Server
+Description: Allocation engine for 18,000+ candidates across 59 colleges; validated within 73 ranks of cutoff; 90.6% payload compression.</div></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="panel" id="projects">
+    <p class="hint">Add section → Additional → Projects. Associate each with "Independent / Self-directed".</p>
+    <div class="grid">
+      <div class="card"><div class="head"><h3>BugAgents <span class="tag">bug.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Two autonomous security-research agents hunt real bugs in live bug-bounty programs across disjoint targets, with a submission gate that only promotes a report when the workspace corroborates it.
+• Produced 3 submission-ready vulnerability reports — two rated High (CVSS 9.3 and 8.6) and one Medium — each with a reproducing proof of concept, pinned commit and file:line citations. (Vendor, asset and vulnerability-class details withheld pending responsible disclosure.)
+• Built a 4-point report-promotion gate (scope match + HEAD match + non-empty repro + evidence files exist) that rejected 34 unverified candidate findings before promoting verified bugs.
+• Enforced per-turn tool-call auditing: any out-of-scope host or offensive tool aborts the agent; a live run was aborted exactly this way.
+• Ran 53 turns / 3,156 tool calls for $0.067 against a $50 hard cap; 8/8 harness tests pass.
+Skills: Python, Node.js, Multi-Agent Systems, Vulnerability Research, CVSS, Guardrails</div></div>
+
+      <div class="card"><div class="head"><h3>AgentSwarm <span class="tag">agent.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">An autonomous multi-agent research arena running unattended against real questions while an independent oracle checks every turn for phantom artifacts, fabricated numbers and asserted verdicts on undecidable questions.
+• 32 runs, all 32 ledger hash chains cryptographically intact (npm run verify). The ledger lives outside the agents' writable directory, so the audited cannot edit the audit.
+• Measured agent honesty directly: 0 oracle violations across 1,254 tool calls, and 0 of 2 self-assessing agents overclaimed.
+• Ran a controlled 4-substrate benchmark (agy/omp/step/pi) on an identical task, with a cost analysis showing subscription-priced agy did ~22x more fresh-token volume than omp at zero marginal cost.
+• Agents autonomously produced 182 reports and 158 tested Python engines; their own suites pass 195/224 when independently re-run.
+Skills: Node.js, Multi-Agent Systems, Agent Evaluation, Hash-Chained Ledgers, Oracle Verification</div></div>
+
+      <div class="card"><div class="head"><h3>JobAgents <span class="tag">job.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Multi-agent pipeline sourcing roles from ATS APIs, scoring them deterministically, then tailoring resumes and drafting outreach from Markdown config.
+• Sources 7,533 jobs / 5,784 distinct roles from 7 sources (Greenhouse, Ashby, Lever, LinkedIn, RemoteOK, Remotive, HN), with 1,864 duplicate postings merged via two-layer dedupe.
+• Deterministic matching service scores every job across 3 role tracks with zero model calls — a cost gate ensuring only top-N candidates reach an LLM (22,647 match scores computed, 0 model calls).
+• Absorbed three undocumented CLI quirks discovered by probing into a single tested harness.
+Skills: Python, Multi-Agent Systems, SQLite, ETL, Deterministic Scoring</div></div>
+
+      <div class="card"><div class="head"><h3>AI Eco — Autonomous Agent Swarm <span class="tag">kprsnt.in/ecosystem</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">A production 10-agent swarm running daily pipelines — telemetry ingestion, automated debt pruning (0 false positives), living-memory compaction (<4,000 words) and target fitness evaluation (83.4%) — exposed via FastMCP over JSON-RPC 2.0 (stdio) and SSE.
+• 10 agents, 15+ MCP tools and 5 resources.
+• Living-memory bound kept under 4,000 words.
+Skills: FastMCP, Model Context Protocol, Python, Multi-Agent Systems, RAG</div></div>
+
+      <div class="card"><div class="head"><h3>BrandXY — 20B LLM Fine-Tuning &amp; Steerability <span class="tag">HF</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">Fine-tuned GPT-OSS-20B on AMD MI300X using LoRA/QLoRA to quantify and steer recommendation bias.
+• Achieved 76.5% vs a 25.5% baseline (+51% lift) under rigorous multi-model A/B evaluation.
+• Published open weights and an interactive demo on Hugging Face Hub for transparent, reproducible scrutiny.
+Skills: LLM Fine-Tuning, PyTorch, LoRA/QLoRA, Hugging Face, AMD ROCm, Model Evaluation</div></div>
+
+      <div class="card"><div class="head"><h3>mSeat — Discrete Allocation Simulator + MCP Server <span class="tag">mseat.kprsnt.in</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+        <div class="body">High-performance discrete allocation / mock-counselling simulator for 18,000+ Telangana MBBS candidates across 59 colleges governed by a multi-dimensional reservation matrix.
+• Validated against official state medical-counselling results: predicted the admitted institution within 73 ranks of the college cutoff.
+• Compressed the payload by 90.6% for fast client-side simulation.
+• Built an MCP server so LLMs (Claude/Gemini) can run deterministic quota evaluations with zero hallucination.
+Skills: Discrete Optimization, Model Context Protocol, Algorithms, JavaScript, Data Engineering</div></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="panel" id="skills">
+    <div class="section-title"><h2>Pin these as Top 3</h2><div class="rule"></div></div>
+    <div class="card"><div class="head"><h3>Top 3 skills</h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">1. Large Language Models (LLM)
+2. Multi-Agent Systems  (or Model Context Protocol (MCP))
+3. Google BigQuery</div></div>
+    <div class="section-title"><h2>Add the rest</h2><div class="rule"></div></div>
+    <div class="card"><div class="head"><h3>High-signal skills <span class="tag">remove DASH</span></h3><div class="actions"><button class="copy">Copy</button></div></div>
+      <div class="body">Python (Programming Language)
+Agentic AI
+Model Context Protocol (MCP)
+RAG (Retrieval-Augmented Generation)
+LLM Fine-Tuning
+Prompt Engineering
+PyTorch
+FastAPI
+SQL
+ETL Pipelines
+Data Modeling
+Data Quality & Validation
+Looker Studio
+Tableau
+Google Cloud Platform (GCP)
+Cloud Run
+Docker
+GitHub Actions
+Node.js
+TypeScript
+Vulnerability Research
+Model Evaluation</div></div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="panel" id="checklist">
+    <div class="section-title"><h2>Update checklist</h2><div class="rule"></div></div>
+    <ul class="check">
+      <li>☐ Set headline → Option A</li>
+      <li>☐ Replace About with the 2,270-char block</li>
+      <li>☐ Update Black Piano dates + paste the 4 experience bullets</li>
+      <li>☐ Refresh Pi Software + Optum bullets (keep the Claims Associate nested role)</li>
+      <li>☐ Add Featured section with the 6 links</li>
+      <li>☐ Add Projects section with the 6 projects</li>
+      <li>☐ Pin top 3 skills; add the full skill list; remove DASH</li>
+      <li>☐ Upload new banner; add portfolio/GitHub/HF to contact info</li>
+      <li>☐ Enable Open to work (AI Engineer, Agentic AI Engineer, LLM Engineer, Applied AI Engineer, AI Systems Engineer, Data Engineer, Analytics Engineer, Senior Data Analyst)</li>
+      <li>☐ Request 3 recommendations</li>
+      <li>☐ Post one build update to reactivate the profile</li>
+    </ul>
+
+    <div class="section-title"><h2>Do NOT add</h2><div class="rule"></div></div>
+    <div class="card"><div class="body">❌ "arXiv paper in progress" / "peer-reviewed" — not verified.
+❌ Staff / Principal / Founding / Head of — target is mid-to-senior IC.
+❌ BugAgents vendor, program, asset, repo or vulnerability class — undisclosed.
+❌ "disclosed / accepted / paid / resolved" for BugAgents — they are submission-ready drafts.
+❌ Production users, revenue or adoption for any project — none exist.
+❌ Clinical-trial / CDISC / ICH-GCP expertise — the pharma background is QA/analytical.
+❌ "6-agent swarm" for AI Eco — verified number is 10 agents.
+❌ Any metric not in config/profile.md → Verified Metrics table.</div></div>
+  </section>
+
+</div>
+
+<footer>Private LinkedIn kit · rash/ (gitignored) · facts limited to verified profile ground truth.</footer>
+<div class="toast" id="toast">Copied to clipboard</div>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('active')});
+    panels.forEach(function(p){p.classList.remove('active')});
+    t.classList.add('active');
+    var el=document.getElementById(t.dataset.tab); if(el)el.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  })});
+  var toast=document.getElementById('toast'),tt=null;
+  function show(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1600)}
+  document.querySelectorAll('button.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var card=btn.closest('.card');var t=card?card.querySelector('.body'):null;if(!t)return;
+      var text=t.innerText;
+      function done(){var o=btn.textContent;btn.textContent='Copied';btn.classList.add('done');show('Copied to clipboard');setTimeout(function(){btn.textContent=o;btn.classList.remove('done')},1500)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){fb(text,done)})}else{fb(text,done)}
+    });
+  });
+  function fb(text,cb){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');cb()}catch(e){show('Copy failed — select manually')}document.body.removeChild(ta)}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>micro1 - AI Agent Evaluator Interview Prep</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--line:#cbd5e1;--accent:#1d4ed8;
+      --bg:#eef1f5;--card:#fff;--code:#f8fafc;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+     font:15px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+     -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:860px;margin:0 auto;padding:26px 18px 70px}
+.doc{background:var(--card);border-radius:14px;padding:34px 40px 46px;
+     box-shadow:0 1px 3px rgba(15,23,42,.10),0 10px 34px rgba(15,23,42,.07)}
+h1{font-size:1.72rem;margin:0 0 6px;letter-spacing:-.4px}
+h2{font-size:1.28rem;margin:34px 0 10px;padding-bottom:6px;
+   border-bottom:2px solid var(--line);letter-spacing:-.2px}
+h3{font-size:1.08rem;margin:26px 0 8px;color:#0b1220}
+h4{font-size:.97rem;margin:20px 0 6px;color:var(--accent);
+   text-transform:uppercase;letter-spacing:.5px}
+p{margin:9px 0}
+ul,ol{margin:9px 0 9px 22px;padding:0}
+li{margin:4px 0}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+blockquote{margin:14px 0;padding:10px 16px;background:#f1f5f9;
+           border-left:4px solid var(--accent);border-radius:0 8px 8px 0;
+           color:var(--muted)}
+code{font-family:ui-monospace,Consolas,"SF Mono",Menlo,monospace;
+     font-size:.92em;background:#eef2f7;padding:1px 5px;border-radius:4px}
+.copyblock{position:relative;margin:14px 0}
+.copyblock pre{background:var(--code);border:1px solid var(--line);
+   border-radius:10px;padding:16px 16px;overflow-x:auto;margin:0}
+.copyblock pre code{background:none;padding:0;font-size:.93rem;line-height:1.6;
+   white-space:pre-wrap;word-break:break-word}
+.copy{position:absolute;top:9px;right:9px;z-index:2;cursor:pointer;
+   background:var(--accent);color:#fff;border:0;border-radius:7px;
+   padding:5px 13px;font-size:.78rem;font-weight:650;letter-spacing:.3px;
+   opacity:.9}
+.copy:hover{opacity:1}
+.copy.done{background:#15803d}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);
+      vertical-align:top}
+th{background:#f1f5f9;font-weight:650}
+.toc{background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+     padding:14px 18px;margin:18px 0 8px}
+.toc b{display:block;margin-bottom:6px;font-size:.82rem;letter-spacing:.6px;
+       text-transform:uppercase;color:var(--muted)}
+.toc a{display:block;padding:2px 0;text-decoration:none;font-size:.94rem}
+.toc a:hover{text-decoration:underline}
+@media print{
+  body{background:#fff}
+  .wrap{max-width:none;padding:0}
+  .doc{box-shadow:none;border-radius:0;padding:0}
+  .copy{display:none}
+  .toc{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  .copyblock,.toc,table,blockquote{break-inside:avoid;page-break-inside:avoid}
+  @page{size:A4;margin:14mm 15mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="doc">
+<h1 id="micro1-ai-agent-evaluator-ai-interview-prep-20-minutes">micro1 — &quot;AI Agent Evaluator&quot; AI Interview Prep (~20 minutes)</h1>
+<blockquote><b>Source of truth for the format:</b> the invitation screenshot, preserved at <a href="assets/micro1_ai_agent_evaluator_20min.png" target="_blank" rel="noopener">assets/micro1_ai_agent_evaluator_20min.png</a>. <b>Source of truth for every fact about you:</b> <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a>. <b>Platform context:</b> <a href="micro1_platform_research.md" target="_blank" rel="noopener">micro1_platform_research.md</a> — verified facts separated from candidate anecdote.</blockquote>
+<hr>
+<h2 id="0-what-this-interview-is-and-the-trap-in-it">§0 — What this interview is, and the trap in it</h2>
+<p>The invitation says, verbatim:</p>
+<blockquote><i>&quot;Please note that this interview will take ~20 minutes with each question having a limited time for a response. You will answer by speaking, or typing. Ensure you&#x27;re in a quiet spot with a stable internet connection. This interview will be recorded and available in your profile link.&quot;</i></blockquote>
+<blockquote><i>&quot;You will be interviewed on these topics:&quot;</i> - Following Detailed Instructions Exactly - Hands-On Use of AI Tools - Judging When to Step In - Custom questions defined for the job</blockquote>
+<p><b>Twenty minutes is short.</b> Roughly 8–12 questions at 90–120 seconds each. There is no room for a long preamble — every answer must land its point in the first sentence.</p>
+<h3 id="platform-facts-that-change-how-you-prepare">Platform facts that change how you prepare</h3>
+<p>Grades below are per <a href="micro1_platform_research.md" target="_blank" rel="noopener">micro1_platform_research.md</a>, which separates micro1&#x27;s own published statements from candidate testimony. <b>Do not treat a candidate-reported item as platform policy.</b></p>
+<ol><li><b>VERIFIED — the interviewer is a voice AI called Zara, auto-scored, with a real-time verdict.</b> micro1&#x27;s own guide promises <i>&quot;a real-time result indicating whether you meet micro1&#x27;s global certification criteria.&quot;</i> There is no human to read the room. Prepare for a machine-readable answer structure.</li><li><b>CANDIDATE-REPORTED — never go silent.</b> Candidates independently report that a pause is read as <i>&quot;answer finished.&quot;</i> Narrate your thinking: <i>&quot;Let me think about that for a moment.&quot;</i> This is the highest-value behavioural change for a 20-minute window, where a lost question is a lost 10% of the interview — and it costs nothing if the report turns out to be wrong.</li><li><b>VERIFIED — rehearse on the real product first, and it is free.</b> <code>interview.micro1.ai/mock-interview</code>, plus <code>micro1.ai/interview-prep</code>. Do it two or three times. It is the same application as the live interview.</li><li><b>VERIFIED — read the pre-interview screen before you click start.</b> micro1 staff confirm it states <i>&quot;skills assessed, duration, etc.&quot;</i>, and that whether a <b>written or task portion</b> is included is <b>role-specific</b>. Free information that resolves the biggest format unknown.</li><li><b>CANDIDATE-REPORTED — seed your intro deliberately.</b> Zara reportedly generates follow-ups from the <i>end</i> of your introduction. End on the thing you want drilled — the evaluation and verification work, not the physics papers. Even if the mechanism is different, ending your intro on your strongest material is free insurance.</li><li><b>CANDIDATE-REPORTED — ask for a rephrase if you miss a question.</b> Reported as permitted and the main recovery mechanism; not published by micro1 as a guarantee. The same reports say there is a live transcript but <b>no scroll-back</b>. Either way: if you miss it, ask rather than guess.</li><li><b>VERIFIED — this is a certification gate, not a job interview.</b> micro1 states: <i>&quot;Certification does not guarantee immediate placement.&quot;</i> Passing puts you in a vetted pool for a client hiring manager to review — and the documented ceiling on that review is 30 days. <b>Treat a pass as eligibility, and keep your other applications running in parallel.</b></li></ol>
+<h3 id="the-trap-read-this-twice">The trap — read this twice</h3>
+<p>Your instinct will be to prove you are a <b>builder</b>. You build multi-agent swarms, autonomous pipelines, evaluation harnesses. The temptation is to turn every answer into an architecture discussion.</p>
+<p><b>This interview is not testing whether you can build an agent. It is testing whether you can be trusted to judge one.</b></p>
+<p>Read the three topics again. &quot;Following Detailed Instructions <b>Exactly</b>.&quot; &quot;<b>Judging</b> When to Step In.&quot; This is an <b>evaluation and operations</b> role. It is closer to quality assurance than to engineering. The evaluation is asking: <i>can this person apply someone else&#x27;s rubric to an AI system&#x27;s output, notice when something is wrong, and know the boundary of their own authority?</i></p>
+<p><b>Your builder background is the supporting evidence, not the headline.</b> Use it to prove you understand <i>why</i> rules exist — then demonstrate that you follow them anyway. The single most valuable thing you can signal is:</p>
+<blockquote><i>&quot;I&#x27;ve built the systems that decide whether to believe an AI&#x27;s output. So I know exactly how they fail, and I know that the person evaluating them has to be more disciplined than the system.&quot;</i></blockquote>
+<p>That is your positioning for all 20 minutes.</p>
+<hr>
+<h2 id="1-how-to-answer-in-a-20-minute-window">§1 — How to answer in a 20-minute window</h2>
+<h3 id="1-1-the-template-tighter-than-the-43-minute-one">1.1 The template — tighter than the 43-minute one</h3>
+<table><thead><tr><th>Beat</th><th>Time</th><th>Rule</th></tr></thead><tbody><tr><td><b>1. Direct answer</b></td><td>5s</td><td>First sentence answers the question. No wind-up.</td></tr><tr><td><b>2. The concrete instance</b></td><td>30–45s</td><td>One real example. Not three.</td></tr><tr><td><b>3. The boundary</b></td><td>15–20s</td><td>The limit, the escalation trigger, or the honest gap.</td></tr></tbody></table>
+<p><b>No beat 4.</b> Twenty minutes doesn&#x27;t have room. If you have more to say, the interviewer will ask a follow-up — and a follow-up question is a better outcome than a monologue.</p>
+<h3 id="1-2-the-three-failure-modes-in-this-format">1.2 The three failure modes in this format</h3>
+<ol><li><b>Over-answering.</b> Talking for three minutes because you know a lot. In a 20-minute interview that costs you two other questions.</li><li><b>Answering the question you wish they&#x27;d asked.</b> Especially: turning &quot;how do you use AI tools?&quot; into &quot;here&#x27;s my agent architecture.&quot; Answer the actual question.</li><li><b>Performing autonomy.</b> Saying you&#x27;d handle something yourself when the correct answer is escalate. &quot;Judging When to Step In&quot; is testing whether you know your own limits. Claiming no limits fails the topic.</li></ol>
+<hr>
+<h2 id="2-topic-1-following-detailed-instructions-exactly">§2 — Topic 1: Following Detailed Instructions Exactly</h2>
+<p><b>This topic is literal, and it is the easiest to fail by being helpful.</b> The test is not &quot;can you follow instructions&quot; — it is &quot;will you follow them <i>exactly</i>, including when you think you know better.&quot;</p>
+<h3 id="2-1-the-six-things-that-break-instruction-following">2.1 The six things that break instruction-following</h3>
+<p>Before you answer anything in this section, run this list:</p>
+<ol><li><b>Output format.</b> If it says &quot;reply with JSON only&quot;, any prose around the JSON is a failure. If it says &quot;three bullets&quot;, four is a failure.</li><li><b>Scope.</b> &quot;Summarise section 2&quot; is not &quot;summarise the document.&quot; Extra content is not a bonus — it&#x27;s a deviation.</li><li><b>Order.</b> If steps are numbered, the sequence is part of the instruction, not a suggestion.</li><li><b>Terminology.</b> If the guideline says &quot;label it <code>Unsupported</code>&quot;, then <code>Unsupported claim</code> is a different label.</li><li><b>Explicit exclusions.</b> &quot;Do not use external sources&quot; is binding even when a source would help.</li><li><b>Implicit length and tone.</b> &quot;One sentence&quot; means one sentence. This is where over-delivery does the most damage.</li></ol>
+<h3 id="2-2-the-method-to-state-out-loud">2.2 The method to state out loud</h3>
+<blockquote>&quot;I read the instruction twice and pull out the <b>constraints</b> as a list before I start — format, scope, order, terminology, exclusions, length. Then I do exactly that, and if I think a constraint is wrong I still follow it and flag the concern separately. That separation matters: the deliverable stays compliant, and the feedback still reaches the person who can change the guideline.&quot;</blockquote>
+<p><b>Say the second half explicitly.</b> It is the answer to the obvious follow-up (&quot;what if the instruction is bad?&quot;), and it demonstrates that compliance and judgement are not in conflict.</p>
+<h3 id="2-3-why-you-actually-believe-this-the-evidence">2.3 Why you actually believe this — the evidence</h3>
+<p>You have an unusually strong, specific reason to hold this position, and it comes from your own work:</p>
+<ul><li><b>JobAgents&#x27; guard rejects non-compliant output rather than warning about it.</b> The rule that generated text may not attribute independent projects to an employer is enforced in code — and the model violated the prompt-level version of that rule <i>anyway</i>, in capitals, while producing fluent output. Your conclusion: <b>&quot;If the rule isn&#x27;t enforced by something that can reject the output, it isn&#x27;t a rule — it&#x27;s a suggestion.&quot;</b></li><li><b>The review invariants split by capability</b> — set membership, regex and arithmetic to code; only genuine judgment calls to a model, and even then as an advisory that never erases a violation. That is guideline adherence designed rather than hoped for.</li><li><b>The BugAgents abort.</b> Any out-of-scope host or offensive tool aborts the agent at the turn boundary. Not warned, not logged-and-continued. <b>Aborted.</b></li></ul>
+<p><b>The one-sentence version:</b> <i>&quot;I&#x27;ve watched a model violate an explicit instruction while producing output that read perfectly. That&#x27;s why I follow guidelines literally — I&#x27;ve seen what happens when something doesn&#x27;t.&quot;</i></p>
+<p>That answer is credible in a way that &quot;I&#x27;m detail-oriented&quot; never will be.</p>
+<h3 id="2-4-instruction-following-drills">2.4 Instruction-following drills</h3>
+<p><b>Q: &quot;The guideline says reply in exactly two sentences. You need three to answer well. What do you do?&quot;</b></p>
+<blockquote>&quot;Two sentences. If the third point is essential I&#x27;d compress it into the second sentence, and if it genuinely can&#x27;t be compressed I&#x27;d deliver two sentences and note separately that the guideline may need a length exception for this class of item. Changing the format unilaterally makes my output incomparable with every other evaluator&#x27;s, and comparability is the entire point of a fixed format.&quot;</blockquote>
+<p><b>Q: &quot;You&#x27;re given a rubric and a guideline that conflict. Which wins?&quot;</b></p>
+<blockquote>&quot;I don&#x27;t resolve it myself — that&#x27;s a judgement call above my authority, and picking one silently means my scores are inconsistent with everyone else&#x27;s. I&#x27;d apply the more specific instruction if one is clearly more specific, document which I applied and why, and raise the conflict immediately so it can be resolved for everyone. A conflict that gets resolved once for one evaluator is a conflict that recurs for all of them.&quot;</blockquote>
+<p><b>Q: &quot;How do you make sure you haven&#x27;t missed a constraint?&quot;</b></p>
+<blockquote>&quot;I extract them into a list before I start rather than holding them in my head — format, scope, order, terms, exclusions, length. Then I check the output against the list before submitting. The failure mode isn&#x27;t not knowing the rule, it&#x27;s having read it and then not checking. So the check is a step, not an intention.&quot;</blockquote>
+<hr>
+<h2 id="3-topic-2-hands-on-use-of-ai-tools">§3 — Topic 2: Hands-On Use of AI Tools</h2>
+<p><b>&quot;Hands-on&quot; means they will probe for real usage, not vocabulary.</b> The failure mode is a keyword wall. The winning mode is: name the tool, say what you did with it, say where it broke.</p>
+<h3 id="3-1-lead-with-what-you-genuinely-use">3.1 Lead with what you genuinely use</h3>
+<p>Everything below is in your verified stack. Lead with the first two groups; the rest is depth if asked.</p>
+<table><thead><tr><th>Tool / capability</th><th>Your real, verified usage</th></tr></thead><tbody><tr><td><b>Claude 4.x, Gemini 2.5/3.x, GPT-OSS 120B/20B, DeepSeek 4.1</b></td><td>Multi-model routing, fallback chains, and A/B evaluation across providers. You run agents on multiple substrates and compare them.</td></tr><tr><td><b>Agent CLIs / harnesses</b> (omp, pi, agy, Antigravity, DeepSeek Harness)</td><td>Orchestrating long-horizon agents, and — importantly — <i>discovering and working around undocumented CLI quirks</i> by probing.</td></tr><tr><td><b>MCP / FastMCP</b></td><td>Built a custom MCP tool letting non-technical marketing and sales teams generate publication-ready, data-grounded content from a one-line prompt.</td></tr><tr><td><b>Prompt and system design</b></td><td>System prompts, tool schemas, guardrails, bounded autonomy, escalation design.</td></tr><tr><td><b>Evaluation harnesses</b></td><td>Independent verifier design, oracle checks, numerical audit, hash-chained audit ledgers.</td></tr><tr><td><b>LoRA/QLoRA fine-tuning</b></td><td>BrandXY — GPT-OSS-20B on AMD MI300X, <b>76.5% vs 25.5% baseline</b>.</td></tr><tr><td><b>Human-in-the-loop design</b></td><td>Email escalation in the data-quality agent; the promotion gate in BugAgents.</td></tr></tbody></table>
+<h3 id="3-2-the-answer-shape-that-beats-a-tool-list">3.2 The answer shape that beats a tool list</h3>
+<p><b>Q: &quot;How do you use AI tools in your work?&quot;</b></p>
+<blockquote>&quot;Three ways, and I&#x27;d rank them by how much judgement each needs.  <b>As a builder</b> — I design and run multi-agent systems. JobAgents scores jobs deterministically with zero model calls and only sends the shortlist to a model; that&#x27;s the pattern I default to, cheap deterministic filter first, model on the residue.  <b>As a user</b> — I built an MCP tool that lets non-technical marketing and sales generate publication-ready, data-grounded content from a one-line prompt. The engineering there wasn&#x27;t generation, it was <b>grounding</b> — the model reads real numbers from auto-exported Sheets pipelines instead of inventing plausible ones.  <b>As a sceptic</b> — which is the part that matters for this role. I&#x27;ve built the layer that decides whether to believe the output: an anti-fabrication guard that validates generated text against a ground-truth file <i>before</i> it&#x27;s written to disk, and catches 8/8 seeded fabrications. I&#x27;ve also watched a model violate an explicit prompt rule while producing fluent output. <b>Fluency is not correctness, and the artifact looks identical either way. Only the evidence distinguishes them.</b>&quot;</blockquote>
+<p>That answer covers all three topics in one breath: real usage, real tools, and the evaluation instinct the role needs.</p>
+<h3 id="3-3-the-honest-gap-answer-prepare-this-you-will-need-it">3.3 The honest-gap answer — prepare this, you will need it</h3>
+<p>You have <b>not</b> shipped production work in ChatGPT Enterprise, Copilot, Cursor, or enterprise AI platforms. If asked directly, do not claim it. Use:</p>
+<blockquote>&quot;I&#x27;ve used ChatGPT for content and analysis work — at Black Piano I built a weekly AI insights pipeline with it, auto-published to a client-facing site. My deeper hands-on work is with Claude, Gemini and open models through agent harnesses, where I&#x27;m doing orchestration and evaluation rather than chat. I haven&#x27;t shipped with Copilot or Cursor in a team setting. I&#x27;d expect the tooling to transfer quickly because the underlying skills — prompt structure, grounding, checking output — don&#x27;t change with the wrapper.&quot;</blockquote>
+<h3 id="3-4-questions-they-may-ask-about-ai-usage">3.4 Questions they may ask about AI usage</h3>
+<table><thead><tr><th>Question</th><th>Your spine</th></tr></thead><tbody><tr><td>&quot;When do you <i>not</i> use an AI tool?&quot;</td><td>When the answer must be deterministic and auditable, when the cost per item is too high at volume, or when the failure is silent and expensive. JobAgents&#x27; scoring is arithmetic with zero model calls for exactly this reason.</td></tr><tr><td>&quot;How do you check AI output?&quot;</td><td>Against ground truth, not against plausibility. The guard validates against a source-of-truth file in code before anything is persisted. And I check that the <i>checker</i> works by deliberately violating every rule and asserting it fires — a checker that only returns pass is worthless.</td></tr><tr><td>&quot;How do you prompt for reliability?&quot;</td><td>Give the model a falsifiable task rather than a confirming one, constrain the output format, and don&#x27;t ask a model to grade a model without a rubric. Also: state what &quot;done&quot; looks like, because most prompt failures are underspecification, not model weakness.</td></tr><tr><td>&quot;What&#x27;s a limitation of LLMs you&#x27;ve hit?&quot;</td><td>Confident, well-formed wrongness — and the fact that it&#x27;s indistinguishable from correct output by inspection. Also context limits: my AI Eco swarm bounds living memory under 4,000 words deliberately, because unbounded state makes behaviour a function of history rather than purpose.</td></tr><tr><td>&quot;Have you fine-tuned?&quot;</td><td>Yes — LoRA/QLoRA. BrandXY: GPT-OSS-20B on AMD MI300X, 76.5% vs 25.5% baseline, to measure and steer recommendation bias. Single run, no external replication — say that part too.</td></tr><tr><td>&quot;What tools do you use daily?&quot;</td><td>Name what&#x27;s true: the agent CLIs, Claude/Gemini/open models, Python, BigQuery, Looker Studio, Git, Google Apps Script. Don&#x27;t pad.</td></tr></tbody></table>
+<hr>
+<h2 id="4-topic-3-judging-when-to-step-in">§4 — Topic 3: Judging When to Step In</h2>
+<p><b>This is the highest-signal topic in the interview.</b> It is asking about <i>calibrated authority</i>: knowing the difference between a decision you should make and one you should escalate. In AI-training and evaluation work this is the core competency — an evaluator who escalates nothing is unreliable, and one who escalates everything is useless.</p>
+<h3 id="4-1-the-decision-framework-memorise-the-two-axes">4.1 The decision framework — memorise the two axes</h3>
+<p><b>Axis 1 — Reversibility.</b> Can this be undone cheaply? If yes, act. If no, act <b>only</b> where the guideline is explicit — and log it. Where it isn&#x27;t explicit <i>and</i> it isn&#x27;t undoable, escalate.</p>
+<p><b>Axis 2 — Coverage and confidence.</b> Coverage: is this case clearly inside the guidelines? Confidence: would you defend this call to a reviewer? <b>These are independent</b> — a case can be clearly covered and still be one you shouldn&#x27;t be the one deciding. Coverage decides <i>who owns the rule</i>; confidence decides <i>whether you should be the one applying it</i>.</p>
+<table><thead><tr><th></th><th><b>Guideline covers it clearly</b></th><th><b>Genuine edge case / not covered</b></th></tr></thead><tbody><tr><td><b>Reversible</b></td><td><b>Decide.</b> Apply the rule, document it.</td><td><b>Decide the item, escalate the gap.</b> Score it as &quot;not covered&quot;, state what you&#x27;d have scored and why, and raise the gap to the guideline owner. The <i>item</i> is yours to call; the <i>rule</i> is not. Do not stretch a criterion to fit.</td></tr><tr><td><b>Irreversible / high-impact</b></td><td><b>Decide, but log it.</b> The rule is clear, but the consequence isn&#x27;t undoable — so the record matters as much as the call.</td><td><b>Escalate.</b> Not covered <i>and</i> not undoable is exactly what escalation exists for.</td></tr></tbody></table>
+<p><b>In every cell:</b> escalate if your confidence is below the threshold you&#x27;d defend (§4.2 item 6). The matrix tells you who owns the decision; it is not a licence to act on a call you couldn&#x27;t justify to a reviewer.</p>
+<p><b>Then the sentence that makes it land:</b></p>
+<blockquote>&quot;The asymmetry is deliberate. Acting on a reversible case costs a correction. Acting on an irreversible one costs something that can&#x27;t be corrected. So the bar for acting alone goes up as reversibility goes down — and the escalation path has to be cheap enough that using it isn&#x27;t a punishment.&quot;</blockquote>
+<p><b>The distinction to say out loud if pushed:</b> <i>&quot;I separate the item from the rule. I&#x27;ll decide the item — that&#x27;s my job — but a gap in the guideline isn&#x27;t mine to fill unilaterally, because my fix would only apply to me and would make my scores inconsistent with everyone else&#x27;s. So the item gets scored and documented, and the gap gets escalated.&quot;</i></p>
+<h3 id="4-2-the-categories-where-you-always-step-in">4.2 The categories where you always step in</h3>
+<p>Name these if asked for a list:</p>
+<ol><li><b>Anything outside your scope or authority</b> — no matter how obvious the answer looks.</li><li><b>Irreversible actions</b> — deletions, submissions, anything customer-facing, anything that leaves your workspace.</li><li><b>Safety, legal, privacy, or regulatory exposure</b> — including PII you weren&#x27;t cleared to see.</li><li><b>Genuine guideline gaps</b> — the case the rubric doesn&#x27;t cover.</li><li><b>Conflicts of interest</b> — including the ones that flatter you.</li><li><b>Confidence below the threshold you&#x27;d defend</b> — if you wouldn&#x27;t defend the call to a reviewer, escalate it rather than ship it.</li><li><b>Anything that requires an identity, an account, or an acceptance of terms that isn&#x27;t yours.</b></li></ol>
+<h3 id="4-3-the-evidence-you-have-for-this-it-is-genuinely-strong">4.3 The evidence you have for this — it is genuinely strong</h3>
+<p>This topic is where your builder background converts directly into credibility. Every example is real and verified:</p>
+<ul><li><b>BugAgents aborts rather than warns.</b> Any out-of-scope host or offensive tool aborts the agent at the turn boundary. And it isn&#x27;t theoretical — <b>a live run was aborted exactly this way</b> when a hunter reached for a host that wasn&#x27;t on the tooling allowlist. <i>&quot;A safety control that has only ever been exercised by its own unit test is an untested control.&quot;</i></li><li><b>BugAgents refuses to submit.</b> Findings are submission-ready drafts; <b>nothing has been submitted</b>. Submission requires accepting a program&#x27;s terms and disclosing identity, so it stays a human action by design. The gate promoted <b>2</b> reports and refused <b>34</b>.</li><li><b>The data-quality agent escalates by email</b> for the cases it can&#x27;t resolve, after three bounded retries. Autonomous on the routine, explicitly non-autonomous on the residue.</li><li><b>Hard budget and kill switch</b> — <code>MAX_SPEND_USD</code>, <code>MAX_TURNS_PER_AGENT</code>, <code>MAX_WALL_CLOCK_MINUTES</code>, and a <code>STOP</code> file that halts the hunters at the next turn boundary. A no-finding verdict is a valid, recorded outcome.</li><li><b>The AI Eco swarm&#x27;s debt-pruning gate is set at zero false positives</b> — deliberately asymmetric, because deleting a live file is unrecoverable in a way that leaving dead code is not.</li></ul>
+<p><b>The line to deliver:</b> <i>&quot;I&#x27;ve built four systems where the escalation boundary was the design decision, not an afterthought. The rule I keep arriving at is the same one: </i><i>act where it&#x27;s reversible and inside the guidelines, escalate where it isn&#x27;t, and make the escalation path cheap enough that using it isn&#x27;t a failure.</i><i>&quot;</i></p>
+<h3 id="4-4-judgement-drills">4.4 Judgement drills</h3>
+<p><b>Q: &quot;An agent&#x27;s output is 90% right and you&#x27;re on a deadline. Ship or escalate?&quot;</b></p>
+<blockquote>&quot;Neither, yet — first I find out what the 10% is. If it&#x27;s formatting or tone, I fix it and move on. If it&#x27;s a factual error, a wrong number, or an unsupported claim, the deadline is irrelevant, because a wrong number that ships gets quoted later without the caveat. The 90% figure is the trap: a plausible output is exactly what a wrong output looks like. So the question isn&#x27;t how much is right, it&#x27;s <i>what kind of thing is wrong</i>.&quot;</blockquote>
+<p><b>Q: &quot;You spot an error in a colleague&#x27;s evaluation. What do you do?&quot;</b></p>
+<blockquote>&quot;Go to the colleague first, with the specific item and the specific criterion, rather than going over them. Most disagreements are rubric ambiguity, and if the rubric is ambiguous that&#x27;s a finding worth raising for everyone. If we still disagree after applying the rubric literally, then it goes to whoever owns the rubric — because the resolution should change the guideline, not just this one score. What I wouldn&#x27;t do is silently change their score or let it stand without saying anything.&quot;</blockquote>
+<p><b>Q: &quot;How do you decide you&#x27;ve done enough checking?&quot;</b></p>
+<blockquote>&quot;When I&#x27;ve checked against the criteria rather than against a feeling, and when a further check wouldn&#x27;t change the verdict. Practically: every criterion has a verdict and a piece of evidence. If I can point at the evidence for each one, I&#x27;m done. If I&#x27;m re-reading the same thing hoping to feel better about it, that&#x27;s not verification, that&#x27;s anxiety — and it&#x27;s a sign the rubric is underspecified.&quot;</blockquote>
+<p><b>Q: &quot;When should a human be in the loop, in one sentence?&quot;</b></p>
+<blockquote>&quot;When the action can&#x27;t be undone, when the guideline doesn&#x27;t cover the case, or when the consequence of being wrong lands on someone other than me. Everything else, I should be able to decide and document.&quot;</blockquote>
+<hr>
+<h2 id="5-the-custom-job-questions">§5 — The custom job questions</h2>
+<p>The invitation lists <i>&quot;Custom questions defined for the job&quot;</i> — role-specific questions set by whoever is hiring. You cannot know them in advance, but the categories for an AI Agent Evaluator role are predictable. Prepare the <i>shape</i>, not the answer.</p>
+<h3 id="5-0-what-the-work-actually-is-so-your-custom-answers-land-in">5.0 What the work actually is — so your custom answers land in the right register</h3>
+<p>micro1 publishes the product this role feeds. Its agent-evaluation platform describes four steps, and <b>your interview topics map onto them one-to-one</b>:</p>
+<table><thead><tr><th>micro1&#x27;s stated process</th><th>Your interview topic</th></tr></thead><tbody><tr><td><b>Evaluation design</b> — <i>&quot;Define success criteria, rubrics, and scoring for the agent&#x27;s task&quot;</i></td><td>Rubric work (also the 43-minute interview)</td></tr><tr><td><b>Failure diagnosis</b> — <i>&quot;review agent outputs and identify where, why, when, and how the agent fails&quot;</i></td><td>Judging When to Step In · Error &amp; Edge-Case Detection</td></tr><tr><td><b>Expert training data</b> — targeted data addressing the failure modes</td><td>Following Detailed Instructions Exactly</td></tr><tr><td><b>Monitor reliability</b> — re-evaluate as models, prompts and rules change</td><td>Hands-On Use of AI Tools</td></tr></tbody></table>
+<p>micro1&#x27;s own engineering language adds the vocabulary it uses internally: <i>&quot;isolate that exact trace, </i><i>grade the reasoning chain</i><i>, and correct the failure mode&quot;</i>; <i>&quot;graded multi-turn traces, your </i><i>failure taxonomies</i><i>&quot;</i>; <i>&quot;Continuous Calibration.&quot;</i> And its data-generation pipeline explicitly turns expert judgment into <i>&quot;new environments, rubrics, variations, and </i><i>edge cases</i><i>.&quot;</i></p>
+<p><b>Use these phrases, and mean them:</b></p>
+<ul><li><b>&quot;grade the reasoning chain, not just the final answer&quot;</b> — the core of trace evaluation.</li><li><b>&quot;failure taxonomy&quot;</b> — a named, ordered classification of how the agent fails, so failures are countable rather than anecdotal.</li><li><b>&quot;where, why, when, and how it failed&quot;</b> — the four-part diagnosis.</li><li><b>&quot;continuous calibration&quot;</b> — re-checking your own scoring against a fixed reference as models and rules change.</li><li><b>&quot;edge-case test set&quot;</b> — a deliberate set of boundary cases used to check whether a rule actually fires.</li><li><b>&quot;human review beyond automated evals and LLM-as-judge&quot;</b> — micro1&#x27;s own stated differentiator, and a position you independently arrived at by building review invariants rather than LLM-grading-LLM.</li></ul>
+<p><b>The one-line version of why you&#x27;re credible here:</b> <i>&quot;I&#x27;ve built the layer that decides whether to believe an agent&#x27;s output — and I&#x27;ve watched it catch things a fluent answer would have hidden.&quot;</i></p>
+<h3 id="5-1-the-five-categories-to-expect">5.1 The five categories to expect</h3>
+<table><thead><tr><th>Category</th><th>Typical question</th><th>Your answer&#x27;s spine</th></tr></thead><tbody><tr><td><b>Agent trace evaluation</b></td><td>&quot;Here&#x27;s a transcript of an agent&#x27;s steps. Where did it go wrong?&quot;</td><td>Find the first divergence, not the final error. Look for: an unsupported assumption early, a tool called with wrong arguments, a result ignored, a loop, or a success claim with no evidence.</td></tr><tr><td><b>Rubric writing</b></td><td>&quot;Write criteria to evaluate this output.&quot;</td><td>Make each criterion <b>independently checkable</b> and <b>binary or clearly banded</b>. Avoid criteria that need taste to apply — those produce disagreement.</td></tr><tr><td><b>Error taxonomy</b></td><td>&quot;Classify these failure types.&quot;</td><td>Separate <i>capability</i> failures (couldn&#x27;t do it) from <i>compliance</i> failures (didn&#x27;t follow the rule) from <i>honesty</i> failures (claimed it did). Honesty failures are the serious class.</td></tr><tr><td><b>Ambiguity escalation</b></td><td>&quot;The guideline is silent on this item.&quot;</td><td>Score the item as &quot;not covered&quot; and state what you&#x27;d have scored and why — then escalate the <b>gap</b>, not the item, to the guideline owner. Do not stretch a criterion to fit, and do not invent a rule that only you will apply.</td></tr><tr><td><b>Tool-usage judgement</b></td><td>&quot;When should the agent call a tool versus answer directly?&quot;</td><td>Call when the answer depends on a fact outside the model&#x27;s reliable knowledge or needs to be current, verifiable, or auditable. Answer directly when it&#x27;s reasoning over what&#x27;s already in context.</td></tr></tbody></table>
+<h3 id="5-2-the-universal-fallback-when-you-don-t-know">5.2 The universal fallback when you don&#x27;t know</h3>
+<p>If a custom question lands outside your experience, <b>say so and reason from first principles out loud.</b> That is a legitimate and often strong answer:</p>
+<blockquote>&quot;I haven&#x27;t worked with that specific setup, so let me tell you how I&#x27;d approach it rather than pretend to know. First I&#x27;d find the guideline that covers it — if there isn&#x27;t one, that&#x27;s the finding. Then I&#x27;d identify what the output is supposed to be, and check whether it&#x27;s there and whether it&#x27;s true. Then I&#x27;d look for the failure classes I know generalise: unsupported claims, confident wrongness, a step that claims success without evidence, and scope drift. And I&#x27;d document the verdict with the evidence per criterion, because an undocumented verdict is just an opinion.&quot;</blockquote>
+<p><b>Never bluff.</b> The person assessing you on an evaluation role is assessing exactly this.</p>
+<h3 id="5-3-the-partial-correctness-question-expect-it-it-s-named-as">5.3 The &quot;partial correctness&quot; question — expect it, it&#x27;s named as a gap</h3>
+<p>micro1&#x27;s post-rejection feedback email — <b>reproduced by one candidate</b>, and consistent with micro1&#x27;s published question bank and its Cortex product language — flags <i>&quot;how to score partial correctness&quot;</i> as something candidates handle weakly. Have this ready:</p>
+<blockquote>&quot;Only if the rubric allows it. If it&#x27;s binary, it&#x27;s binary — inventing a middle band makes my scores incomparable with everyone else&#x27;s. Where partial credit is allowed, I score <b>per criterion</b> rather than per output, so &#x27;covers the required sections&#x27; can pass while &#x27;no unsupported claims&#x27; fails, and the total reflects both. What I won&#x27;t do is give a vague middle score because the output felt mostly fine. <b>&#x27;Mostly fine&#x27; isn&#x27;t a criterion.</b>&quot;</blockquote>
+<p>And the sibling question — <b>&quot;how do you keep your scoring consistent across a long batch?&quot;</b></p>
+<blockquote>&quot;Two ways. For myself, I re-check a fixed set of known items periodically to confirm my scoring hasn&#x27;t drifted; the failure is gradual, so it needs a fixed reference rather than a feeling. Across raters, you need a <b>calibration set</b> — a handful of items everyone scores independently, then compare. If two raters diverge, that&#x27;s information about the rubric wording, not about the item. You fix the wording, not the score.&quot;</blockquote>
+<hr>
+<h2 id="6-practice-set-10-questions-20-minutes-total">§6 — Practice set: 10 questions, 20 minutes total</h2>
+<p>Answer each in 90 seconds or less, out loud, with the §1.1 template. Two minutes per question is the real pace — practise to it.</p>
+<table><thead><tr><th>#</th><th>Question</th><th>Topic</th></tr></thead><tbody><tr><td>1</td><td>Tell me about yourself in 60 seconds.</td><td>All</td></tr><tr><td>2</td><td>How do you make sure you follow instructions exactly?</td><td>Instructions</td></tr><tr><td>3</td><td>What do you do when an instruction conflicts with your judgement?</td><td>Instructions</td></tr><tr><td>4</td><td>How do you use AI tools in your daily work?</td><td>Tools</td></tr><tr><td>5</td><td>How do you verify AI output?</td><td>Tools</td></tr><tr><td>6</td><td>When do you decide <i>not</i> to use AI?</td><td>Tools</td></tr><tr><td>7</td><td>When do you escalate instead of deciding?</td><td>Judgement</td></tr><tr><td>8</td><td>An agent&#x27;s output is mostly right and you&#x27;re on deadline.</td><td>Judgement</td></tr><tr><td>9</td><td>The guideline doesn&#x27;t cover the case in front of you.</td><td>Judgement</td></tr><tr><td>10</td><td>How would you evaluate whether an AI agent performed well?</td><td>Custom</td></tr></tbody></table>
+<p><b>Score yourself 1–5 on:</b> Did the first sentence answer the question? Did I give one concrete example? Did I name a boundary or escalation trigger? Was it under 90 seconds?</p>
+<hr>
+<h2 id="7-before-you-sign-anything-commercial-realities">§7 — Before you sign anything (commercial realities)</h2>
+<p><b>This section is not about the interview. It is about what comes after, and it is the part that costs people money.</b> All of the following is well-corroborated candidate testimony — commercial grievance, not fraud. micro1 is a real company: micro1, Inc., a San Francisco address, named executives, mainstream press coverage, and a large employee-staffed community. The &quot;fake company&quot; worry is unfounded. The <i>contract</i> worries are not.</p>
+<p><b>What is verified:</b></p>
+<ul><li>Pay is <i>&quot;hourly </i><i>or</i><i> per task (depending on your project), at the rate fixed during onboarding&quot;</i>, paid biweekly through Deel in USD. <b>Two contract shapes, and the difference matters enormously.</b></li><li>The advertised range for <b>AI Agent Task Evaluator</b> is <b>$20–$45/hr</b>. India is <b>not</b> on micro1&#x27;s geographic exclusion list, so you are eligible.</li><li>micro1&#x27;s Candidate Privacy Policy states it may use <i>&quot;de-identified information collected from interviews, including audio, video, transcripts, and assessment results, to train and enhance our proprietary machine learning models.&quot;</i> It also states it does <b>not</b> share that data with AI model companies for <i>their</i> training. The opt-out is <b>account deletion</b> (<code>talent.micro1.ai/delete-account</code>).</li><li>Certification requires <b>government-issued ID</b>.</li><li>The automated assessment <i>&quot;will be reviewed by a human evaluator before a final decision is made&quot;</i>, and there is an appeal route via <code>privacy@micro1.ai</code>.</li></ul>
+<p><b>What candidates repeatedly report — treat as risk, not fact:</b></p>
+<ul><li><b>Advertised rate ≠ contracted rate.</b> Multiple reports of the advertised hourly figure being multiplied down — 0.667×, 0.5×, 0.375×, even 0.125× — when the actual placement was as a Trainer or Reviewer rather than the advertised role.</li><li><b>Per-task completion is defined by the client.</b> <i>&quot;As determined by Client&#x27;s project leadership&quot;</i> — with no objective completion test, and reports of long unpaid waits when a project pauses mid-review.</li><li><b>Onboarding and screening hours may be unpaid or capped</b> below the time actually taken.</li><li><b>Same role, materially different rates</b> across postings.</li><li><b>30-day limbo</b> is normal between certification and a client decision.</li></ul>
+<p><b>The five things to get in writing before signing — ask for all five:</b></p>
+<ol><li><b>Rate basis:</b> is this hourly or per-task?</li><li><b>The multiplier and the role you are contracted as</b> — Trainer, Reviewer, or the role advertised.</li><li><b>The per-task definition of &quot;complete&quot;</b>, and who determines it.</li><li><b>The review SLA</b> — how long between submission and payment.</li><li><b>&quot;What happens to my completed-but-unreviewed tasks if the project pauses?&quot;</b></li></ol>
+<p><b>One candidate&#x27;s rule is the right rule:</b> <i>&quot;If there is no clear answer, do not accept the project.&quot;</i></p>
+<p><b>On quoting your rate:</b> you state your expected rate during application, and the contract is <i>&quot;at the rate fixed during onboarding&quot;</i> — so the number you enter is consequential, and candidates report being unable to raise it afterwards. <b>Quote within the advertised band for the role.</b> Do not reflexively bottom out to look competitive; several candidates report that under-quoting did not help them get selected and left them stuck low.</p>
+<p><b>Two safety notes:</b></p>
+<ul><li>micro1&#x27;s official sender domains are <b>`@micro1.ai`, `@micro1.io`, `@micro1.co`</b> — and nothing else. Anything from another domain claiming to be micro1 should be treated as untrusted.</li><li><b>`microonejobs.com` presents as micro1 but is not on micro1&#x27;s own sitemap.</b> Treat it as untrusted.</li></ul>
+<hr>
+<h2 id="8-pocket-card">§8 — Pocket card</h2>
+<p><b>Positioning, one breath:</b></p>
+<blockquote><i>&quot;I build autonomous agent systems — and the part I care about is the component that decides whether to believe the output. I&#x27;ve watched a model break an explicit instruction while producing fluent output that read perfectly. That&#x27;s why I follow guidelines literally, check output against ground truth rather than plausibility, and escalate the cases the guidelines don&#x27;t cover.&quot;</i></blockquote>
+<p><b>The three topic answers, compressed:</b></p>
+<ul><li><b>Follow instructions exactly</b> → extract the constraints as a list before starting; follow them even when you disagree, and raise the concern separately.</li><li><b>Hands-on AI tools</b> → builder, user, and sceptic. Name real tools; name where they broke.</li><li><b>Judging when to step in</b> → reversible + inside the guidelines = decide. Irreversible or not covered = escalate. Make escalation cheap.</li></ul>
+<p><b>The four sentences worth memorising:</b></p>
+<ol><li><i>&quot;If the rule isn&#x27;t enforced by something that can reject the output, it isn&#x27;t a rule — it&#x27;s a suggestion.&quot;</i></li><li><i>&quot;Fluency is not correctness — the artifact looks identical either way. Only the evidence distinguishes them.&quot;</i></li><li><i>&quot;A reviewer that returns pass for everything is worse than no reviewer, because it manufactures confidence in a verdict nobody verified.&quot;</i></li><li><i>&quot;The escalation path has to be cheap enough that using it isn&#x27;t a punishment.&quot;</i></li></ol>
+<p><b>Say:</b></p>
+<ul><li>Self-healing data-quality agent — table-first, LLM fallback, write-back, 3 retries, email escalation <i>(Black Piano)</i></li><li>18 automated ETL pipelines → BigQuery → Looker Studio across 18 industry sectors <i>(Black Piano)</i></li><li>MCP tool for non-technical teams — grounded in auto-exported Sheets data, not invention <i>(Black Piano)</i></li><li>JobAgents: guard catches <b>8/8</b> seeded fabrications; <b>22,839</b> scores with <b>zero model calls</b></li><li>BugAgents: <b>34 refused, 2 promoted</b>; a live run aborted on a scope violation</li><li>BrandXY: GPT-OSS-20B, <b>76.5% vs 25.5%</b> baseline — single run, no external replication</li></ul>
+<p><b>Never say:</b></p>
+<ul><li>A number that isn&#x27;t in <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a></li><li>Any title above <b>Data Analyst</b>; no people-management experience exists</li><li>Independent projects as employer or client work</li><li>The BugAgents vendor, asset, repository, or vulnerability class — cite the project and severities only</li><li>That BugAgents findings were &quot;disclosed&quot;, &quot;accepted&quot;, &quot;paid&quot;, <b>or &quot;resolved&quot;</b> — nothing has been submitted</li><li>Any <b>production users, revenue, adoption, or customer</b> claim for any of your projects — none exist</li><li>That you <b>authored</b> the AgentSwarm manuscripts — the agent authors are <code>A001_DarkMatter</code> / <code>A002_QuantumCosmos</code></li><li>&quot;Peer-reviewed&quot; or &quot;published in a journal&quot; about either AgentSwarm manuscript</li><li>&quot;We&quot; about solo work</li><li>That you use tools you haven&#x27;t used. The gap answer in §3.3 is stronger than a bluff.</li><li><b>Excel, VBA, or Power Query depth</b> — not in your verified skills. See the spreadsheet note in <a href="micro1_data_analyst_prep.md" target="_blank" rel="noopener">`micro1_data_analyst_prep.md` §5</a>.</li></ul>
+<p><b>Full forbidden list:</b> <a href="outreach_templates.md" target="_blank" rel="noopener">`outreach_templates.md` §6</a> — it binds here too.</p>
+<p><b>Before you click start:</b> run the free mock at <code>interview.micro1.ai/mock-interview</code> two or three times · read the pre-interview screen for the skills list and whether a written portion is included · seed your intro to end on the work you want drilled · never go silent — narrate your thinking.</p>
+<hr>
+<p><i>Companion files: <a href="micro1_data_analyst_prep.md" target="_blank" rel="noopener">micro1_data_analyst_prep.md</a> (the 43-minute interview), <a href="micro1_platform_research.md" target="_blank" rel="noopener">micro1_platform_research.md</a> (platform intel), <a href="icici_lombard_interview_prep.md" target="_blank" rel="noopener">icici_lombard_interview_prep.md</a>, <a href="interview_guide.md" target="_blank" rel="noopener">interview_guide.md</a>, <a href="../config/profile.md" target="_blank" rel="noopener">../config/profile.md</a>.</i></p>
+</div>
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.copy');
+  if (!btn) return;
+  var pre = document.getElementById(btn.dataset.target);
+  if (!pre) return;
+  var text = pre.innerText;
+  function done() {
+    var old = btn.textContent;
+    btn.textContent = 'Copied';
+    btn.classList.add('done');
+    setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1400);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else { fallback(); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (err) { btn.textContent = 'Ctrl+C'; }
+    document.body.removeChild(ta);
+  }
+});
+</script>
+</body>
+</html>
